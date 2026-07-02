@@ -22,5 +22,19 @@
     <div data-username="user1234" data-abc="abcdef">계정명</div>
     <div data-addr="대구광역시 중구">주소</div>
     <div data-phone="010-1234-5678">연락처</div>
+    
+    <script>
+
+        /* 
+            === data-* 속성 전체 조회 ===
+            페이지 내 모든 div 요소를 선택해 각 요소에 담긴 data-* 값을 콘솔에 출력
+            querySelectorAll(): 지정한 CSS 선택자와 일치하는 모든 요소를 NodeList로 반환하는 메서드
+            dataset: 요소에 설정된 모든 data-* 속성을 key-value 객체 형태로 담고 있는 프로퍼티
+            data-username → dataset.username, data-abc → dataset.abc 처럼 카멜케이스로 변환되어 담긴다.
+        */
+        const Els = document.querySelectorAll('div');
+        Els.forEach(el=>console.log(el.dataset));
+
+    </script>
 </body>
 </html>
