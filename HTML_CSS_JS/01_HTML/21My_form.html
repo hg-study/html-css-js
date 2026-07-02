@@ -33,6 +33,66 @@
 
     <form action="/test.jsp" method="get">
 
+        <div>
+            <h2>정보입력</h2>
+        </div>
+        <hr/>
+        <div>
+            <h3>회원 정보 입력</h3>
+        </div>
+        <hr/>
+
+        <div>
+            <!-- 
+                === 이름 ===
+                hint: 입력 규칙 안내 문구.
+            -->
+            <div class="row">
+                <label>이름</label>
+                <input type="text" name="name" />
+            </div>
+            <span class="hint">* 한글은 10자, 영문은 20자 이내로 입력해 주세요</span>
+
+            <!-- 
+                === 아이디 ===
+                href="javascript:void(0)": 페이지 이동 없이 클릭 이벤트만 발생시키는 더미 링크
+            -->
+            <div class="row">
+                <label>아이디</label>
+                <input type="text" name="userid" />
+                <a class="btn" href="javascript:void(0)">중복확인</a>
+            </div>
+            <span class="hint">* 6자리 이상의 영문 혹은 영문, 숫자를 조합하여 입력해 주세요</span>
+
+            <!-- === 비밀번호 === -->
+            <div class="row">
+                <label>비밀번호</label>
+                <input type="password" name="password" />
+            </div>
+            <span class="hint">* 영문, 대소문자, 숫자, 특수문자 중 3개 이상을 조합하여 8자리 이상 입력해 주세요</span>
+
+            <div class="row">
+                <label>비밀번호 확인</label>
+                <input type="password" name="re-password" />
+            </div>
+
+            <!-- 
+                === 이메일 ===
+                아이디 직접 입력 + 도메인 select 조합
+            -->
+            <div class="row">
+                <label>이메일</label>
+                <input type="text" name="mail" />
+                <select>
+                    <option value="" selected>@naver.com</option>
+                    <option value="">@gmail.com</option>
+                    <option value="">@hotmail.com</option>
+                    <option value="">@hanmail.net</option>
+                    <option value="">@daum.net</option>
+                    <option value="">@nate.com</option>
+                </select>
+                <a class="btn" href="javascript:void(0)">중복확인</a>
+            </div>
 
     </form>
 
