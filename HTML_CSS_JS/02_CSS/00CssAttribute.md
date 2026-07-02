@@ -30,6 +30,38 @@
 
 ---
 
+
+## CSS Box Model
+ 
+> 모든 HTML 요소는 content - padding - border - margin 4개 영역이 겹겹이 쌓인 박스 구조로 공간이 구성된다. CSS에서 `width` / `height`를 지정할 때 어떤 영역까지 포함하는지는 `box-sizing` 속성으로 결정된다.
+ 
+<br>
+
+```
+┌─────────────────────────────┐
+│          margin             │  ← margin: 바깥 여백 (다른 요소와의 간격)
+│  ┌───────────────────────┐  │
+│  │        border         │  │  ← border: 테두리 선
+│  │  ┌─────────────────┐  │  │
+│  │  │     padding     │  │  │  ← padding: 안쪽 여백 (content ↔ border)
+│  │  │  ┌───────────┐  │  │  │
+│  │  │  │  content  │  │  │  │  ← content: 실제 콘텐츠 (텍스트, 이미지 등)
+│  │  │  └───────────┘  │  │  │
+│  │  └─────────────────┘  │  │
+│  └───────────────────────┘  │
+└─────────────────────────────┘
+```
+ 
+Inline 요소는 Box Model에서 `width`, `height`, 상하 `margin`이 <span style="color:brown">적용되지 않는다.</span>
+ 
+<span style="color:gray">`box-sizing: border-box;`를 적용하면 width/height 안에 padding·border가 포함되어 계산된다. 때문에 `* { box-sizing: border-box; }`로 전체 요소에 일괄 적용하는 경우가 많다.</span>
+ 
+<br>
+
+- 예제 코드: [Block · Inline 요소 & Box Model](../01_HTML/02Basic.html)
+
+---
+
 ## 크기
 
 > 요소의 너비, 높이, 내외부 여백을 지정하는 속성들이다.
