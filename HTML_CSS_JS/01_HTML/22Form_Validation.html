@@ -179,15 +179,23 @@
             <input name="zipcode" type="text" />
             <a class="btn" href="javascript:void(0)">검색</a>
         </div>
+
+        <!--
+            =====================================================
+            기본주소 / 상세주소 - readonly & disabled
+            =====================================================
+            readonly : 입력 불가 + 서버 전송 대상에 포함. 우편번호 검색 후 자동 채워지는 주소 필드에 사용
+            disabled : 입력 불가 + 서버 전송 대상에서 제외. 조건 충족 전까지 비활성화할 때 사용
+        -->
         <div class="row">
             <label>기본주소</label>
-            <input name="addr1" type="text" />
+            <input name="addr1" type="text" readonly/>
         </div>
         <div class="row">
             <label>상세주소</label>
-            <input name="addr2" type="text" />
+            <input name="addr2" type="text" disabled/>
         </div>
-
+        
         <!-- 
             === 휴대전화  ===
             select로 앞자리 선택 + input 2개로 나머지 번호 분할 입력 
