@@ -4,42 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!--
+        =====================================================
+        input type 종류 
+        =====================================================
+        text / search / url / date / time / datetime-local / number 등
+        input 태그의 type 속성 실습
+    -->
+
 </head>
 <body>
     <form action="/text.jsp">
+        <!--
+            === input type 속성 종류 ===
+            type 속성에 따라 브라우저가 제공하는 입력 UI와 유효성 검사 방식이 달라진다.
+        -->
         <div>
             <label for="">TEXT</label>
+            <!-- type="text": 일반 텍스트 입력 필드 (기본값) -->
             <input type="text">
-        </div>
-        <div>
-            <label for="">SEARCH</label>
-            <input type="search">
-        </div>
-        <div>
-            <!-- 유효성 검증. 주소여야 제출 가능 -->
-            <label for="">URL</label>
-            <input type="url">
-        </div>
-        <div>
-            <label for="">DATE</label>
-            <input type="date">
-        </div>
-        <div>
-            <label for="">TIME</label>
-            <input type="time">
-        </div>
-        <div>
-            <label for="">DATETIME</label>
-            <input type="datetime-local">
-        </div>
-        <div>
-            <label for="">NUMBER</label>
-            <input type="number">
-        </div>
-        <div>
-        
-            <input type="submit">
-            <input type="reset">
         </div>
     </form>
 </body>
