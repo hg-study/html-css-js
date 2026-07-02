@@ -23,8 +23,7 @@
 <br>
 
 
-- 예제 코드: [HTML 정의 & 기본 설명 이론](./Theory/01Theory.md)
----
+- 예제 코드: [HTML 기본 구조](../01Basic.html)---
 
 ## `<head>` 내부 주요 태그
 
@@ -40,7 +39,7 @@
   
 <br>
 
-- 예제 코드: [HTML 정의 & 기본 설명 이론](./Theory/01Theory.md)
+- 예제 코드: [HTML 기본 구조](../01Basic.html)
 
 ---
 
@@ -69,7 +68,7 @@ HTML 요소는 레이아웃 동작 방식에 따라 두 종류로 나뉜다.
 
 <br>
 
-- 예제 코드: [Block · Inline 요소 & Box Model](./02Basic.html)
+- 예제 코드: [Block · Inline 요소 & Box Model](../02Basic.html)
   
 ---
 
@@ -124,11 +123,11 @@ HTML 요소는 레이아웃 동작 방식에 따라 두 종류로 나뉜다.
 
 <br>
 
-- 예제 코드: [Block · Inline 요소 & Box Model](./02Basic.html)
+- 예제 코드: [Block · Inline 요소 & Box Model](../02Basic.html)
 
 ---
 
-#### Form 관련 태그
+### Form 관련 태그
 
 `<input>`을 감싸 실제 데이터를 전송하는 폼 구성 태그들
 
@@ -143,8 +142,88 @@ HTML 요소는 레이아웃 동작 방식에 따라 두 종류로 나뉜다.
 
 <br>
 
-- 예제 코드: [회원가입 폼 페이지](./15Form.html)
-- 예제 코드: [회원가입 폼 Css 추가](./16Form_add_css.html)
+- 예제 코드: [회원가입 폼 페이지](../15Form.html)
+- 예제 코드: [회원가입 폼 Css 추가](../16Form_add_css.html)
+- 예제 코드: [회원가입 폼 실습](../21My_form.html)
+
+<br>
+
+---
+
+### `<form>` method 속성
+
+> 서버로 요청을 보낼 때 데이터를 전달하는 방식을 지정하는 속성이다.
+
+<br>
+
+| **값** | **설명** |
+|---|---|
+| `get` | 요청 정보를 Query String으로 전달한다 (기본값) |
+| `post` | 요청 정보를 Request body(Payload)로 전달한다 |
+| `put` | 리소스 전체를 새 데이터로 교체(덮어쓰기)할 때 사용한다 |
+| `patch` | 리소스의 일부 데이터만 수정할 때 사용한다 |
+| `delete` | 리소스를 삭제할 때 사용한다 |
+
+<br>
+
+- 예제 코드: [회원가입 폼 페이지2](../17Form_only_html.html)
+- 예제 코드: [회원가입 폼 페이지2 Css 추가](../19Form_only_html_css.html)
+
+---
+
+### `id` + `label for` 연결
+
+> `label`의 `for` 값과 `input`의 `id` 값을 일치시켜 두 요소를 연결하는 방식이다. 연결되면 label 텍스트를 클릭해도 해당 input이 체크·포커스된다(클릭 영역 확장).
+
+<br>
+
+- 예제 코드: [회원가입 폼 페이지2 Css 추가](../19Form_only_html_css.html)
+
+---
+
+### `<button>` vs `<input type="submit">`
+
+> 둘 다 form 데이터를 전송하는 제출 버튼이지만 내부 구성 방식에 차이가 있다.
+
+<br>
+
+| **태그** | **설명** |
+|---|---|
+| `<button>` | 텍스트·이미지 등 HTML 요소를 내부에 넣을 수 있다. `<form>` 내부에서는 기본 `type`이 `submit`이라 클릭 시 form 데이터를 전송한다 |
+| `<input type="submit">` | `value` 속성으로 버튼 텍스트를 지정한다. 내부에 HTML 요소는 넣을 수 없다 |
+
+<br>
+
+<span style="color:gray">스타일 자유도가 필요하면 `<button>`을, 단순 제출 버튼이면 둘 중 아무거나 써도 무관하다.</span>
+
+<br>
+
+- 예제 코드: [네이버 회원가입 폼 실습](../18Make_Naver_Form_only_html.html)
+
+---
+
+### input 유효성 검사 속성
+
+> 클라이언트(브라우저) 단에서 입력값을 검증해, 조건에 맞지 않으면 `submit`을 막는 속성들이다.
+
+<br>
+
+| **속성** | **설명** |
+|---|---|
+| `required` | 값이 비어있으면 submit을 막고 브라우저가 자동으로 에러 메시지를 표시한다 |
+| `pattern` | 정규식을 지정해 입력값이 해당 형식과 일치하지 않으면 submit을 막는다 |
+| `title` | `pattern` 검증 실패 시 브라우저가 표시할 안내 문구를 지정한다 |
+| `readonly` | 입력은 불가능하지만 서버 전송 대상에는 포함된다 |
+| `disabled` | 입력이 불가능하고 서버 전송 대상에서도 제외된다 |
+
+<br>
+
+<span style="color:gray">`readonly`는 우편번호 검색 후 자동으로 채워지는 주소 필드처럼 값은 유지한 채 수정만 막을 때 사용하고, `disabled`는 조건이 충족되기 전까지 완전히 비활성화할 때 사용한다.</span>
+
+<br>
+
+- 예제 코드: [회원가입 폼 페이지2 유효성 검사 준비](../22Form_Validation.html)
+
 ---
 ## CSS Box Model
 
@@ -177,7 +256,7 @@ HTML 요소는 레이아웃 동작 방식에 따라 두 종류로 나뉜다.
 
 <br>
 
-- 예제 코드: [Block · Inline 요소 & Box Model](./02Basic.html)
+- 예제 코드: [Block · Inline 요소 & Box Model](../02Basic.html)
 
 ---
 
@@ -236,5 +315,5 @@ ul (대분류)
   
   <br>
 
-- 예제 코드: [리스트: ul, ol, li, 중첩](./03List.html)
-- 예제 코드: [리스트 prtc](./04Listprtc.html)
+- 예제 코드: [리스트: ul, ol, li, 중첩](../03List.html)
+- 예제 코드: [리스트 prtc](../04Listprtc.html)
