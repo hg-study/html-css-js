@@ -137,17 +137,34 @@
             <h2>회원가입</h2>
         </div>
         <!-- 
-            === 아이디 중복확인 === 
-            (href="javascript:void(0)": 페이지 이동 없이 클릭 이벤트만 발생시키는 더미 링크) 
+            === 아이디 ===
+            href="javascript:void(0)": 페이지 이동 없이 클릭 이벤트만 발생시키는 더미 링크
+            required: 값이 비어있으면 submit을 막고 브라우저가 자동으로 에러를 표시하는 속성
         -->
         <div class="row">
             <label>아이디</label>
-            <input name="userid" type="text" />
+            <input name="userid" type="text" required/>
             <a class="btn" href="javascript:void(0)">중복확인</a>
         </div>
+        <!--
+            =====================================================
+            비밀번호 - pattern 유효성 검사
+            =====================================================
+            pattern: 정규식을 지정해 입력값이 해당 형식과 일치하지 않으면 submit을 막는 속성
+            title: pattern 검증 실패 시 브라우저가 표시할 안내 문구를 지정하는 속성
+ 
+            (?=.*[A-Za-z])   : 영문자가 최소 1개 이상 포함되어야 한다는 전방탐색 조건
+            (?=.*\d)         : 숫자가 최소 1개 이상 포함되어야 한다는 전방탐색 조건
+            [A-Za-z\d]{8,}   : 영문자와 숫자로만 구성되고 8자 이상이어야 하는 조건
+        --> 
+        <!-- 영문+숫자 8자 이상 패턴 검증 -->
         <div class="row">
             <label>비밀번호</label>
-            <input name="password" type="password" />
+            <input name="password" type="password" 
+            required
+            pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}"
+            title="영문 대소문자, 숫자를 포함해 최소 8자 이상 입력하세요."
+            />
         </div>
         <div class="row">
             <label>비밀번호 확인</label>
