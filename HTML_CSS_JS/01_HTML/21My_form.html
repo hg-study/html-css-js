@@ -94,6 +94,38 @@
                 <a class="btn" href="javascript:void(0)">중복확인</a>
             </div>
 
+            <!-- === 생년월일 === -->
+            <div class="row">
+                <label>생년월일</label>
+                <input type="text" name="birth" placeholder="예: 20001021" />
+            </div>
+
+            <!-- 
+                === 성별 ===
+                radio: 같은 name으로 묶어 하나만 선택 가능
+            -->
+            <div class="row">
+                <label>성별</label>
+                <input type="radio" name="gender" /> 남성
+                <input type="radio" name="gender" /> 여성
+            </div>
+
+            <!-- 
+                === 휴대폰번호 ===
+                select로 앞자리 선택 + input 2개로 나머지 번호 분할 입력
+            -->
+            <div class="row">
+                <label>휴대폰번호</label>
+                <select>
+                    <option value="" selected>010</option>
+                    <option value="">011</option>
+                    <option value="">016</option>
+                </select>
+                <input type="text" name="phone" />
+                <input type="text" name="phone" />
+                <a class="btn" href="javascript:void(0)">인증전송</a>
+            </div>
+
     </form>
 
 </body>
