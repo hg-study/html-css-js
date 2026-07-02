@@ -66,8 +66,33 @@
 
 <body>
 
+    <!--
+        =====================================================
+        Bootstrap 5 그리드 시스템
+        =====================================================
+        Bootstrap의 레이아웃은 container - row - col 3단계 구조로 구성된다.
+ 
+        container   : 전체 콘텐츠를 가운데 정렬하고 좌우 여백을 잡는 최상위 래퍼
+        row         : col들을 가로로 배치하는 flex 행 단위. 내부를 12열로 나눠 관리한다
+        col / col-N : row 안에서 차지할 열 수를 지정. col-4면 12열 중 4칸, col이면 나머지 공간 균등 분배
+        m-2         : margin 0.5rem (BS5 spacing 유틸리티. 숫자가 클수록 여백 증가)
+        me-1        : margin-end(오른쪽) 0.25rem. 요소 사이 간격을 조절할 때 사용
+
+        =====================================================
+        Bootstrap 5 폼 클래스
+        =====================================================
+        form-control : input 태그에 적용. BS5 기본 폼 스타일(테두리, 패딩, 포커스 효과)을 부여
+        form-select  : select 태그에 적용. form-control과 동일한 스타일을 select에 적용
+        form-check   : checkbox/radio 래퍼 또는 input 자체에 붙여 BS5 체크박스 스타일 적용
+        form-check-label : form-check와 함께 쓰는 label 스타일
+        btn          : 버튼 기본 스타일 (크기, 패딩, 둥근 모서리)
+        btn-success  : btn에 초록색 배경 적용
+        btn-primary  : btn에 파란색 배경 적용
+    -->
+
     <div class="wrapper container">
         <form action="/test.jsp" method="get">
+
             <div class="row m-2">
                 <label class="col-4">아이디</label>
                 <input  class="col me-1 form-control" name="userid" type="text" />
@@ -131,6 +156,7 @@
                 <input class="col-auto"  name="birth" value="a" type="radio" /><span class="col-1 me-2">양</span>
                 <input class="col-auto" name="birth" value="b" type="radio" /><span class="col-1">음</span>
             </div>
+
             <div class="row m-2">
                 <select class="col form-select me-1" >
                     <option value="" selected>2025</option>
@@ -148,7 +174,12 @@
                     <option value="">03</option>
                 </select>
             </div>
-            <hr />    
+            <hr />
+
+            <!-- 
+                === 수신 동의 ===
+                label for="id" + input id="id": label 텍스트 클릭 시 해당 input이 체크되도록 연결
+            -->            
             <div class="row m-2">
                 <input  class="col-auto form-check"  id="email-recv" name="email_recv" type="checkbox" />
                 <label  class="col form-check-label" for="email-recv">이메일 수신에 동의합니다.</label>
@@ -157,9 +188,14 @@
                 <input  class="col-auto form-check" id="sms-recv" name="sms_recv" type="checkbox" />
                 <label  class="col form-check-label" for="sms-recv">문자메시지 수신에 동의합니다.</label>
             </div>
+            <!-- 
+                === 제출 버튼 ===
+                input type="submit": form 데이터를 전송하는 입력 타입
+            -->
             <div class="row m-2">
                 <input  class="btn btn-primary" type="submit" value="회원가입" />
             </div>
+
         </form>
     </div>
 
