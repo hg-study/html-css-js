@@ -36,7 +36,28 @@
             border: 1px solid #ddd;
             padding: 30px 40px;
         }
-        
+
+        /* --- 공통 입력 스타일 --- */
+        input {
+            outline: none;
+            border-radius: 0;
+            border: 1px solid #ccc;
+            height: 35px;
+            padding-left: 8px; /* 입력 텍스트가 테두리에 안 붙도록 좌측 여백 */
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%; /* text/password 타입만 row 너비를 꽉 채움 */
+        }
+
+        select {
+            height: 35px;
+            outline: none;
+            border-radius: 0;
+            border: 1px solid #ccc;
+        }
+
     </style>
 </head>
 <body>
