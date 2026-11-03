@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padding</title>
+    <!--
+        =======================================
+        padding 내부 여백
+        padding 단축 표기, 버튼 스타일에 활용
+        =======================================
+    -->
+
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: olivedrab;
+            border: 1px solid;
+
+            /* 상하좌우 동일 */
+            padding: 10px;
+
+            /* 상하 / 좌우 */
+            padding: 10px 20px;
+
+            /* 상 / 좌우 / 하 */
+            padding: 10px 20px 30px;
+
+            /* 상 / 우 / 하 / 좌 (시계 방향) */
+            padding: 10px 20px 30px 40px;
+        }
+        .btn{
+            font-size: 0.9rem;
+            text-decoration: none;     /* 링크 밑줄 제거 */
+            color: rgb(107, 107, 107);
+            border-color: transparent;    /* 아래 border 단축 속성이 덮어씀 */
+            border: 1px solid lightgray;
+            outline: 0;     /* 포커스 시 생기는 기본 윤곽선 제거 */
+            border-radius: 2px;
+            /* width: 80px; : 글자 길이에 따라 버튼이 어색해지므로 width 대신 padding으로 크기를 잡는다 */
+            padding: 10px 20px; /* 상하 10px, 좌우 20px : 글자 길이에 맞게 버튼 크기가 조절된다 */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>HELLO WORLD</div>
+    <hr>
+    <!-- button, a, input 모두 같은 .btn 클래스로 같은 모양의 버튼을 만든다. -->
+    <button class="btn">버튼1</button>
+    <a class="btn" href="javascript:void(0)">버튼2 HELLOWORLD</a>
+    <input class="btn" type="submit" value="버튼3">
+</body>
+
+</html>

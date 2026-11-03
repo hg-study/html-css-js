@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin</title>
+    <!--
+        =======================================
+        margin 외부 여백
+        margin 단축 표기, 가운데 정렬 3가지 방법
+        =======================================
+    -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0
+        }
+
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(150, 245, 240);
+        }
+
+        .d1 {
+            /* 상하좌우 동일 */
+            margin: 20px;
+
+            /* 상하 20px / 좌우 40px */
+            margin: 20px 40px ;
+
+            /* 상 10px / 좌우 20px / 하 30px */
+            margin: 10px 20px 30px;
+
+            /* 상 / 우 / 하 / 좌 (시계 방향) */
+            margin: 10px 20px 30px 40px;
+
+            /* 방향별로 따로 지정 */
+            margin-top: 10px;
+            margin-right: 20px;
+            margin-bottom: 30px;
+            margin-left: 40px;
+        }
+
+        body{border: 1px solid; width: 1280px;margin: 0 auto;}    /* 페이지 전체를 1280px 폭으로 가운데 정렬 */
+
+
+        /* 1. 가운데 맞추기 - margin: 0 auto */
+        /* auto : 좌우 남은 공간을 브라우저가 균등 분배. width가 지정된 블록 요소에서만 가운데 정렬됨 */
+        .d2{margin: 50px auto;}
+
+
+        /* 가운데 정렬 대상 박스 */
+        .son{
+            background-color: royalblue;
+            width: 250px;
+            height: 150px;
+            border: 1px solid;
+        }
+
+        /* 2. 가운데 맞추기 - display: flex */
+        .parent1{
+            height: 250px;
+            width: 80vw;
+            margin: 0 auto;
+
+            /* display: flex는 부모에 지정하며, 자식 요소의 배치를 부모가 제어한다 */
+            display: flex;
+            flex-direction: column;     /* 자식을 세로로 배치 */
+            align-items: center;        /* 가로 방향 가운데 정렬 */
+            gap: 20px;                  /* 자식 사이 간격 */
+        }
+
+        /* 3. 가운데 맞추기: position */
+        .parent2{
+            height: 250px;
+            width: 80vw;
+            margin: 0 auto;
+            position: relative;     /* 자식 absolute의 기준 */
+        }
+
+        .parent2>.son{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;   /* 4방향을 0으로 잡고 margin: auto를 주면 가운데로 온다 */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="d1">HELLO WORLD</div>
+    <hr>
+    <div class="d2">HELLO WORLD</div>
+    <hr>
+    <div class="d3 parent1">
+        <div class="son son1"></div>
+        <div class="son son2"></div>
+    </div>
+    <hr>
+    <div class="d3 parent2">
+        <div class="son son1"></div>
+    </div>
+</body>
+
+</html>
