@@ -53,3 +53,68 @@
 <br>
 
 - 예제 코드: [스타일 우선순위](../01_Basic/02StylePriority.html)
+
+---
+
+### 크기 계산 함수
+
+> 값을 계산하거나 범위를 제한해 화면 크기에 따라 가변하게 만드는 함수다.
+
+<br>
+
+| **함수** | **형식** | **설명** |
+| --- | --- | --- |
+| `clamp()` | `clamp(최솟값, 기준값, 최댓값)` | 기준값(`vw` 등)이 변해도 최솟값과 최댓값 사이로 제한한다<br>`font-size: clamp(16px, 2vw, 40px);` |
+| `calc()` | `calc(값 연산 값)` | 단위가 다른 값끼리 계산한다<br>`top: calc(50vh - 25px);` |
+
+<br>
+
+- 예제 코드: [글자 크기 단위](../01_Basic/08FontSize.html)
+
+---
+
+### 폰트 적용
+
+> `font-family`로 글꼴을 지정한다. 브라우저에 없는 폰트는 Google Font를 연결하거나 폰트 파일을 등록해 사용한다.
+
+<br>
+
+| **방식** | **설명** |
+| --- | --- |
+| 시스템 폰트 | `font-family`에 쉼표로 우선순위를 지정하고, 마지막에 `serif`, `cursive` 같은 계열 폰트를 쓴다 |
+| Google Font | `<link>`로 폰트 CSS를 불러온 뒤 지정된 클래스나 폰트 이름으로 적용한다 |
+| `@font-face` | 폰트 파일(`.ttf`, `.woff2`)을 불러와 `font-family` 이름을 붙여 등록한다 |
+
+<br>
+
+```css
+@font-face {
+    font-family: 'custom-01';
+    src: url("../../../.github/fonts/NanumGangInHanWiRo.ttf");
+}
+```
+
+<br>
+
+- 예제 코드: [글꼴 적용](../01_Basic/09FontFamily.html)
+
+<br>
+
+---
+
+<br>
+
+**CSS 기본 요약**
+
+<aside>
+
+> 우선순위: !important > 인라인 > 내부, 외부 (같으면 아래 코드) <br>
+clamp(): 최솟값과 최댓값 사이로 제한, calc(): 단위가 다른 값 계산 <br>
+폰트: 시스템 폰트, Google Font, @font-face
+
+</aside>
+
+<br>
+
+### Link
+[Google Fonts](https://fonts.google.com/)

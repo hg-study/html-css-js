@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FontSize</title>
+    <!--
+        =======================================
+        글자 크기 단위
+        px, em, rem, %, vw, clamp 비교
+        =======================================
+    -->
+
+    <style>
+        :root{
+            /* font-size: 16px; */   /* rem의 기준이 되는 root 글자 크기. 기본값 16px */
+
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- px : 고정 크기. 브라우저 기본값 16px -->
+    <div style="font-size: 48px;">
+        <div style="font-size: 32px;">HELLOWORLD</div>
+        <div style="">HELLOWORLD</div>  <!-- font-size를 지정하지 않으면 부모의 값을 상속받는다 -->
+        <div style="font-size: 8px;">HELLOWORLD</div>
+        <div style="font-size: 16px;">HELLOWORLD</div>
+    </div>
+    <hr/>
+
+    <!-- em : 부모 요소의 font-size에 대한 배수 -->
+     <!-- 부모에 지정된 값이 없으면 기본값이나 root 설정값을 따른다 -->
+    <div style="font-size: 24px;">
+        <div style="font-size: 1em;">HELLOWORLD</div>
+        <div style="font-size: 2em;">HELLOWORLD</div>
+        <div style="font-size: 3em;">HELLOWORLD</div>
+        <div style="font-size: 0.5em;">HELLOWORLD</div>
+    </div>
+    <hr/>
+
+    <!-- rem : root 요소의 font-size에 대한 배수. 부모가 아니라 기본값 또는 root 설정값을 따른다 -->
+    <div style="font-size: 24px;">   <!-- 부모의 24px은 rem에 영향을 주지 않는다 -->
+        <div style="font-size: 1rem;">HELLOWORLD</div>
+        <div style="font-size: 2rem">HELLOWORLD</div>
+        <div style="font-size: 3rem">HELLOWORLD</div>
+        <div style="font-size: 0.5rem">HELLOWORLD</div>
+    </div>
+    <hr/>
+
+    <!-- % : 부모 요소의 font-size에 대한 비율 -->
+    <div style="font-size: 24px;">
+        <div style="font-size: 100%">HELLOWORLD</div>
+        <div style="font-size: 50%">HELLOWORLD</div>
+        <div style="font-size: 200%">HELLOWORLD</div>
+        <div style="font-size: 75%">HELLOWORLD</div>
+    </div>
+    <hr/>
+
+    <!-- vw : 뷰포트 너비의 1%. 창 크기에 따라 글자 크기가 함께 변한다 -->
+    <div style="font-size: 24px;">
+        <div style="font-size: 1vw">HELLOWORLD</div>
+        <div style="font-size: 1.5vw">HELLOWORLD</div>
+        <div style="font-size: 2vw">HELLOWORLD</div>
+        <div style="font-size: clamp(16px, 2vw, 40px)">HELLOWORLD</div>
+        <!-- clamp(최솟값, 기준값, 최댓값) : 기준값이 변해도 최솟값과 최댓값 범위를 벗어나지 않는다 -->
+    </div>
+    <hr/>
+
+    <!-- clamp 응용 : 박스 너비와 글자 크기를 모두 clamp로 지정 -->
+    <div style="width: clamp(200px,50vw,1280px); height: 200px; border: 1px solid; margin: 0 auto;">
+        <div style="font-size:clamp(.8rem, 5vw, 4rem); text-align: center; line-height: 200px;">
+            (*^-^)/ ੈ✩‧₊˚ ~ <br>
+
+
+        </div>
+    </div>
+
+
+</body>
+</html>

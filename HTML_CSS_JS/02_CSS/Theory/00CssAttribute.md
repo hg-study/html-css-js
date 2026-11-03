@@ -136,27 +136,6 @@ Inline 요소는 Box Model에서 `width`, `height`, 상하 `margin`이 <span sty
 
 ---
 
-## 글자
-
-> 글자의 크기, 굵기, 정렬, 간격 등을 제어하는 속성들이다.
-
-<br>
-
-| **속성** | **포함되는 값** | **설명** |
-| --- | --- | --- |
-| `font-family` | 폰트 이름. 쉼표로 우선순위 지정, 마지막에 계열 폰트 권장<br>`font-family: 'Noto Sans KR', sans-serif;` | 글꼴 |
-| `font-size` | `px` `%` `em` `rem`<br>브라우저 기본값: `16px`<br>`font-size: 1.2rem;` | 글자 크기 |
-| `font-weight` | **normal:** 기본 (400)<br>**bold:** 굵게 (700)<br>**lighter / bolder:** 부모 기준 상대적 굵기<br>숫자 100~900 (100 단위)<br>`font-weight: 700;` | 글자 굵기 |
-| `font-style` | **normal:** 기본<br>**italic:** 기울임꼴<br>`font-style: italic;` | 글자 기울기 |
-| `text-align` | **left:** 왼쪽 정렬 (기본값)<br>**center:** 가운데 정렬<br>**right:** 오른쪽 정렬<br>**justify:** 양쪽 정렬<br>`text-align: center;` | 텍스트 수평 정렬 |
-| `text-decoration` | **none:** 장식 없음. 링크 밑줄 제거 시 사용<br>**underline:** 밑줄<br>**line-through:** 취소선<br>**overline:** 윗줄<br>`text-decoration: none;` | 텍스트 장식선 |
-| `text-transform` | **uppercase:** 전체 대문자<br>**lowercase:** 전체 소문자<br>**capitalize:** 각 단어 첫 글자 대문자<br>`text-transform: uppercase;` | 영문 대소문자 변환 |
-| `line-height` | 숫자(배수) `px` `%`<br>**숫자 권장:** `1.5` = font-size의 1.5배. 단위 없는 숫자는 자식에도 상대적으로 계산됨<br>`line-height: 1.6;` | 줄 간격 |
-| `letter-spacing` | `px` `em`<br>음수 허용 (자간 좁히기)<br>`letter-spacing: 0.05em;` | 자간 (글자 사이 간격) |
-| `white-space` | **normal:** 기본값. 연속 공백 합침, 자동 줄바꿈<br>**nowrap:** 줄바꿈 하지 않음<br>**pre:** 입력 그대로 유지. 공백/줄바꿈 보존<br>`white-space: nowrap;` | 공백 및 줄바꿈 처리 방식 |
-
-<br>
-
 ---
 
 ## CSS 프레임워크 - Bootstrap 5
