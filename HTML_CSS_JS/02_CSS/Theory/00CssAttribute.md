@@ -2,20 +2,6 @@
 
 ### CSS 기본 개념
 
-> CSS(Cascading Style Sheets)는 HTML 요소에 색상, 크기, 배치 등 시각적 스타일을 지정하는 언어다. HTML이 구조를 담당한다면 CSS는 표현을 담당한다.
-
-<br>
-
-**CSS 적용 방식**
-
-| **방식** | **설명** |
-| --- | --- |
-| 인라인(Inline) | HTML 태그 `style` 속성에 직접 작성한다. `<p style="color:red">` |
-| 내부(Internal) | `<head>` 안 `<style>` 태그 내에 작성한다 |
-| 외부(External) | 별도 `.css` 파일을 만들어 `<link rel="stylesheet">`로 연결한다 |
-
-<br>
-
 **길이 단위**
 
 | **단위** | **설명** |
@@ -58,7 +44,7 @@ Inline 요소는 Box Model에서 `width`, `height`, 상하 `margin`이 <span sty
  
 <br>
 
-- 예제 코드: [Block · Inline 요소 & Box Model](../01_HTML/02Basic.html)
+- 예제 코드: [Block · Inline 요소 & Box Model](../../01_HTML/02Basic.html)
 
 ---
 
@@ -106,7 +92,7 @@ Inline 요소는 Box Model에서 `width`, `height`, 상하 `margin`이 <span sty
 
 <br>
 
-- 예제 코드: [회원가입 폼 Css 추가](../01_HTML/16Form_add_css.html)
+- 예제 코드: [회원가입 폼 Css 추가](../../01_HTML/16Form_add_css.html)
 
 ---
 
@@ -156,9 +142,9 @@ Inline 요소는 Box Model에서 `width`, `height`, 상하 `margin`이 <span sty
 
 <br>
 
-- 예제 코드: [회원가입 폼 페이지2 Css 추가](../01_HTML/19Form_only_html_css.html)
+- 예제 코드: [회원가입 폼 페이지2 Css 추가](../../01_HTML/19Form_only_html_css.html)
 
-- 예제 코드: [회원가입 폼 Css 추가](../01_HTML/16Form_add_css.html)
+- 예제 코드: [회원가입 폼 Css 추가](../../01_HTML/16Form_add_css.html)
 
 ---
 
@@ -261,7 +247,7 @@ Inline 요소는 Box Model에서 `width`, `height`, 상하 `margin`이 <span sty
 
 <br>
 
-- 예제 코드: [회원가입 폼 페이지2 bs5 추가](../01_HTML/20Form_only_html_bs.html)
+- 예제 코드: [회원가입 폼 페이지2 bs5 추가](../../01_HTML/20Form_only_html_bs.html)
 
 ---
 
@@ -284,7 +270,7 @@ Inline 요소는 Box Model에서 `width`, `height`, 상하 `margin`이 <span sty
 
 <br>
 
-- 예제 코드: [회원가입 폼 페이지2 bs5 추가](../01_HTML/20Form_only_html_bs.html)
+- 예제 코드: [회원가입 폼 페이지2 bs5 추가](../../01_HTML/20Form_only_html_bs.html)
 
 ---
 

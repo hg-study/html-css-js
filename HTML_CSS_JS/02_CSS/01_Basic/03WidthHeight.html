@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WidthHeight</title>
+    <!--
+        =======================================
+        너비 / 높이 속성
+        width, height와 min, max 값의 우선 적용 확인
+        =======================================
+    -->
+
+    <style>
+
+        .parent{
+            background-color: rgb(193, 228, 209);
+            height: 300px;
+            width: 200px;
+            min-width: 200px; /* 최소 너비. width가 이보다 작아도 이 값을 따른다 */
+            max-width: 1200px; /* 최대 너비. 창을 넓혀도 이 값 이상으로 커지지 않는다 */
+            min-height: 500px; /* 최소 높이. height 300px보다 우선하여 500px로 표시된다 */
+            max-height: 700px; /* 최대 높이. height가 이 값을 넘어도 제한한다 */
+        }
+        .son{
+            background-color: rgb(241, 237, 200);
+            height: 150px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!--
+        width: auto : 기본값. 블록 요소는 부모 너비를 가득 채운다
+        height: auto : 기본값. 내용 높이에 맞춰진다
+
+        min-width: 최소너비
+        max-width: 최대너비
+        min-height: 최소높이
+        max-height: 최대높이
+    -->
+
+    <div class="parent">
+
+        <div class="son"></div>
+
+    </div>
+
+</body>
+</html>

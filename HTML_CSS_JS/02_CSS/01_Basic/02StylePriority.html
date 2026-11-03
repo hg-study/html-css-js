@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StylePriority</title>
+    <!--
+        =======================================
+        CSS 스타일 우선순위
+        !important, 인라인, 내부 스타일, 외부 css 적용 순서 확인
+        =======================================
+    -->
+
+    <style>
+        h1{
+            /* !important : 다른 스타일보다 우선 적용된다. 덮어쓰기 어려워 유지보수가 힘드므로 사용을 피한다 */
+            background-color: orange !important;
+            color: white;
+
+        }
+    </style>
+    <!-- 우선순위가 같으면 코드 아래에 작성한 스타일이 적용된다. -->
+    <!-- link : 외부 css 파일을 연결하는 태그. h1 배경을 royalblue로 지정한 common.css 연결 -->
+    <link rel="stylesheet" href="./css/common.css">
+
+</head>
+<body>
+
+    <!--
+        우선순위 : !important > 인라인 style > 내부 style / 외부 css (같으면 아래에 쓴 것)
+        라인 안에 넣는 게 더 우선순위가 높으나, 유지보수가 어려우니 권장하지 않는다.
+        여기서는 !important가 인라인(red)보다 우선하여 orange가 적용된다.
+    -->
+    <h1 style="background-color: red;">HELLO WORLD</h1>
+
+</body>
+</html>
