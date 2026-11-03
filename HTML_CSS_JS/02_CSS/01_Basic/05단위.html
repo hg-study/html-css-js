@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단위</title>
+    <!--
+        =======================================
+        길이 단위
+        px, %, vw 비교
+        =======================================
+    -->
+
+    <style>
+        div {
+            height: 100px;
+            background-color: rgb(215, 240, 240);
+        }
+
+        /* 자식 선택자 : div 바로 안의 div */
+        div>div {
+            background-color: royalblue;
+            height: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- px : 고정 크기. 부모보다 커도 지정한 크기로 표시된다 -->
+    <div style="width:500px;">
+        <div style="width: 700px;"></div>
+    </div>
+    <hr />
+    <!-- % : 부모 요소의 너비에 대한 비율 -->
+    <div style="width: 300px;">
+        <div style="width: 50%;"></div>
+    </div>
+    <hr />
+    <!-- vw, vh : 뷰포트 너비, 높이의 1%. 창 크기에 따라 변한다 -->
+    <div style="width: 500px;">
+        <div style="width: 50vw;"></div>
+    </div>
+</body>
+
+</html>
