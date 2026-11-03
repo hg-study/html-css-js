@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkState</title>
+    <!--
+        =======================================
+        링크 상태 가상 클래스
+        :hover, :active, :visited로 상태별 스타일 지정
+        =======================================
+    -->
+
+    <style>
+        * {box-sizing: border-box;}
+        a{text-decoration: none;}
+        .btn{
+            display: block;
+            width: 120px;
+            text-align: center;
+            height: 35px;
+            line-height: 35px;   /* height와 같게 주어 글자를 세로 가운데에 놓는다 */
+            color: gray;
+            margin: 10px;
+            border: 1px solid gray;
+            opacity: .7;
+            border-radius: 5px;
+            font-size: .9rem;
+            transition: .2s;     /* 상태가 바뀔 때 스타일 변화를 0.2초 동안 부드럽게 */
+        }
+
+        /* :hover : 마우스를 올렸을 때 */
+        .btn:hover{
+            opacity: 1;
+            font-size: 1.1rem;
+        }
+
+        /* :active : 클릭하는 순간 */
+        .btn:active{
+            color: white;
+            background-color: black;
+        }
+
+        /* :visited : 이미 방문한 링크. a 태그의 href가 방문 기록에 있을 때만 적용 */
+        .btn:visited{
+            color: rgb(129, 57, 57);
+            background-color: tomato;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <a class= "btn" href="./01BasicSelector.html">BUTTON-1</a>
+    <a class= "btn" href="javascript:void(0)">BUTTON-2</a>
+    <a class= "btn" href="javascript:void(0)">BUTTON-3</a>
+    <a class= "btn" href="javascript:void(0)">BUTTON-4</a>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NthChild</title>
+    <!--
+        =======================================
+        구조 가상 클래스
+        :first-child, :last-child, :nth-child로 순서에 따라 선택
+        =======================================
+    -->
+
+    <style>
+
+        ul{
+            list-style: none;   /* 목록 기호 제거 */
+            margin: 0;
+            padding: 0;
+        }
+
+        ul>li{
+            width: 200px;
+            height: 25px;
+            border: 1px solid;
+            margin: 10px;
+        }
+
+        /* :first-child : 형제 중 첫 번째 요소 */
+        ul>li:first-child{
+            background-color: red;
+        }
+        /* :last-child : 형제 중 마지막 요소 */
+        ul>li:last-child{
+            background-color: orange;
+        }
+        /* :nth-child(n) : n번째 요소. 2n은 짝수번째, 2n+1은 홀수번째 */
+        ul>li:nth-child(2n){
+            width: 250px;
+            height: 35px;
+            border: 5px solid;
+        }
+        ul>li:nth-child(2n+1){
+            border: 5px solid blue;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+
+    <!-- Emmet : ul>li*8>a{TEST_$} 를 입력하면 li 8개와 번호가 붙은 a 태그가 만들어진다 -->
+
+    <ul>
+        <li><a href="">TEST_1</a></li>
+        <li><a href="">TEST_2</a></li>
+        <li><a href="">TEST_3</a></li>
+        <li><a href="">TEST_4</a></li>
+        <li><a href="">TEST_5</a></li>
+        <li><a href="">TEST_6</a></li>
+        <li><a href="">TEST_7</a></li>
+        <li><a href="">TEST_8</a></li>
+    </ul>
+</body>
+</html>

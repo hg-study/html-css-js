@@ -29,43 +29,6 @@
 
 ---
 
-## 가상 요소 & 가상 클래스
-
-**가상 요소(Pseudo-element)**
-
-> 실제 HTML 태그가 아니지만 특정 요소 내부의 일부분만 선택해 스타일을 적용할 수 있게 해주는 선택자다. `::`(콜론 두 개)로 시작하며 일반 선택자 뒤에 이어붙여 사용한다.
-
-| **선택자** | **설명** |
-| --- | --- |
-| `::file-selector-button` | `input[type="file"]` 내부의 "파일 선택" 버튼 부분만 선택해 스타일을 적용하는 가상 요소. <br>`input[type="file"]::file-selector-button { background-color: royalblue; }` |
-
-
-<br>
-
-**가상 클래스(Pseudo-class)**
-
-> 요소의 특정 상태를 선택해 스타일을 적용하는 선택자다. `:`(콜론 한 개)로 시작하며 일반 선택자 뒤에 이어붙여 사용한다.
-
-| **선택자** | **설명** |
-| --- | --- |
-| `:hover` | 마우스를 요소 위에 올렸을 때의 상태를 선택한다<br>`.btn:hover { opacity: 1; }` |
-| `:focus` | 요소가 클릭·탭 등으로 포커스를 받았을 때의 상태를 선택한다<br>`input:focus { border-color: royalblue; }` |
-| `:active` | 요소를 클릭하는 순간의 상태를 선택한다<br>`.btn:active { opacity: 0.6; }` |
-| `:first-child` / `:last-child` | 형제 요소 중 첫 번째 / 마지막 요소를 선택한다<br>`li:first-child { margin-top: 0; }` |
-| `:nth-child(n)` | 형제 요소 중 n번째 요소를 선택한다<br>`li:nth-child(2) { color: gray; }` |
-
-<br>
-
-- 예제 코드: [회원가입 폼 페이지2 Css 추가](../../01_HTML/19Form_only_html_css.html)
-
-- 예제 코드: [회원가입 폼 Css 추가](../../01_HTML/16Form_add_css.html)
-
----
-
----
-
----
-
 ## CSS 프레임워크 - Bootstrap 5
 
 > 미리 만들어진 CSS·JS 클래스 모음(프레임워크)이다. 클래스 이름만 붙이면 레이아웃, 버튼, 폼 스타일 등을 별도 CSS 작성 없이 적용할 수 있다.

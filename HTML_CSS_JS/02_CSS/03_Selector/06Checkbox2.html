@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox2</title>
+    <!--
+        =======================================
+        체크박스 커스텀 복습
+        05.html과 같은 구조를 다시 작성
+        =======================================
+    -->
+
+    <style>
+        *{box-sizing: border-box;}
+
+        /* 속성 선택자 [속성="값"] : 해당 속성값을 가진 요소만 선택 */
+        input[type="checkbox"]{
+            /* 기본 체크박스는 width, height만 적용된다 */
+            width: 150px;
+            height: 150px;
+            /* border, background는 기본 체크박스에 적용되지 않는다 */
+            border: 5px solid;
+            background-color: orange;
+            background-image: url("");
+            display:none;   /* 기본 체크박스를 숨기고 label이 대신 보이게 한다 */
+        }
+
+        /* 인접 형제 선택자 '+' : 체크박스 바로 다음의 label을 선택 */
+        input[type="checkbox"]+label{
+            display:inline-block;
+            width:45px;
+            height:45px;
+            border:1px solid gray;
+            cursor:pointer;
+        }
+        .chk-block{
+            display:flex;
+            align-items: center;
+            gap:5px;
+        }
+        /* :checked 상태에서 label에 배경색과 아이콘 표시 */
+        input[type="checkbox"]:checked+label{
+            background-color: lightseagreen;
+            background-image: url('./chk.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chk-block">
+        <input type="checkbox" id="chk">
+        <label for="chk"></label>
+        <span>체크박스</span>
+    </div>
+
+</body>
+</html>
