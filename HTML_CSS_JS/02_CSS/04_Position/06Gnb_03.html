@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gnb03</title>
+    <!--
+        =======================================
+        GNB 세로 메뉴
+        1단 메뉴를 세로로 배치하고 sub-menu를 오른쪽 옆에 표시
+        =======================================
+    -->
+
+    <style>
+        /* common */
+        *{box-sizing: border-box;}
+        body{margin: 0; padding: 0;}
+        ul{list-style: none; margin: 0; padding: 0;}
+        a{text-decoration: none; color: black;}
+
+        /* layout */
+        .wrapper{
+
+        }
+        /* layout-header */
+        .wrapper>header{
+            
+        }
+        .wrapper>header>.top-header{
+            
+        }
+        /* nav 높이를 메뉴 한 줄 높이로 고정 */
+        .wrapper>header>nav{
+            height: 50px;
+        }
+
+        /* layout-nav-gnb */
+        .wrapper>header>nav>.main-menu{
+            display: flex;
+            flex-direction: column;   /* 항목을 세로로 배치 */
+            justify-content: space-around;   /* 항목 사이와 양옆에 여백을 균등 분배 */
+            height: 100%;
+            /* border: 1px solid; */
+        }
+        /* 1단 메뉴 항목. 하위 메뉴 위치의 기준이 된다 */
+        .wrapper>header>nav>.main-menu>li{
+           /* border: 1px solid;*/
+            width: 150px;
+            text-align: center;   /* 글자 가운데 정렬 */
+            height: 100%;
+            background-color: royalblue;
+            /* padding: 0 20px; */
+
+            position: relative;   /* 하위 absolute 요소의 기준 */
+        }
+        /* 링크 영역을 항목 전체로 확장 */
+        .wrapper>header>nav>.main-menu>li>a{
+            display: block;
+            height: 100%;
+            line-height: 50px;   /* height와 같게 주어 글자를 세로 가운데에 놓는다 */
+            color: white;
+        }
+
+        /* 2단 메뉴 : absolute로 1단 항목 기준 위치에 배치 */
+        .wrapper>header>nav>.main-menu>li>.sub-menu{
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 100%;
+
+            position: absolute;   /* 기준 요소(relative)를 기준으로 위치 지정 */
+            left: 150px;
+            top: 0;
+
+            display: none;   /* 평소에는 숨김 */
+        }
+        /* 2단 메뉴 항목 */
+        .wrapper>header>nav>.main-menu>li>.sub-menu>li{
+            /* border: 1px solid; */
+            height: 100%;
+            background-color: orange;
+            padding: 0 20px;
+
+        }
+        /* 링크 영역을 항목 전체로 확장 */
+        .wrapper>header>nav>.main-menu>li>.sub-menu>li>a{
+            display: block;
+            height: 100%;
+            line-height: 50px;   /* height와 같게 주어 글자를 세로 가운데에 놓는다 */
+            color: white;
+
+        }
+
+
+        /* main-menu:li에 마우스 호버 시 각 sub-menu 표시 */
+        .wrapper>header>nav>.main-menu>li:hover>.sub-menu{
+            display: block;
+        }
+        
+        /* layout-main */
+        .wrapper>main{
+
+        }
+        /* 본문 영역. 스크롤 확인을 위해 높이 지정 */
+        .wrapper>main>section{
+
+        }
+
+        /* layout-footer */
+        .wrapper>footer{
+
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+    <!-- .wrapper>header>.top-header+nav^main>section^footer -->
+
+    <div class="wrapper">
+        <header>
+            <div class="top-header"></div>
+            <nav>
+
+                <!-- ul.main-menu>li*4>a{$_MAINMENU}+ul.sub-menu>li*5>a{$_SUBMENU} -->
+                <ul class="main-menu">
+                    <li>
+                        <a href="">1_MAINMENU</a>
+                        <ul class="sub-menu">
+                            <li><a href="">1_SUBMENU</a></li>
+                            <li><a href="">2_SUBMENU</a></li>
+                            <li><a href="">3_SUBMENU</a></li>
+                            <li><a href="">4_SUBMENU</a></li>
+                            <li><a href="">5_SUBMENU</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">2_MAINMENU</a>
+                        <ul class="sub-menu">
+                            <li><a href="">1_SUBMENU</a></li>
+                            <li><a href="">2_SUBMENU</a></li>
+                            <li><a href="">3_SUBMENU</a></li>
+                            <li><a href="">4_SUBMENU</a></li>
+                            <li><a href="">5_SUBMENU</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">3_MAINMENU</a>
+                        <ul class="sub-menu">
+                            <li><a href="">1_SUBMENU</a></li>
+                            <li><a href="">2_SUBMENU</a></li>
+                            <li><a href="">3_SUBMENU</a></li>
+                            <li><a href="">4_SUBMENU</a></li>
+                            <li><a href="">5_SUBMENU</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">4_MAINMENU</a>
+                        <ul class="sub-menu">
+                            <li><a href="">1_SUBMENU</a></li>
+                            <li><a href="">2_SUBMENU</a></li>
+                            <li><a href="">3_SUBMENU</a></li>
+                            <li><a href="">4_SUBMENU</a></li>
+                            <li><a href="">5_SUBMENU</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section></section>
+        </main>
+        <footer></footer>
+    </div>
+
+
+</body>
+</html>

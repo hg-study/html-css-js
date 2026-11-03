@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gnb02Prtc</title>
+    <!--
+        =======================================
+        GNB 연습, 호버 시 서브 메뉴 박스
+        1단 메뉴에 마우스를 올리면 하위 메뉴 박스가 나타나는 메뉴 연습
+        =======================================
+    -->
+
+    <style>
+        /* common */
+        /* 모든 요소의 크기 계산에 padding, border 포함 */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* 브라우저 기본 여백 제거 */
+        body {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        div {
+            background-color: rgb(240, 238, 224);
+            width: 100%;
+        }
+
+        /* 목록 기호와 기본 여백 제거 */
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 링크 밑줄 제거 */
+        a {
+            text-decoration: none;
+            text-align: center;   /* 글자 가운데 정렬 */
+            color: black;
+            padding: 0 30px;
+        }
+
+        /* layout */
+        .wrapper {}
+
+        /* layout-header */
+        .wrapper>header {
+            width: 1000px;
+            margin: 0 auto;
+            margin-left: calc(50% - 400px);
+        }
+
+        .wrapper>header>.top-header {}
+
+        /* nav 높이를 메뉴 한 줄 높이로 고정 */
+        .wrapper>header>nav {
+            height: 60px;
+        }
+
+        /* layout-nav-gnb */
+        .wrapper>header>nav>.main-menu {
+            display: flex;
+            justify-content: space-around;   /* 항목 사이와 양옆에 여백을 균등 분배 */
+            height: 60px;
+            position: relative;   /* 하위 absolute 요소의 기준 */
+        }
+
+        /* 1단 메뉴 항목. 하위 메뉴 위치의 기준이 된다 */
+        .wrapper>header>nav>.main-menu>li {
+            height: 100%;
+            background-color: rgb(240, 238, 224);
+            position: relative;   /* 하위 absolute 요소의 기준 */
+        }
+
+        /* 링크 영역을 항목 전체로 확장 */
+        .wrapper>header>nav>.main-menu>li>a {
+            display: block;
+            height: 100%;
+            line-height: 45px;
+            color: black;
+        }
+
+        /* 2단 메뉴 박스 : 평소에는 숨기고 hover 시 표시 */
+        .wrapper>header>nav>.main-menu>li>.sub-menu-name {
+            height: auto;
+            padding: 20px 10px;
+            background-color: rgb(58, 58, 58);
+
+            position: absolute;   /* 기준 요소(relative)를 기준으로 위치 지정 */
+            width: 220px;
+
+            display: none;   /* 평소에는 숨김 */
+        }
+
+        /* 2단 메뉴 링크 */
+        .wrapper>header>nav>.main-menu>li>.sub-menu-name>li>a {
+            color: #ffffff;
+            font-size: 17px;
+        }
+
+        /* 3단 메뉴 목록 */
+        .wrapper>header>nav>.main-menu>li>.sub-menu-name>li>.sub-menu {
+            padding-top: 10px;
+        }
+
+        /* 3단 메뉴 링크 */
+        .wrapper>header>nav>.main-menu>li>.sub-menu-name>li>.sub-menu>li>a {
+            color: #d3d3d3;
+            font-size: 14px;
+        }
+
+        /* 1단 항목에 마우스를 올리면 링크 강조 */
+        .wrapper>header>nav>.main-menu>li:hover>a {
+            text-decoration : underline;
+            color: rgb(62, 187, 62);
+            background-color: rgb(58, 58, 58);
+        }
+
+        /* 1단 항목에 마우스를 올리면 2단 메뉴 박스 표시 */
+        .wrapper>header>nav>.main-menu>li:hover>.sub-menu-name {
+            display: block;
+        }
+
+        /* layout-main */
+        .wrapper>main {}
+
+        /* 본문 영역. 스크롤 확인을 위해 높이 지정 */
+        .wrapper>main>section {}
+
+        /* layout-footer */
+        .wrapper>footer {}
+    </style>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header>
+            <div class="top-header"></div>
+            <nav>
+
+                <ul class="main-menu">
+                    <li>
+                        <a href="">COFFEE</a>
+                        <ul class="sub-menu-name">
+                            <li>
+                                <a href="">에스프레소 음료</a>
+                                <ul class="sub-menu">
+                                    <li><a href="">도피오</a></li>
+                                    <li><a href="">에스프레소 마키아또</a></li>
+                                    <li><a href="">아메리카노</a></li>
+                                    <li><a href="">마키아또</a></li>
+                                    <li><a href="">카푸치노</a></li>
+                                    <li><a href="">라떼</a></li>
+                                    <li><a href="">모카</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">MENU</a>
+                        <ul class="sub-menu-name">
+                            <li>
+                                <a href="">음료</a>
+                                <ul class="sub-menu">
+                                    <li><a href="">콜드브루</a></li>
+                                    <li><a href="">브루드 커피</a></li>
+                                    <li><a href="">프라푸치노</a></li>
+                                    <li><a href="">블랜디드</a></li>
+                                    <li><a href="">티(티바나)</a></li>
+                                    <li><a href="">기타 제조 음료</a></li>
+                                    <li><a href="">주스(병음료)</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">STORE</a>
+                        <ul class="sub-menu-name">
+                            <li>
+                                <a href="">매장 찾기</a>
+                                <ul class="sub-menu">
+                                    <li><a href="">퀵 검색</a></li>
+                                    <li><a href="">지역 검색</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">ENG</a>
+                        <ul class="sub-menu-name">
+                            <li>
+                                <a href="">친환경</a>
+                                <ul class="sub-menu">
+                                    <li><a href="">친환경 활동</a></li>
+                                    <li><a href="">다회용컵 사용 캠페인</a></li>
+                                    <li><a href="">커피박 재활용</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </nav>
+        </header>
+        <main>
+            <section></section>
+        </main>
+        <footer></footer>
+    </div>
+
+</body>
+
+</html>
