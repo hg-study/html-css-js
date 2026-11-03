@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky</title>
+    <!--
+        =======================================
+        position 4종 비교
+        relative, absolute, fixed, sticky를 한 화면에서 스크롤하며 확인
+        =======================================
+    -->
+
+    <style>
+    body{
+        height: 3000px;     /* 스크롤 확인용 높이 */
+    }
+
+    .parent{
+        width: 500px;
+        height: 500px;
+        border: 1px solid;
+        margin-top: 250px;
+        background-color: orange;
+
+        position: relative;     /* absolute 자식의 기준 */
+    }
+    .parent>.son{
+        width: 100px;
+        height: 100px;
+        font-size: .8rem;
+        background-color: royalblue;
+        border: 1px solid;
+        color: white;
+    }
+
+    /* relative : 원래 자리를 유지하며 기준 위치만 지정 */
+    .parent>.son:nth-child(1){
+        position: relative;
+    }
+    /* absolute : .parent 기준 위치. 스크롤하면 .parent와 함께 이동 */
+    .parent>.son:nth-child(2){
+        position: absolute;
+        left: 100px;
+        top: 0px;
+    }
+    /* fixed : 뷰포트 기준 위치. 스크롤해도 화면의 같은 자리에 유지 */
+    .parent>.son:nth-child(3){
+        position: fixed;
+        left: 210px;
+        top: 251px;
+    }
+    /* sticky : 평소에는 relative처럼 자리를 지키다가, 스크롤하다 top 위치(뷰포트 위쪽 0px)에 닿으면 fixed처럼 고정.
+    부모(.parent) 범위를 벗어나면 함께 사라진다 */
+    .parent>.son:nth-child(4){
+        position: sticky;
+
+        left: 311px;    /* 가로 스크롤이 있을 때 고정되는 왼쪽 기준 거리 */
+        top: 0px;       /* 세로 스크롤 시 뷰포트 위쪽에서 떨어진 고정 거리 */
+
+        margin-left:400px;
+        margin-top:-102px;
+    }
+
+    </style>
+
+
+</head>
+<body>
+
+    <!-- Emmet : .wrapper>header+main>section^footer -->
+
+    <div class="wrapper">
+        <header></header>
+        <main>
+            <section>
+                <!-- Emmet : .parent>.son*4 -->
+                <div class="parent">
+                    <div class="son">relative</div>
+                    <div class="son">absolute</div>
+                    <div class="son">fixed</div>
+                    <div class="son">sticky</div>
+                </div>
+            </section>
+        </main>
+        <footer></footer>
+
+
+
+
+    </div>
+
+</body>
+</html>

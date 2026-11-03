@@ -60,3 +60,23 @@
 - 예제 코드: [세로 메뉴 기준 위치 변경](../04_Position/06Gnb_04.html)
 - 예제 코드: [3단 메뉴](../04_Position/07Gnb_05.html)
 - 예제 코드: [3단 메뉴 연습](../04_Position/07Gnb_05prtc.html)
+
+<br>
+
+---
+
+<br>
+
+**Position 요약**
+
+<aside>
+
+> relative: 원래 위치 기준, absolute: 상위 position 요소 기준, fixed: 뷰포트 기준, sticky: 스크롤 위치에 따라 고정 <br>
+z-index: 겹친 요소의 앞뒤 순서 (position 지정 요소에만 적용)
+
+</aside>
+
+<br>
+
+### Link
+[MDN position](https://developer.mozilla.org/ko/docs/Web/CSS/position)
