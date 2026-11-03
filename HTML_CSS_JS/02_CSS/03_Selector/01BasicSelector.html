@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BasicSelector</title>
+    <!--
+        =======================================
+        기본 선택자
+        전체, 요소, id, class, 그룹 선택자
+        =======================================
+    -->
+    <style>
+        /* 전체 선택자 '*' : 문서의 모든 요소를 선택 */
+        *{box-sizing: border-box;}
+
+        /* 요소 선택자 : 태그 이름으로 해당 태그를 모두 선택 (div, span) */
+        div{
+            width: 150px;
+            height: 150px;
+            border: 1px solid;
+            margin: 10px;
+        }
+
+        /* id 선택자 '#' : id가 같은 요소 하나를 선택. 문서에서 id는 유일해야 한다 */
+        #id_01{
+            background-color: red;
+        }
+        /* class 선택자 '.' : class가 같은 요소를 모두 선택. 서로 다른 태그에도 쓸 수 있다 */
+        .cl{
+            background-color: royalblue;
+        }
+
+        /* 그룹 선택자 ',' : 여러 선택자에 같은 스타일을 한 번에 적용 */
+        #id_01, .cl{
+            border-radius: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="cl"></div>
+    <div id="id_01"></div>
+    <div></div>
+    <div class="cl"></div>
+    <div>
+        <p class="cl">HELLOWORLD</p>
+    </div>
+
+</body>
+</html>

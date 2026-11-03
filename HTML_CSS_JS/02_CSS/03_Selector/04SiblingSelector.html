@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiblingSelector</title>
+    <!--
+        =======================================
+        형제 선택자
+        일반 형제(~)와 인접 형제(+) 선택 범위 비교
+        =======================================
+    -->
+
+    <style>
+        *{margin-left: 20px;}
+        .c1{border: 1px solid red;}
+        .c2{border: 1px solid orange;}
+        .c3{border: 1px solid green;}
+
+        /*
+        A ~ B : A 뒤에 오는 같은 부모의 형제 B를 모두 선택
+        A + B : A 바로 다음에 오는 형제 B 하나만 선택
+        */
+
+        .c1>p{
+            color:blueviolet;
+        }
+        .c2~p{
+            background-color: orange;
+        }
+        .c2+p{
+            width: 200px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="c1">
+        <p>1 HELLO WORLD</p>
+        <div class="c2">
+            <p>2 HELLO WORLD</p>
+            <div class="c3">
+                <p>3 HELLO WORLD</p>
+                <p>4 HELLO WORLD</p>
+                <p>5 HELLO WORLD</p>
+            </div>
+            <p>6 HELLO WORLD</p>
+            <p>7 HELLO WORLD</p>
+        </div>
+        <p>8 HELLO WORLD</p>
+        <p>9 HELLO WORLD</p>
+    </div>
+
+</body>
+</html>
