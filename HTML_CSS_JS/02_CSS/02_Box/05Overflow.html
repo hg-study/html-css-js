@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <!--
+        =======================================
+        overflow 넘침 처리
+        자식이 부모 영역을 넘칠 때 표시 방식
+        =======================================
+    -->
+
+    <style>
+        .parent {
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+
+            /* overflow : 내용이 요소 밖으로 넘칠 때 처리 방식. -x 가로, -y 세로만 따로 지정 가능 */
+
+            /* hidden : 넘치는 부분을 잘라 숨김 */
+            overflow-x: hidden;
+            /* scroll : 항상 스크롤바 표시 */
+            overflow-x: scroll;
+            /* visible : 기본값. 넘친 내용을 그대로 표시 */
+            overflow-x: visible;
+            /* auto : 넘칠 때만 스크롤바 표시. 같은 속성이 겹치면 마지막 값이 적용된다 */
+            overflow: auto;
+        }
+
+        .son {
+            width: 550px;       /* 부모(300px)보다 넓어서 넘침 발생 */
+            height: 150px;
+            background-color: royalblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="parent">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>

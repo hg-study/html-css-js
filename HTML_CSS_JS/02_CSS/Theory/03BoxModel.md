@@ -60,3 +60,40 @@ Inline 요소는 Box Model에서 `width`, `height`, 상하 `margin`이 <span sty
 - 예제 코드: [Padding](../02_Box/02Padding.html)
 
 <br>
+
+---
+
+### 영역
+
+> 요소의 테두리, 외곽선, 그림자, 박스 크기 계산 방식을 제어하는 속성들이다.
+
+<br>
+
+| **속성** | **포함되는 값** | **설명** |
+| --- | --- | --- |
+| `border` | `굵기 스타일 색상` 순 단축 속성<br>**solid:** 실선 <br>**dashed:** 파선 <br>**dotted:** 점선<br>**none:** 선 없음 <br>**double:** 이중 실선<br>`border: 1px solid black;` | 테두리 |
+| `border-top` `border-right` `border-bottom` `border-left` | `border`와 같은 형식으로 방향별 지정<br>`border-top: 2px dashed red;` | 방향별 테두리 |
+| `border-radius` | `px` `%`<br>값 순서는 왼쪽 위부터 시계 방향<br>**a:** 네 모서리 공통<br>**a b:** 왼쪽 위, 오른쪽 아래 / 오른쪽 위, 왼쪽 아래<br>**a b c:** 왼쪽 위 / 오른쪽 위, 왼쪽 아래 / 오른쪽 아래<br>**a b c d:** 왼쪽 위 / 오른쪽 위 / 오른쪽 아래 / 왼쪽 아래<br>**50%:** 정사각형이면 원형<br>`border-radius: 8px;` | 테두리 모서리 곡률 |
+| `border-collapse` | **collapse:** 이중 테두리 → 단일 선<br>**separate:** 기본값. 이중 테두리<br>`border-collapse: collapse;` | 테이블 테두리 병합 방식 |
+| `box-sizing` | **content-box:** 기본값. width/height = 콘텐츠 영역만<br>**border-box:** width/height에 padding · border 포함 계산<br>`box-sizing: border-box;` | 박스 크기 계산 기준 |
+| `box-shadow` | `x y blur spread color` 순<br>**inset:** 내부 그림자<br>`box-shadow: 2px 4px 8px rgba(0,0,0,0.2);` | 박스 그림자 |
+| `overflow` | **visible:** 기본값. 넘친 내용 그대로 표시<br>**hidden:** 넘친 내용 잘라 숨김<br>**scroll:** 항상 스크롤바 표시<br>**auto:** 내용이 넘칠 때만 스크롤바 표시<br>`overflow: hidden;` | 콘텐츠가 요소 밖으로 넘칠 때 처리 방식 |
+| `overflow-x` `overflow-y` | `overflow`와 같은 값<br>가로, 세로 방향만 따로 지정<br>`overflow-x: hidden;` | 방향별 넘침 처리 |
+| `outline` | `굵기 스타일 색상` 순. border와 유사하지만 레이아웃에 영향 없음<br>`outline: 2px solid red;` | 윤곽선. 레이아웃 공간 차지 안 함 |
+
+<br>
+
+<span style="color:gray">`outline: none;`은 클릭(focus) 시 브라우저가 기본으로 그리는 테두리를 제거할 때 자주 쓰인다.</span>
+
+<br>
+
+<br>
+
+- 예제 코드: [Border](../02_Box/03Border.html)
+- 예제 코드: [BoxSizing](../02_Box/04BoxSizing.html)
+- 예제 코드: [Overflow](../02_Box/05Overflow.html)
+
+<br>
+
+### Link
+[MDN 박스 모델](https://developer.mozilla.org/ko/docs/Learn_web_development/Core/Styling_basics/Box_model)
