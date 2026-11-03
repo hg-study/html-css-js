@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolute</title>
+    <!--
+        =======================================
+        position: absolute
+        position이 지정된 상위 요소를 기준으로 위치 지정
+        =======================================
+    -->
+
+    <style>
+
+        /*
+        relative : 원래 위치(static 위치)가 기준
+        absolute : position이 지정된 가장 가까운 상위 요소가 기준. 상위 요소 중에 없으면 뷰포트(문서) 기준
+        */
+
+        * {box-sizing: border-box;}
+
+        body {margin: 0; padding: 20px;}
+
+        .ancestor {
+            width: 750px;
+            height: 750px;
+            background-color: aquamarine;
+            border: 1px solid;
+            padding: 20px;
+            position: relative;
+        }
+
+        .parent {
+            width: 500px;
+            height: 500px;
+            background-color: orange;
+            border: 1px solid;
+            padding: 20px;
+            position: relative;     /* 자식 absolute의 기준 */
+        }
+
+        .son {
+            width: 50px;
+            height: 50px;
+            background-color: royalblue;
+            border: 1px solid;
+        }
+
+        .son:nth-child(1){
+            /* relative : 원래 위치 기준으로 이동 */
+            position:relative;
+            left: 10px;
+            top: 10px;
+        }
+        .son:nth-child(2){
+            /* absolute : 가장 가까운 상위 position 요소(.parent)의 안쪽 모서리 기준.
+            상위 요소의 padding은 위치에 영향을 주지 않는다. */
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+        .son:nth-child(3){
+            /* bottom, right : 기준 요소의 아래쪽, 오른쪽 모서리에서 떨어진 거리 */
+            position: absolute;
+            width: 70px;
+            height: 60px;
+            background-color: #80f0ff;;
+            bottom: 30px;
+            right: 30px;
+
+        }
+        .son:nth-child(4){
+
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="ancestor">
+        <div class="parent">
+            <div class="son">1</div>
+            <div class="son">2</div>
+            <div class="son">3</div>
+            <div class="son">4</div>
+        </div>
+    </div>
+</body>
+
+</html>

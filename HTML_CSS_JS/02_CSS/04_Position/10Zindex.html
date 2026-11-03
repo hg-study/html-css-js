@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zindex</title>
+    <!--
+        =======================================
+        z-index
+        겹친 요소의 앞뒤 순서 지정
+        =======================================
+    -->
+
+    <style>
+        * { box-sizing: border-box }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .parent {
+            width: 500px;
+            height: 500px;
+            background-color: orange;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: royalblue;
+            border: 1px solid;
+        }
+
+        /* z-index : 숫자가 클수록 앞에 표시. position이 static이 아닌 요소에만 적용된다 */
+        .son:nth-child(1) {
+            position: relative;
+            z-index: 5;
+        }
+
+        /* z-index를 지정하지 않으면 auto(0)이라, 값이 5인 1번 요소가 2번 위에 표시된다 */
+        .son:nth-child(2) {
+            position: relative;
+            top: -20px;
+            left: 20px;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <!-- Emmet : .parent>.son*4{$} -->
+    <div class="parent">
+        <div class="son">1</div>
+        <div class="son">2</div>
+        <div class="son">3</div>
+        <div class="son">4</div>
+    </div>
+
+</body>
+
+</html>
