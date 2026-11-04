@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting</title>
+    <!--
+        =======================================
+        호이스팅
+        var, function은 선언 전에 사용할 수 있고 let, const 함수 표현식은 사용할 수 없다
+        =======================================
+    -->
+</head>
+<body>
+    
+    <script>
+        
+        /*
+            호이스팅
+            변수와 함수의 정의가 코드 실행 전에 메모리에 미리 저장되는 현상
+            function 예약어 사용 시 호이스팅 처리 됨
+            var 예약어 사용 시 호이스팅 처리됨
+            cf) 변수 지정: let, var / (심볼릭) 상수 지정: const
+        */
+
+        // const tmp = 10;
+        // console.log("tmp",tmp);
+        // tmp=20;
+        // console.log("tmp",tmp);
+        
+
+        // 변수 HOISTING
+        a = 10;
+        console.log('a',a);
+        var a;
+        
+
+        let b;
+        b = 10;
+        console.log('b',b);
+
+        // 함수 HOISTING
+
+        h1();
+        function h1() {
+            console.log("Hello world");
+        }
+        // const 함수 표현식은 호이스팅되지 않아 선언 전에 호출하면 ReferenceError가 발생한다 (이 오류는 의도된 확인용)
+        h2();
+        const h2 = () =>{
+            console.log("Hello world2");
+        }
+
+        /*
+            var 변수는 가급적 사용 지양
+            function은 목적에 따라 사용여부 결정. (처음에 만든 효과를 주고 싶으면 적용)
+            function은 기본적으로 이름 부여 가능. (익명 함수/이름 부여 함수 선택 가능)
+            화살표 함수는 기본적으로 익명함수 처리.
+        */
+
+    </script>
+
+
+</body>
+</html>

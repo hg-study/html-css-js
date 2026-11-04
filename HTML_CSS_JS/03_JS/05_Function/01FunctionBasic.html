@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FunctionBasic</title>
+    <!--
+        =======================================
+        함수 정의와 호출
+        function 선언문과 화살표 함수를 인자와 리턴 유무별로 비교
+        =======================================
+    -->
+</head>
+<body>
+    
+    <script>
+
+
+        console.log('-------function 함수명()){}-------');
+
+        // ECMA6 이전 함수 문법 (ex. function 함수명()){} )    
+        // header만 작성: 선언
+        // header+body: 정의
+        // --> 호이스팅 O.
+
+        // 인자 O 리턴 O
+        function sum1(n1, n2){      // header
+            // body
+            console.log("sum1(n1, n2) invoke..!");
+            return n1+n2;
+        }
+        const r1 = sum1(10,20);  // Call-by-Value
+        console.log('r1: ', r1)
+
+        console.log('---------------------');
+        
+        // 인자 O 리턴 X
+        function sum2(n1, n2){
+            console.log("sum2(n1, n2) invoke..!",n1+n2);
+        }
+        sum2(100,200); 
+
+        console.log('---------------------');
+        
+        // 인자 X 리턴 O
+        function sum3(){
+            const n1 = Number(prompt('첫번째 수 입력: '));
+            const n2 = parseInt(prompt('두번째 수 입력: '));
+            console.log("sum3() invoke..!");
+            return n1+n2;
+        }
+        const r3 = sum3();
+        console.log ("r3: ", r3);
+        
+        console.log('---------------------');
+
+        // 인자 X 리턴 X
+
+        function sum4(){
+            const n1 = Number(prompt('첫번째 수 입력: '));
+            const n2 = parseInt(prompt('두번째 수 입력: '));
+
+            console.log("sum4() invoke..!",n1+n2); 
+        }
+        sum4();
+        
+        console.log('-------const 함수명= ()=>{}-------');
+
+        // ECMA6 이후 함수 문법 (ex. const 함수명= ()=>{} )
+        // --> 절차를 지킴. 호이스팅 X 정의되기 전에 함수를 불러오면 오류 발생. 
+
+        // 인자 O 리턴 O
+        const sum01 = (n1, n2) => n1+n2;
+        const s1 = sum01(10,20);  
+        console.log('s1: ', s1)
+
+        console.log('---------------------');
+        
+        // 인자 O 리턴 X
+        const sum02 = (n1, n2) => {
+            console.log("sum02(n1, n2) invoke..!",n1+n2);
+        }
+        sum02(100,200); 
+
+        console.log('---------------------');
+        
+        // 인자 X 리턴 O
+        const sum03 = () => {
+            const n1 = Number(prompt('첫번째 수 입력: '));
+            const n2 = parseInt(prompt('두번째 수 입력: '));
+            console.log("sum03() invoke..!");
+            return n1+n2;
+        }
+        const s3 = sum03();
+        console.log ("s3: ", s3);
+        
+        console.log('---------------------');
+
+        // 인자 X 리턴 X
+
+        const sum04 = () => {
+            const n1 = Number(prompt('첫번째 수 입력: '));
+            const n2 = parseInt(prompt('두번째 수 입력: '));
+
+            console.log("sum04() invoke..!",n1+n2); 
+        }
+        sum04();
+        
+        console.log('---------------------');
+
+
+    </script>
+
+</body>
+</html>
