@@ -27,6 +27,7 @@
     - [배열](#배열)
     - [연산자](#연산자)
     - [흐름 제어문](#흐름-제어문)
+    - [함수](#함수)
 
 <br>
 
@@ -218,3 +219,11 @@
     - [분기문 if](./HTML_CSS_JS/03_JS/04_Control/01Branch.html)
     - [분기문 활용: 폼 유효성 검증](./HTML_CSS_JS/03_JS/04_Control/02FormValidation.html)
     - [반복문 while, for](./HTML_CSS_JS/03_JS/04_Control/03Loop.html)
+
+#### 함수
+- [Function 이론](./HTML_CSS_JS/03_JS/Theory/07Function.md)
+    - [함수 정의와 호출](./HTML_CSS_JS/03_JS/05_Function/01FunctionBasic.html)
+    - [호이스팅](./HTML_CSS_JS/03_JS/05_Function/02Hoisting.html)
+    - [스코프](./HTML_CSS_JS/03_JS/05_Function/03Scope.html)
+    - [클로저](./HTML_CSS_JS/03_JS/05_Function/04Closure.html)
+    - [콜백 함수](./HTML_CSS_JS/03_JS/05_Function/05CallBack.html)
