@@ -23,6 +23,8 @@
 - [03_JS](#03_js)
     - [JS 기본](#js-기본)
     - [자료형](#자료형)
+    - [객체](#객체)
+    - [배열](#배열)
 
 <br>
 
@@ -187,3 +189,20 @@
 #### 자료형
 - [Type 이론](./HTML_CSS_JS/03_JS/Theory/02Type.md)
     - [typeof로 자료형 확인](./HTML_CSS_JS/03_JS/01_Basic/04Type.html)
+    - [보간법](./HTML_CSS_JS/03_JS/02_Type/01Interpolation.html)
+
+#### 객체
+- [Object 이론](./HTML_CSS_JS/03_JS/Theory/03Object.md)
+    - [객체 리터럴](./HTML_CSS_JS/03_JS/02_Type/02Object.html)
+    - [객체 연습: 점수 계산](./HTML_CSS_JS/03_JS/02_Type/03ObjectPrtc.html)
+    - [객체 연습: 점수 계산 답](./HTML_CSS_JS/03_JS/02_Type/03Object답.html)
+    - [객체 연습: 카페, 계좌, 도서관, 주차장](./HTML_CSS_JS/03_JS/02_Type/04ObjectPrtc.html)
+    - [Object 함수와 prototype](./HTML_CSS_JS/03_JS/02_Type/08Prototype.html)
+    - [prototype 상속](./HTML_CSS_JS/03_JS/02_Type/09Prototype2.html)
+
+#### 배열
+- [Array 이론](./HTML_CSS_JS/03_JS/Theory/04Array.md)
+    - [배열과 배열 함수](./HTML_CSS_JS/03_JS/02_Type/05ArrayObject.html)
+    - [공공데이터 filter, map](./HTML_CSS_JS/03_JS/02_Type/06OpenData.html)
+    - [주문받기: 분류별 집계](./HTML_CSS_JS/03_JS/02_Type/07OrderPrtc.html)
+    - [주문받기: 분류별 집계 답](./HTML_CSS_JS/03_JS/02_Type/07Order답.html)
