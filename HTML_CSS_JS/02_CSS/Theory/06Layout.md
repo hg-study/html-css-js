@@ -1,0 +1,55 @@
+# Layout
+
+### display
+
+> 요소를 화면에 어떤 방식으로 배치할지 정한다. 블록은 한 줄을 차지하고, 인라인은 내용 크기만큼만 차지한다. `flex`와 `grid`를 지정하면 자식 요소를 배치하는 컨테이너가 된다.
+
+<br>
+
+| **속성** | **포함되는 값** | **설명** |
+| --- | --- | --- |
+| `display` | **block:** 한 줄 전체 차지. width/height 지정 가능<br>**inline:** 콘텐츠 크기만큼만 차지. width/height 지정 불가<br>**inline-block:** 인라인처럼 배치되지만 width/height 지정 가능<br>**none:** 화면에서 완전히 제거. 레이아웃 공간도 없어짐<br>**flex:** 자식 요소를 flexbox 방식으로 배치<br>**grid:** 자식 요소를 grid 방식으로 배치<br>`display: inline-block;` | 요소의 레이아웃 배치 방식 |
+
+<br>
+
+- 예제 코드: [Block vs Inline](../01_Basic/01Block_vs_Inline.html)
+
+---
+
+### Flex
+
+> 자식 요소를 한 방향(가로 또는 세로)으로 배치하는 레이아웃이다. 부모에 `display: flex`를 지정하고, 부모와 자식에 각각 속성을 지정한다. 주축은 `flex-direction`이 정한 방향이고, 교차축은 그에 수직인 방향이다.
+
+<br>
+
+**컨테이너(부모) 속성**
+
+| **속성** | **포함되는 값** | **설명** |
+| --- | --- | --- |
+| `flex-direction` | **row:** 기본값. 가로 방향 배치<br>**column:** 세로 방향 배치<br>**row-reverse / column-reverse:** 역순 배치<br>`flex-direction: row;` | flex 컨테이너의 주축 방향 지정 |
+| `justify-content` | **flex-start:** 기본값. 시작점 정렬<br>**flex-end:** 끝점 정렬<br>**center:** 가운데 정렬<br>**space-between:** 양 끝 붙이고 사이 균등 분배<br>**space-around:** 요소 양옆에 균등 여백<br>`justify-content: space-between;` | `display: flex` 컨테이너의 주축(가로) 방향 정렬 |
+| `align-items` | **stretch:** 기본값. 교차축 꽉 채움<br>**center:** 교차축 가운데 정렬<br>**flex-start / flex-end:** 교차축 시작/끝 정렬<br>`align-items: center;` | flex 컨테이너의 교차축(세로) 방향 정렬 |
+| `gap` | `px` `%`<br>flex·grid 자식 요소 사이 간격을 한 번에 지정. margin과 달리 바깥쪽 끝에는 여백이 생기지 않음<br>`gap: 5px;` | flex(또는 grid) 자식 요소 사이 간격 |
+| `flex-wrap` | **nowrap:** 기본값. 한 줄 유지(넘치면 축소)<br>**wrap:** 공간 부족 시 다음 줄로 넘김<br>`flex-wrap: wrap;` | flex 자식 요소의 줄바꿈 허용 여부 |
+
+<br>
+
+**아이템(자식) 속성**
+
+| **속성** | **포함되는 값** | **설명** |
+| --- | --- | --- |
+| `flex-grow` | 숫자 (기본값 0)<br>남는 공간을 나누어 가지는 비율. 0이면 늘어나지 않는다<br>`flex-grow: 1;` | 늘어나는 비율 |
+| `flex-shrink` | 숫자 (기본값 1)<br>공간이 부족할 때 줄어드는 비율. 0이면 줄어들지 않는다<br>`flex-shrink: 0;` | 줄어드는 비율 |
+| `flex-basis` | `px` `%` `auto`<br>요소의 기본 크기. `width`와 겹치므로 `flex-grow`를 쓸 때는 `width`를 지정하지 않는다<br>`flex-basis: 200px;` | 기본 크기 |
+| `flex` | `flex-grow flex-shrink flex-basis` 순 단축 속성<br>`flex: 1 1 300px;` | flex 아이템 단축 속성 |
+| `align-self` | **stretch:** 교차축을 꽉 채움<br>**flex-start / flex-end / center:** 교차축 시작 / 끝 / 가운데<br>`align-self: flex-end;` | 아이템 하나만 교차축 정렬을 따로 지정 |
+
+<br>
+
+<span style="color:gray">`flex-wrap: wrap`과 `flex-basis`를 함께 쓰면 화면 폭에 따라 한 줄에 놓이는 개수가 자동으로 달라진다. 카드, 푸터처럼 반응형으로 줄바꿈되는 영역에 많이 쓴다.</span>
+
+<br>
+
+- 예제 코드: [Flex 방향, 정렬, 줄바꿈](../05_Layout/01Flex.html)
+- 예제 코드: [Flex 전체 폭 고정 버전](../05_Layout/01Flex+.html)
+- 예제 코드: [Flex 자식 속성](../05_Layout/02Flex.html)

@@ -3,29 +3,6 @@
 ---
 
 
-## 레이아웃
-
-> 요소의 배치 방식, 위치 기준, 쌓임 순서를 제어하는 속성들이다.
-
-<br>
-
-| **속성** | **포함되는 값** | **설명** |
-| --- | --- | --- |
-| `display` | **block:** 한 줄 전체 차지. width/height 지정 가능<br>**inline:** 콘텐츠 크기만큼만 차지. width/height 지정 불가<br>**inline-block:** 인라인처럼 배치되지만 width/height 지정 가능<br>**none:** 화면에서 완전히 제거. 레이아웃 공간도 없어짐<br>**flex:** 자식 요소를 flexbox 방식으로 배치<br>**grid:** 자식 요소를 grid 방식으로 배치<br>`display: inline-block;` | 요소의 레이아웃 배치 방식 |
-| `float` | **left:** 왼쪽으로 띄워 배치<br>**right:** 오른쪽으로 띄워 배치<br>**none:** 기본값<br>`float: left;` | 요소를 흐름에서 분리해 좌우 배치 |
-| `justify-content` | **flex-start:** 기본값. 시작점 정렬<br>**flex-end:** 끝점 정렬<br>**center:** 가운데 정렬<br>**space-between:** 양 끝 붙이고 사이 균등 분배<br>**space-around:** 요소 양옆에 균등 여백<br>`justify-content: space-between;` | `display: flex` 컨테이너의 주축(가로) 방향 정렬 |
-| `align-items` | **stretch:** 기본값. 교차축 꽉 채움<br>**center:** 교차축 가운데 정렬<br>**flex-start / flex-end:** 교차축 시작/끝 정렬<br>`align-items: center;` | flex 컨테이너의 교차축(세로) 방향 정렬 |
-| `gap` | `px` `%`<br>flex·grid 자식 요소 사이 간격을 한 번에 지정. margin과 달리 바깥쪽 끝에는 여백이 생기지 않음<br>`gap: 5px;` | flex(또는 grid) 자식 요소 사이 간격 |
-| `flex-direction` | **row:** 기본값. 가로 방향 배치<br>**column:** 세로 방향 배치<br>**row-reverse / column-reverse:** 역순 배치<br>`flex-direction: row;` | flex 컨테이너의 주축 방향 지정 |
-| `flex-wrap` | **nowrap:** 기본값. 한 줄 유지(넘치면 축소)<br>**wrap:** 공간 부족 시 다음 줄로 넘김<br>`flex-wrap: wrap;` | flex 자식 요소의 줄바꿈 허용 여부 |
-| `cursor` | **pointer:** 손가락 모양. 클릭 가능한 요소임을 표시<br>**default:** 기본 화살표<br>**not-allowed:** 금지 모양<br>`cursor: pointer;` | 마우스를 올렸을 때의 커서 모양 |
-
-<br>
-
-- 예제 코드: [회원가입 폼 Css 추가](../../01_HTML/16Form_add_css.html)
-
----
-
 ## CSS 프레임워크 - Bootstrap 5
 
 > 미리 만들어진 CSS·JS 클래스 모음(프레임워크)이다. 클래스 이름만 붙이면 레이아웃, 버튼, 폼 스타일 등을 별도 CSS 작성 없이 적용할 수 있다.
