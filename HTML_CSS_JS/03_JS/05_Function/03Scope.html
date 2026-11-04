@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+    <!--
+        =======================================
+        스코프
+        전역, 함수, 블록, 렉시컬 스코프와 this
+        =======================================
+    -->
+</head>
+<body>
+    
+    <script>
+
+        /*
+
+            스코프(SCOPE)란
+            변수나 함수가 접근할 수 있는 범위
+            전역 스코프(Global Scope)와 지역 스코프(Local Scope)로 구별
+            전역 스코프: 모든 지역에서 접근 가능
+            지역 스코프: 특정 영역({})에서만 접근 가능
+            - 함수 스코프: 함수 본문{} 내에서 선언된 변수는 함수 내부에서만 접근 가능
+            - 블록 스코프: if, while...{} 블록 내에서만 접근 가능
+            
+            렉시컬(Lexical) 스코프: 변수를 선언한 위치에 따라 스코프 결정
+         */
+
+         // 전역 스코프
+         var g_val =  "전역변수 확인!";
+
+         function a(){
+            console.log('a func(..)', g_val);
+         }
+         a();
+
+         if(true){
+            console.log('if..',g_val);
+         }
+         console.log({key1:g_val});
+         
+         // 함수 스코프(함수 내에서만 사용되는 변수 범위, 만약 함수 범위 아니면 전역 스코프, var에 적용)
+
+         // 같은 이름 a로 다시 선언하면 호이스팅으로 뒤의 정의가 앞을 덮으므로 이름을 b로 구분
+         function b() {
+            var n1 = 10;
+            console.log("n1",n1);
+         }
+         b();
+
+         // 함수 스코프 영역이 아니라면 var 은 전역 스코프로 적용됨
+         // 부연 ---> var은 함수 스코프(지역 변수 선언, 선언된 함수 안에서만 접근 가능)지만 블록 레벨 스코프를 무시해 블록 안에서 작성했더라도 바깥에서 불러올 수 있다.
+
+         for(var i=0 ; i<3 ; i++) console.log("i",i);
+         console.log('end i: ', i);
+         
+         // 블록 스코프({}내에서만 유효한 범위)
+        //  if(true){
+        //     let v_1 ="블럭 내에서만 사용되는 지역변수"
+        //     var v_2 ="블럭 내에 사용한 var 변수"
+        //     console.log("v_1", v_1);        
+        //     console.log("v_2", v_2);
+        // }
+        // console.log("---------");
+        // console.log("v_2", v_2);        // 불러와 적용된다.
+        // console.log("v_1", v_1);        // 블록레벨 스코프라  Uncaught ReferenceError: v_1 is not defined 오류 띄운다.
+
+        
+        // 렉시컬 스코프
+
+        const name = "Global Scope";
+
+        function outer() {
+            const name = "Outer Local Scope";   // 더 가까운 곳 따름
+
+            function inner() {
+                console.log(name);
+            }
+            inner();
+        }
+
+        outer();
+
+        window.name= "김길동"
+
+        // function의 this는 호출한 객체(b), 화살표 함수의 this는 정의된 위치의 상위 스코프(window)
+        const b = {
+            name: "홍길동",
+            age: 55,
+            addr: "대구",
+            talk: function(){
+                console.log(`${this.name}님이 말합니다.`); // function's this: 호출 당시 기준
+                console.log(this);
+                
+            },
+            walk: ()=>{
+                console.log(`${this.name}님이 걷습니다.`); // ()=>{}'s this: 탄생 시점 기준(렉시컬)
+                console.log(this); // 정의된 위치 상위 스코프 this 상속. window 
+            }
+        }
+        b.talk();
+        b.walk();
+
+        const f1 = () => {
+            console.log('f1...',this); // 상위 스코프(window객체)의 this를 가져옴  
+        }
+        f1();
+        function f2() {
+            console.log('f2...',this); // 호출방법에 따라 this가 달라짐
+        }
+        f2();
+
+    </script>
+</body>
+</html>

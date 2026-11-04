@@ -58,7 +58,7 @@ console.log(typeof function(){}) // "function"
 
 <br>
 
-<span style="color:gray">함수 밖에서 선언하면 모두 전역 스코프가 된다. 스코프와 호이스팅은 Function에서 다룬다.</span>
+<span style="color:gray">함수 밖에서 선언하면 모두 전역 스코프가 된다. 스코프와 호이스팅은 [Function](07Function.md)에서 다룬다.</span>
 
 <br>
 
