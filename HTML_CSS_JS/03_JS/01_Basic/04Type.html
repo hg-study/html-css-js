@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type</title>
+    <!--
+        =======================================
+        자료형 확인
+        typeof로 number, string, object, null, undefined, boolean 비교
+        =======================================
+    -->
+</head>
+<body>
+    <script>
+        // typeof : 값이나 변수의 자료형을 문자열로 반환하는 연산자
+        // number: 숫자
+        console.log("number: 숫자 10");
+        console.log(typeof 10);
+        console.log(typeof 10.5);
+        console.log("-------------------")
+
+        // string: 문자 (", ', ` 모두 가능)
+        console.log("string: 문자 HELLO WORLD");
+        console.log(typeof "HELLO WORLD");
+        console.log(typeof 'HELLO WORLD');
+        console.log(typeof `HELLO WORLD`);
+        console.log("-------------------")
+
+        // object: 객체 --> {key: value, key: value}
+        console.log(typeof {});
+        console.log("object: 객체", {"name" : "홍길동", "age" : "30", "addr": "대구"});
+        console.log(typeof {"name" : "홍길동", "age" : "30", "addr": "대구"});
+        console.log("-------------------")
+
+            // object - 포함된 값 중 ->
+            // null: 빈값임을 명시 (null이라는 값을 할당받음)
+            // ㄴ 변수 초기화(공간 형성 o + 기본값 null 삽입 <- 개발자가 의도한 값)
+            // 따라서 콘솔에서는 null로 표시되며, 타입은 object다.
+            let vol = null;
+            console.log("null: 빈값");
+            console.log(typeof vol);
+            console.log("-------------------")
+
+        // undefined: 정의되지 않은 값 (값을 할당받지 못함)
+        // ㄴ 공간 형성 x, 기본값 생략 <- 개발자가 의도하지 않은 예외)
+        // 따라서 콘솔에서는 undefined로 표시되며, 타입도 undefined다.
+        let vol2;
+        console.log("undefined: 정의되지 않은 값(예외)");
+        console.log(vol2);
+        console.log(typeof vol2);
+        console.log("-------------------")
+
+        // boolean: 참(true), 거짓(false). 이진수에서는 true- 1, false- 0.
+        console.log(typeof true);
+        console.log(typeof false);
+    </script>
+</body>
+</html>
