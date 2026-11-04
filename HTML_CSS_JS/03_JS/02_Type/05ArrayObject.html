@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArrayObject</title>
+    <!--
+        =======================================
+        배열과 배열 객체
+        push, pop, forEach, sort, filter, reduce, map으로 배열과 객체 배열 처리
+        =======================================
+    -->
+</head>
+<body>
+    
+
+    
+
+
+
+    <script>
+        /*
+            배열: 여러 자료 Type을 저장하기 위한 자료구조
+            배열은 순서번호(Index)를 가지고 있고 번호를 통해서 요소값에 접근가능
+        */
+
+       // let: 블록 스코프(block scope) 변수를 선언하는 키워드. var와 달리 중복 선언이 불가능하다.
+
+       let arr= ['str1', "str2", `str3`, null, true, false, undefined,{name: "홍길동", age: 35}];
+       console.log(arr);
+       console.log(arr[0]);
+       console.log(arr[1]);
+       console.log(arr[2]);
+       console.log(arr[3]);
+       console.log(arr[4]);
+       console.log(arr[5]);
+       console.log(arr[6]);
+       console.log(arr[7]);
+
+        // 자바스크립트의 배열은 동적확장이 가능하다.
+        arr[8] = 100;
+        console.log(arr);
+
+        // 이렇게 띄워서 지정하면 중간 빈 값들은 empty로 채워준다.
+        arr[12] = "HELLO WORLD";
+        console.log(arr);
+
+        // typeof: 변수의 데이터 타입을 반환하는 연산자
+       console.log(typeof arr[9], typeof arr[10])
+
+       console.log("-------------------------")
+        /* 배열함수 
+        push(마지막 index+1에 값 추가) 배열의 끝에 요소 추가
+        pop(마지막 index 값 제거) 배열의 맨 끝 요소를 제거하고 제거된 요소를 반환 */
+        
+        arr.push("aaa");
+        arr.push("bbb");
+        arr.push("ccc");
+        console.log(arr);
+        console.log(arr.pop());
+        console.log(arr.pop());
+        console.log(arr);
+
+        console.log("-------------------------")
+        /* 배열 함수: forEach
+        배열 내의 모든 요소에 순차적으로 접근하는 반복구문
+        배열을 순회해서 각 요소를 콜백 함수로 처리하기 위한 함수
+
+        for 문은 중간에 멈추거나(break), 건너뛰는(continue)게 가능한 반면 forEach는 불가능하다.
+        처음부터 끝까지 꺼내주며, 중간에 멈출 수 없다. 
+
+        ** 배열에 있는 모든 요소를 꺼내 어떠한 작업을 할 때 사용 ** 
+
+        콜백 함수 ()=>{}: 다른 함수에 인자(parameter)로 전달되어, 특정 작업이 완료되거나 이벤트가 발생한 후 외부 함수에 의해 '나중에' 호출되는 함수
+
+        Callback 함수(로직을 전달, ()=>{})
+        arr.forEach((요소명, 번호)=>{처리할 코드}) // ( , )의 변수 이름 자유 설정 가능
+        array.forEach((element, index) => {}) : 기본구조. index 생략 ok
+        idx: 배열의 인덱스
+        
+        */
+        
+        arr.forEach( (item, idx)=> {console.log(`item: ${item}`)} )
+
+        console.log("-------------------------")        
+        /*
+            sort: 배열의 요소를 정렬하는 데 사용하는 함수. 
+            배열의 요소를 적절한 위치에 정렬한 후에 그 배열을 반환한다.
+
+            arr.sort() -> 요소를 문자열로 변환해 정렬함. 따라서 숫자 정렬 시 ()=>{} 콜백함수 이용 필요
+            정렬: sort((비교인자1, 비교인자2) => {return 비교인자 1, 비교인자 2})
+            오름차순: arr.sort((a,b) => {return a-b})
+            내림차순: arr.sort((a,b) => {return b-a})
+            문자열 정렬: arr.sort()
+            기존 배열에서 정렬 진행하므로 원본의 배열이 바뀐다. 원본을 유지하고 싶다면 복사본 만들기.
+         */
+
+        let arr2 = [10,33,57,44,2,1,45,77,12,7]
+        // 오름차순
+        arr2.sort((a,b)=> {return a-b})
+        console.log(arr2);
+        // 내림차순
+        arr2.sort((a,b)=> {return b-a})
+        console.log(arr2);        
+        // 내림차순(약식)
+        arr2.sort((a,b)=>b-a)
+
+        console.log("-------------------------")    
+
+
+        /*
+        필터: 배열 내에서 특정 요소만 필터링하여 필터링된 요소만 묶은 새로운 배열 생성
+        arr.filter((요소명)=>{return 조건식})   
+        */
+
+       let arr3= ['str1', "str2", `str3`, 45, null, true, false, undefined,{name: "홍길동", age: 35}, 2, 10.5];    
+        
+        // 새 배열을 생성하기 때문에 재사용하기 위해 새 변수명을 선언해준다.
+        // return typeof item == 'number' -->    item의 타입명이 number인지 확인하고, true인 경우 그  item(요소)들을 새로운 배열에 포함시키고 출력해라.
+
+        console.log("filter")
+        const filtered_01 = arr3.filter((item)=>{return typeof item == 'number'})
+        console.log("filtered_01: ",filtered_01)
+        const filtered_02 = arr3.filter((item)=>{return typeof item == 'string'})
+        console.log("filtered_02: ",filtered_02)
+        // 약식(한줄, 인자 하나일 때)
+        const filtered_03 = arr3.filter(item =>typeof item == 'object')
+        console.log("filtered_03: ", filtered_03)
+
+        console.log("-------------------------")   
+        /*
+        reduce: 배열의 각 요소에 대해 주어진 리듀서 (reducer) 함수를 실행하고, *하나의 결과값*을 반환
+        리듀서 함수: 이전 상태와 동작을 받아 새 상태를 리턴하는 순수 함수
+
+        누산: 누적합, 누적곱...누적 작업
+        배열의 요소들을 누적하여 마지막 요소까지 작업한다. 
+        [1,2,3] 
+        0(초기값)+1=1 
+        1(누적값)+2=3
+        3(누적값)+3=6
+        arr.reduce((누적변수, 요소명)=>{처리 로직 return 조건식}, 누산변수 초기값)
+
+        초기값을 설정해주지 않으면 배열의 첫번째 값이 초기값으로 사용되어 오류를 일으킬 수 있으므로 초기값을 꼭 설정해주도록 한다.
+        */
+       let arr4= ['str1', "str2", `str3`, 45, null, true, false, undefined,{name: "홍길동", age: 35}, 2, 10.5];   
+       
+        const result =
+
+        arr4.filter((item)=>{return typeof item == 'number'}) // filter로 number인 요소만 가져온다.
+
+            
+            .reduce((sum,item)=>{
+                console.log('item: ',item);  // 확인
+                return sum+item;},0);   // return sum*item;},1); 곱셈은 이렇게
+
+        console.log("result: ",result);
+
+        console.log("-------------------------")   
+        // 배열 object 처리 [{},{},{},{}...]
+
+        console.log("-------배열 object-------")   
+        let products = [
+            {"pid":1, "pname":"삼성 모니터", "price": 100, "amount": 100},
+            {"pid":2, "pname":"삼성 노트북", "price": 140, "amount": 105},
+            {"pid":3, "pname":"삼성 휴대폰", "price": 80, "amount": 10},
+            {"pid":4, "pname":"삼성 에어컨", "price": 150, "amount": 146},
+            {"pid":5, "pname":"삼성 공기청정기", "price": 101, "amount": 14}
+        ]
+
+        console.log("products", products);
+        // forEach
+        //products.forEach((item)=>{console.log(item)});
+        // 축약
+        //products.forEach(item=>console.log(item));
+        // 인덱스 번호 추가
+        //products.forEach((item,idx)=>{console.log(idx,item)});
+        // 특정 요소만 출력
+        //products.forEach((item,idx)=>{console.log(idx,item["pname"], item["price"])});
+        //products.forEach((item,idx)=>{console.log(idx,item.pname, item.price)}); // 위아래동일
+
+        // filter
+        // item의 가격(price)이 100 이상인 object만 필터링
+        const result_1 = products.filter((item)=>{return item.price >= 100});
+        console.log("result_1", result_1);
+        
+        // item의 수량(amount)이 30개 이하인 object만 필터링
+        const result_2 = products.filter((item)=>{return item.amount <= 30});
+        console.log("result_2", result_2);
+
+        // reduce
+        // 각 아이템 가격이 100만원 이상이 item의 재고량*가격 총합(누적)을 구하세요
+
+        const result_3 = products.filter((item)=>{return item.price >= 100})
+                .reduce((sum,item) => {
+                    console.log('item: ',item);  // 확인
+                    return sum + item.price * item.amount;},0
+                )
+        console.log("result_3",result_3);
+
+        /*map: 기본 배열을 새로운 형태의 배열로 재구성
+        arr.map((요소명) => {return 재구성할 요소의 형태})
+        새로운 배열이 만들어짐
+        filter와의 차이: map은 요소를 변환하여 원본과 같은 길이의 배열을 반환하고, filter는 조건에 맞는 요소만 걸러내어 원본과 같거나 더 짧은 배열을 반환
+        */
+
+        console.log("-----------map-----------");
+
+        // products 배열의 각 요소}{}에 제품별 총판매액(totalPrice: amount*price) 속성을 추가
+        const result_4 = products.map((item)=>{
+            console.log("맵안",item);
+            // ...objName(스프레드 연산자): object의 기존 속성 그대로 가져올 때 사용
+            item = {...item,"totalPrice":item.price*item.amount};
+            console.log("맵안", item);
+            return item;
+        })
+        console.log("result_4: ",result_4);
+        console.log("-------------------------");
+
+
+        //----------------------------------
+        // 문제
+        //----------------------------------
+        let employees = [
+            { id: 1, name: "김철수", age: 35, department: "개발", salary: 6000, years: 10 },
+            { id: 2, name: "이영희", age: 28, department: "디자인", salary: 5000, years: 5 },
+            { id: 3, name: "박지성", age: 40, department: "마케팅", salary: 7000, years: 15 },
+            { id: 4, name: "손흥민", age: 30, department: "개발", salary: 6500, years: 7 },
+            { id: 5, name: "정우성", age: 45, department: "경영", salary: 9000, years: 20 },
+            { id: 6, name: "한지민", age: 29, department: "디자인", salary: 5200, years: 6 },
+            { id: 7, name: "강호동", age: 50, department: "경영", salary: 8500, years: 25 },
+            { id: 8, name: "유재석", age: 42, department: "마케팅", salary: 7500, years: 18 },
+            { id: 9, name: "송중기", age: 32, department: "개발", salary: 6200, years: 8 },
+            { id: 10, name: "수지", age: 26,  department: "디자인", salary: 4800, years: 3 }
+        ];
+        // 연봉이(salary) 6000 이상이면서 근속연수(years)가 7년 이상인(item.salary>=6000 && item.years>=7) 직원만 필터링해서 배열로 저장 확인
+        const result_5 = employees
+        .filter(item =>{return item.salary >= 6000})
+        .filter(item => {return item.years >= 7});
+        console.log("result_5: ",result_5);
+
+        // 답
+        const r1 = employees.filter(item =>{return item.salary >= 6000 && item.years >= 7})
+        console.log("r1",r1)
+
+            
+        // 모든 직원의 연봉(salary) 기준으로 내림차순 정렬한 배열 새로 만들기
+        // sort는 원본 배열을 바꾸므로 스프레드([...])로 복사한 뒤 정렬한다
+        const result_6 = [...employees].sort((a,b)=>{return b.salary-a.salary});
+        
+        console.log("result_6: ",result_6);
+
+        //답
+        // sort는 원본 배열을 바꾸기 때문에 새로 배열을 만들고 해야함.
+
+        const r2 = employees
+        .map((item)=>{return item;})
+        .sort((a,b)=>{return b.salary-a.salary})
+        console.log("r2",r2)      
+
+        // 모든 직원의 연봉(salary) 에 근속연수*100 만큼의 보너스를 추가하여 total_salary필드를 추가한 배열을 반환
+        const result_7 = employees.map((item)=>{
+            item ={...item, "total_salary":item.salary+(item.years*100)};
+            return item;
+        })
+        console.log("result_7: ",result_7);
+
+        // 답
+         const r3 = employees.map((item)=>{
+            item ={...item, "total_salary":item.salary+(item.years*100)};
+            return item;
+        })
+        console.log("r3: ",r3);
+
+        // department(부서) 별로 직원들의 연봉총합을 구하세요
+        // const result_8 = 
+        
+        // employees.filter((item)=>{return item.department == '개발'})
+        //     .reduce((sum,item) => {
+        //         return salary+item;},0);
+
+        // console.log("개발 연봉 총합: ",result_8);
+
+        
+        // undefined? true일 때 값:false일 때 값
+        const r4 = employees.reduce((sum,item) => {
+            sum[item.department] = sum[item.department] 
+            == undefined? item.salary // 아무것도 정의되어 있지 않다(undefined)면 초기값(1번값)을 넣는다.
+            :sum[item.department] +=item.salary; // 무언가 정의되어 있다면 값을 더한다.
+            return sum;
+        },{})
+        console.log("r4",r4);
+
+        // 연봉(salary)가 가장높은 직원을 찾아 객체 하나만 반환(mdn문서에서 max를 찾아보세요 - !)
+        // sort사용
+        const r5 = employees.sort((a,b) => {return b.salary-a.salary;})[0]
+        console.log ('r5',r5)
+        // max사용
+        const r6 = employees.reduce((maxValue,item)=>{
+            return item.salary > maxValue? // 해당 요소가 maxValue보다 큰가?
+            item.salary // T
+            :maxValue // F
+        },0)
+        console.log ('r6',r6)
+        //최대값 구하기
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

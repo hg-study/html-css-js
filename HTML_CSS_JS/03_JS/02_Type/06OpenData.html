@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenData</title>
+    <!--
+        =======================================
+        공공데이터 배열 처리
+        중구 맛집 데이터를 filter, map으로 분류와 변환
+        =======================================
+    -->
+    <script src="./js/중구맛집.js"></script>
+
+
+</head>
+<body>
+    <script>
+
+        //console.log("중구맛집", 중구맛집);
+        
+        // 중구맛집.js : 대구 중구 맛집 공공데이터. 전역 변수 중구맛집의 data 배열에 가게 정보가 들어 있다
+        const dataArray = 중구맛집.data;
+        console.log("dataArray", dataArray);
+        // 한식
+        // filter : 조건(FD_CS가 한식)을 만족하는 요소만 모아 새 배열을 만든다
+        const 한식맛집 = dataArray.filter((item)=>{return item.FD_CS == '한식'})
+        console.log("한식맛집",한식맛집)
+
+        // 일식
+        // filter로 일식만 고른 뒤 map으로 필요한 속성(상호명, 메뉴, 주소)만 가진 새 객체 배열로 변환
+        const 일식맛집 = dataArray
+        .filter((item) => {return item.FD_CS == '일식'})
+        .map((item) => {
+            return item = {"상호명":item.BZ_NM,"메뉴":item.MNU,"주소":item.GNG_CS};
+        })
+        console.log("일식맛집",일식맛집)
+    </script>
+
+
+</body>
+</html>
