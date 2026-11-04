@@ -53,3 +53,25 @@
 - 예제 코드: [Flex 방향, 정렬, 줄바꿈](../05_Layout/01Flex.html)
 - 예제 코드: [Flex 전체 폭 고정 버전](../05_Layout/01Flex+.html)
 - 예제 코드: [Flex 자식 속성](../05_Layout/02Flex.html)
+
+---
+
+### Flex 레이아웃 구성
+
+> 네비게이션 바, 카드, 미디어 콘텐츠, 푸터를 flex로 구성하는 대표 패턴이다.
+
+<br>
+
+| **영역** | **구성** |
+| --- | --- |
+| 네비게이션 바 | 부모 `display: flex`와 `justify-content: space-between`으로 로고는 왼쪽, 메뉴는 오른쪽 끝에 배치한다 |
+| 카드 | `flex-wrap: wrap`과 `flex: 1 1 300px`로 폭에 따라 줄 수가 변하게 한다 |
+| 미디어 콘텐츠 | 이미지와 글을 나란히 놓고, 좁아지면 줄바꿈으로 세로로 쌓이게 한다 |
+| 푸터 | 섹션 여러 개를 `flex: 1 1 250px`로 균등 분배한다 |
+| 반응형 | `@media (max-width: 1080px)`에서 `flex-direction: column`으로 세로 배치로 바꾼다 |
+
+<br>
+
+- 예제 코드: [Flex 레이아웃 연습](../05_Layout/03Layout_prtc.html)
+- 예제 코드: [Flex 레이아웃 연습 답](../05_Layout/04%5B답%5DLayout.html)
+- 예제 코드: [KREAM 레이아웃](../05_Layout/06KREAM_LAYOUT.html)

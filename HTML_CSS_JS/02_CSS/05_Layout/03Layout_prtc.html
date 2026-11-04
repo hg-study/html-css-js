@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout_prtc</title>
+    <!--
+        =======================================
+        flex 레이아웃 연습
+        네비게이션 바, 카드, 미디어 콘텐츠, 반응형 푸터를 flex로 구성
+        예시 영상(03Flex_Layout_Template_예시.mp4) 참고
+        =======================================
+    -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        /* common */
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            margin: 0;
+        }
+        /* layout */
+        .wrapper {}
+        /* header */
+        .wrapper>header {}
+        .wrapper>header>.top-header {
+            padding: 0 20px;
+        }
+        /* 1. 네비게이션 바 : 로고는 왼쪽, 메뉴는 오른쪽 끝에 배치 */
+        .wrapper>header>nav {
+            color: white;
+            background-color:black;
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            position: relative;
+            left: 10px;
+            justify-content: space-between;   /* 양 끝으로 벌려 배치 */
+            align-items: center;              /* 세로 가운데 정렬 */
+            height: 80px;
+            padding: 0 20px;
+        }
+        .wrapper>header>nav>.nav-logo {
+            font-size: 25px;
+        }
+        .wrapper>header>nav>.nav-menu {
+            display: flex;
+            flex-direction: row;
+        }
+        .wrapper>header>nav>.nav-menu>li {
+            padding: 10px 20px;
+        }
+        /* main  */
+        .wrapper>main {
+            background-color:green;
+            padding: 0 20px;
+        }
+        .wrapper>main>section {
+            background-color:silver;
+            padding-bottom: 20px;
+        }
+        /* 2. 카드 레이아웃 : flex-wrap과 flex-basis로 화면 폭에 따라 줄 수가 변함 */
+        .wrapper>main>section>.card-container {
+            display: flex;
+            flex-wrap: wrap;    /* 공간이 부족하면 다음 줄로 넘김 */
+            gap: 20px;
+        }
+        .wrapper>main>section>.card-container>.card {
+            flex: 1 1 300px;    /* flex-grow 1, flex-shrink 1, flex-basis 300px : 최소 300px을 기준으로 남는 공간을 균등 분배 */
+            background-color: white;
+            border: 1px solid;
+            border-radius: 15px;
+            padding: 20px;
+        }
+        /* 3. 미디어 콘텐츠 : 이미지와 글을 나란히 배치하고 좁아지면 세로로 쌓임 */
+        .wrapper>main>section>.container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .wrapper>main>section>.container>.media-item {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            background-color: white;
+            border: 1px solid;
+            padding: 20px;
+        }
+        .wrapper>main>section>.container>.media-item>.media-img {
+            flex: 1 1 200px;
+            height: 150px;
+            background-color: lightgray;
+        }
+        .wrapper>main>section>.container>.media-item>.media-content {
+            flex: 3 1 300px;    /* 이미지보다 글 영역이 3배 넓게 남은 공간을 차지 */
+        }
+        /* footer */
+        .wrapper>footer {}
+        /* 4. 반응형 푸터 : 섹션이 한 줄에 나란히 놓이다가 좁아지면 줄바꿈 */
+        .wrapper>footer>.footer {
+            color: white;
+            background-color:black;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        .wrapper>footer>.footer>.footer-section {
+            flex: 1 1 250px;
+        }
+        .wrapper>footer>.footer>.footer-section>h3 {
+            margin: 0;
+        }
+
+        /* 화면 폭이 1080px 이하이면 네비게이션을 세로로 배치 */
+        @media (max-width: 1080px) {
+            .wrapper>header>nav {
+                flex-direction: column;
+                height: auto;
+                padding: 20px;
+            }
+            .wrapper>header>nav>.nav-menu {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="top-header">
+                <h2>1. 네비게이션 바 레이아웃</h2>
+            </div>
+            <nav>
+                <div class="nav-logo">Logo</div>
+                <ul class="nav-menu">
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>2. 카드 레이아웃</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Product 1</h3>
+                        <p>상품 설명이 들어갑니다. 실무에서 자주 사용되는 카드 형태의 레이아웃입니다.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Product 2</h3>
+                        <p>반응형으로 구현되어 화면 크기에 따라 자동으로 배치가 조절됩니다.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Product 3</h3>
+                        <p>flex-wrap과 flex-basis를 활용하여 유동적인 레이아웃을 구현했습니다.</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>3. 미디어 컨텐츠 레이아웃</h2>
+                <div class="container">
+                    <div class="media-item">
+                        <div class="media-img"></div>
+                        <div class="media-content">
+                            <h3>뉴스 제목</h3>
+                            <p>뉴스 내용이 들어갑니다. 이미지와 텍스트가 나란히 배치되는 레이아웃입니다.</p>
+                        </div>
+                    </div>
+                    <div class="media-item">
+                        <div class="media-img"></div>
+                        <div class="media-content">
+                            <h3>블로그 포스트</h3>
+                            <p>블로그 내용이 들어갑니다. 모바일에서는 세로로 배치됩니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <h2>4. 반응형 푸터</h2>
+            <footer class="footer">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>회사 소개 내용이 들어갑니다.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>연락처 정보가 들어갑니다.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>소셜 미디어 링크가 들어갑니다.</p>
+                </div>
+            </footer>
+        </footer>
+    </div>
+</body>
+
+</html>
