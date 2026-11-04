@@ -1,9 +1,6 @@
-# CssAttribute
+# Bootstrap
 
----
-
-
-## CSS 프레임워크 - Bootstrap 5
+### CSS 프레임워크 - Bootstrap 5
 
 > 미리 만들어진 CSS·JS 클래스 모음(프레임워크)이다. 클래스 이름만 붙이면 레이아웃, 버튼, 폼 스타일 등을 별도 CSS 작성 없이 적용할 수 있다.
 
@@ -73,7 +70,6 @@
 - 예제 코드: [회원가입 폼 페이지2 bs5 추가](../../01_HTML/20Form_only_html_bs.html)
 
 ---
-
 
 ### Link
 [CSS 속성 참고서 - MDN](https://developer.mozilla.org/ko/docs/Web/CSS/Reference)
