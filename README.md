@@ -25,6 +25,8 @@
     - [자료형](#자료형)
     - [객체](#객체)
     - [배열](#배열)
+    - [연산자](#연산자)
+    - [흐름 제어문](#흐름-제어문)
 
 <br>
 
@@ -206,3 +208,13 @@
     - [공공데이터 filter, map](./HTML_CSS_JS/03_JS/02_Type/06OpenData.html)
     - [주문받기: 분류별 집계](./HTML_CSS_JS/03_JS/02_Type/07OrderPrtc.html)
     - [주문받기: 분류별 집계 답](./HTML_CSS_JS/03_JS/02_Type/07Order답.html)
+
+#### 연산자
+- [Operator 이론](./HTML_CSS_JS/03_JS/Theory/05Operator.md)
+    - [연산자](./HTML_CSS_JS/03_JS/03_Operator/00Operator.html)
+
+#### 흐름 제어문
+- [Control 이론](./HTML_CSS_JS/03_JS/Theory/06Control.md)
+    - [분기문 if](./HTML_CSS_JS/03_JS/04_Control/01Branch.html)
+    - [분기문 활용: 폼 유효성 검증](./HTML_CSS_JS/03_JS/04_Control/02FormValidation.html)
+    - [반복문 while, for](./HTML_CSS_JS/03_JS/04_Control/03Loop.html)
