@@ -75,3 +75,56 @@
 - 예제 코드: [Flex 레이아웃 연습](../05_Layout/03Layout_prtc.html)
 - 예제 코드: [Flex 레이아웃 연습 답](../05_Layout/04%5B답%5DLayout.html)
 - 예제 코드: [KREAM 레이아웃](../05_Layout/06KREAM_LAYOUT.html)
+
+---
+
+### Grid
+
+> 행과 열을 기준으로 요소를 배치하는 레이아웃이다. 부모에 `display: grid`를 지정하고 열과 행의 구조를 정의한다. Flex는 한 방향, Grid는 행과 열 두 방향을 다룬다.
+
+<br>
+
+| **속성** | **포함되는 값** | **설명** |
+| --- | --- | --- |
+| `grid-template-columns` | 열 너비를 공백으로 나열<br>`fr`: 남은 공간의 비율<br>`repeat(횟수, 값)`: 같은 값 반복<br>`minmax(최소, 최대)`: 크기 범위<br>**auto-fit:** 들어갈 수 있는 만큼 열을 자동 생성<br>`grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));` | 열 구조 |
+| `grid-template-rows` | 행 높이를 공백으로 나열<br>`grid-template-rows: 1fr 1fr 1fr;` | 행 구조 |
+| `grid-template-areas` | 영역 이름을 행 단위 문자열로 나열<br>`grid-template-areas: 'header header' 'sidebar main';` | 영역 이름으로 배치 정의 |
+| `grid-area` | 자식에 영역 이름 지정<br>`grid-area: header;` | 자식이 차지할 영역 |
+| `justify-items` `align-items` | **center / start / end / stretch**<br>`justify-items`: 가로, `align-items`: 세로 | 셀 안에서 아이템 정렬 |
+
+<br>
+
+- 예제 코드: [Grid 기본, 영역, 반응형, 정렬](../05_Layout/05Grid.html)
+- 예제 코드: [Grid 연습](../05_Layout/05Grid_연습.html)
+
+---
+
+### 그 외
+
+<br>
+
+| **속성** | **포함되는 값** | **설명** |
+| --- | --- | --- |
+| `float` | **left:** 왼쪽으로 띄워 배치<br>**right:** 오른쪽으로 띄워 배치<br>**none:** 기본값<br>`float: left;` | 요소를 흐름에서 분리해 좌우 배치 |
+| `cursor` | **pointer:** 손가락 모양. 클릭 가능한 요소임을 표시<br>**default:** 기본 화살표<br>**not-allowed:** 금지 모양<br>`cursor: pointer;` | 마우스를 올렸을 때의 커서 모양 |
+
+<br>
+
+---
+
+<br>
+
+**Layout 요약**
+
+<aside>
+
+> display: block, inline, inline-block, none, flex, grid <br>
+Flex: 한 방향 배치 (justify-content 주축, align-items 교차축, flex-wrap 줄바꿈, flex 자식 크기) <br>
+Grid: 행과 열 배치 (grid-template-columns, grid-template-areas, fr, repeat, minmax)
+
+</aside>
+
+<br>
+
+### Link
+[MDN Flexbox](https://developer.mozilla.org/ko/docs/Learn_web_development/Core/CSS_layout/Flexbox), [MDN Grid](https://developer.mozilla.org/ko/docs/Learn_web_development/Core/CSS_layout/Grids)
