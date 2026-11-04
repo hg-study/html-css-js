@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnerHTML</title>
+    <!--
+        =======================================
+        요소 선택과 내용 변경
+        getElementById로 요소를 찾아 innerHTML로 내용 변경
+        =======================================
+    -->
+</head>
+<body>
+    <!-- document.getElementById('id') : id가 같은 요소 하나를 찾아 Element 객체로 반환 -->
+    <!-- innerHTML : 요소 안의 HTML 내용을 가져오거나 바꾼다. 태그도 인식한다 -->
+    <button onclick="document.getElementById('d1').innerHTML='<h2>abcd</h2>'">변경</button>
+    <div id="d1">HELLOWORLD</div>
+
+    <script>
+        // 요소를 변수에 담아 재사용
+        const d1El=document.getElementById('d1');
+        d1El.innerHTML='<h2>Test</h2>'
+    </script>
+</body>
+</html>

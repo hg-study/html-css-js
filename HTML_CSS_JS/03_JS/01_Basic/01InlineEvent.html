@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InlineEvent</title>
+    <!--
+        =======================================
+        HTML에 JS 직접 삽입
+        onclick 속성과 href="javascript:"로 태그 안에서 JS 실행
+        =======================================
+    -->
+</head>
+<body>
+    <!-- === button의 onclick 속성 === -->
+    <!-- onclick : 버튼을 클릭했을 때 속성 값의 JS 코드를 실행하는 인라인 이벤트 핸들러. 코드가 지저분해져 사용을 지양한다 -->
+    <!-- alert() : 브라우저 팝업창으로 메시지를 표시. \n은 줄바꿈 -->
+    <button onclick="alert('HELLOWORLD')">BTN_1</button>
+    <button onclick="alert(10+20)">BTN_2</button>
+    <button onclick="alert('HELLOWORLD\nHELLOWORLD\nHELLOWORLD')">BTN_3</button>
+
+    <!-- === a의 href === -->
+    <!-- javascript:void(0) : 링크 이동과 새로고침 없이 아무 동작도 하지 않게 하는 값 -->
+    <!-- href="javascript:코드" : 링크를 클릭하면 코드를 실행 -->
+    <a href="javascript:void(0)">BTN_1</a>
+    <a href="javascript:alert('HELLOWORLD')">BTN_2</a>
+    <a href="javascript:alert(10+30)">BTN_3</a>
+    <!-- console.log() : 개발자 도구(F12) 콘솔에 값을 출력 -->
+    <a href="javascript:console.log(obj);">BTN_4</a>
+
+    <script>
+        const obj = {"name" : "홍길동", "age" : "30", "addr": "대구"};
+    </script>
+</body>
+</html>

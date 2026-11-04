@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocumentWrite</title>
+    <!--
+        =======================================
+        document.write
+        문서에 HTML을 직접 출력
+        =======================================
+    -->
+</head>
+<body>
+    <script>
+        // document.write() : 괄호 안 내용을 페이지에 즉시 삽입. 태그도 렌더링한다. 사용을 지양한다
+        document.write('<h1>HELLO WORLD~~~</h1>');
+        document.write('<h2>HELLO WORLDㅇ.ㅇ*</h2>');
+        document.write('<h3>HELLO WORLD....</h3>');
+    </script>
+    <!-- 화면이 모두 로딩된 뒤 write를 실행하면 기존 문서가 지워지고 새로 쓴 내용만 남는다 -->
+    <button onclick="document.write('<h1>HELLO WO..</h1>')">ADD</button>
+</body>
+</html>
