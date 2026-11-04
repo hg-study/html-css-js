@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkMedia</title>
+    <!--
+        =======================================
+        link의 media 속성
+        화면 너비별 css 파일을 나누어 조건에 맞는 파일만 적용
+        =======================================
+    -->
+
+
+    <!-- DESKTOP : 조건 없이 항상 적용되는 기본 스타일 -->
+    <link rel="stylesheet" href="./css/desktop.css">
+
+    <!-- TABLET : media 속성의 조건을 만족할 때(화면 너비 1024px 이하)만 적용 -->
+    <link rel="stylesheet" href="./css/tablet.css" media="all and (max-width: 1024px)">
+
+    <!-- MOBILE : 화면 너비 480px 이하일 때 적용 -->
+    <link rel="stylesheet" href="./css/mobile.css" media="all and (max-width: 480px)">
+
+</head>
+<body>
+    <div></div>
+</body>
+</html>

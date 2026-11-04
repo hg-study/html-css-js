@@ -1,0 +1,5 @@
+/* 태블릿 : 화면 너비 1024px 이하일 때 link의 media 조건으로 적용 */
+div{
+    background-color: green;
+    height: 100px;
+}

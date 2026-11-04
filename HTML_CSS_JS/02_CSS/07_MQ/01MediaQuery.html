@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaQuery</title>
+    <!--
+        =======================================
+        미디어 쿼리 @media
+        화면 너비에 따라 스타일을 바꾸는 반응형 기본
+        =======================================
+    -->
+
+    <style>
+
+        /* 기본(데스크톱) 스타일 */
+        div {height: 150px; background-color: orange;}
+
+        /* @media 장치유형 and (조건) {} : 조건을 만족할 때만 안의 스타일을 적용 */
+        /* all : 모든 장치. max-width: 1024px : 화면 너비가 1024px 이하일 때 */
+        /* 태블릿 width: 1024 */
+        @media all and (max-width: 1024px) {
+            div{
+                background-color: green;
+                height: 100px;
+            }
+        }
+        /* 모바일 width: 480 */
+        /* 큰 조건을 먼저, 작은 조건을 나중에 작성해야 작은 화면에서 마지막 규칙이 적용된다 */
+        @media all and (max-width: 480px) {
+            div{
+                background-color: royalblue;
+                height: 50px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+</html>

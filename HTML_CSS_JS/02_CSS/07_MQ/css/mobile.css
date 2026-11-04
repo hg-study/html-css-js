@@ -1,0 +1,5 @@
+/* 모바일 : 화면 너비 480px 이하일 때 link의 media 조건으로 적용 */
+div{
+    background-color: royalblue;
+    height: 50px;
+}
