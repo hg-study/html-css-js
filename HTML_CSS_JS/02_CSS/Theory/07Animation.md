@@ -3,6 +3,7 @@
 - [transition](#transition)
 - [transform](#transform)
 - [transform 3D](#transform-3d)
+- [animation](#animation)
 
 <br>
 
@@ -70,3 +71,40 @@
 
 - 예제 코드: [perspective](../06_Animation/05Transform3D.html)
 - 예제 코드: [카드 뒤집기](../06_Animation/06Transform3D.html)
+
+---
+
+### animation
+
+> `@keyframes`로 움직임의 단계를 정의하고, `animation` 속성으로 요소에 적용한다. transition이 두 상태 사이를 전환한다면 animation은 여러 단계를 자동으로 반복 실행할 수 있다.
+
+<br>
+
+| **속성** | **포함되는 값** | **설명** |
+| --- | --- | --- |
+| `@keyframes 이름` | `from` `to` 또는 `0%` ~ `100%`<br>`@keyframes moving { from {left: 0;} to {left: 100px;} }` | 움직임의 단계를 정의 |
+| `animation-name` | `@keyframes` 이름<br>`animation-name: moving;` | 적용할 keyframes |
+| `animation-duration` | `s` `ms`<br>`animation-duration: 5s;` | 한 번 실행하는 시간 |
+| `animation-iteration-count` | 숫자<br>**infinite:** 무한 반복<br>`animation-iteration-count: infinite;` | 반복 횟수 |
+| `animation-direction` | **normal:** 기본값. 매번 처음부터 실행<br>**alternate:** 갈 때와 올 때를 번갈아 실행<br>**reverse:** 거꾸로 실행<br>`animation-direction: alternate;` | 진행 방향 |
+| `animation-timing-function` | 아래 속도 곡선 표 참고<br>`animation-timing-function: linear;` | 속도 곡선 |
+| `animation-play-state` | **running:** 기본값<br>**paused:** 일시 정지<br>`animation-play-state: paused;` | 실행, 정지 |
+
+<br>
+
+**속도 곡선**
+
+| **값** | **설명** |
+| --- | --- |
+| `ease` | 느리게 시작해 빨라지다가 느리게 끝난다. 기본값 |
+| `ease-in` | 느리게 시작해 점점 빨라진다 |
+| `ease-out` | 빠르게 시작해 점점 느려진다 |
+| `ease-in-out` | 느리게 시작해 느리게 끝난다. ease보다 가운데가 완만하다 |
+| `linear` | 처음부터 끝까지 일정한 속도 |
+
+<br>
+
+- 예제 코드: [animation 기본](../06_Animation/07Animation.html)
+- 예제 코드: [여러 요소](../06_Animation/08Animation.html)
+- 예제 코드: [keyframes 퍼센트](../06_Animation/09Animation.html)
+- 예제 코드: [속도 곡선](../06_Animation/10Animation.html)

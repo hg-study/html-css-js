@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <!--
+        =======================================
+        animation 기본
+        @keyframes로 움직임을 정의하고 animation 속성으로 적용
+        =======================================
+    -->
+
+    <style>
+        *{box-sizing: border-box ;}
+
+        body{margin: 0; padding: 0;}
+
+        div{
+            width: 400px;
+            height: 40px;
+            background-color: orange;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid black;
+        }
+
+        div:nth-child(1){
+            /* animation-name : 적용할 @keyframes 이름 */
+            animation-name: moving1;
+            /* animation-duration : 한 번 실행하는 데 걸리는 시간 */
+            animation-duration: 5s;
+            /* animation-iteration-count : 반복 횟수. infinite는 무한 반복 */
+            animation-iteration-count: infinite;
+            /* animation-direction : 진행 방향. alternate는 갈 때와 올 때를 번갈아 실행 */
+            animation-direction: alternate;        
+            /* animation-timing-function : 속도 곡선. linear는 일정한 속도 */
+            animation-timing-function: linear;
+        }
+
+        div:nth-child(2){
+            animation-name: moving2;
+
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;        
+            animation-timing-function: linear;
+
+
+        }
+
+        @keyframes moving1{
+            /* from : 시작 상태 */
+            from{margin-left: 100%;}
+            /* to : 종료 상태 */
+            to{margin-left: 0%;}
+        }
+
+        @keyframes moving2{
+            from{margin-top: 100%;}
+            to{margin-top: 0%;}
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    
+    <div>HELLO WORLD</div>
+    <div>HELLO WORLD</div>
+
+</body>
+</html>
