@@ -20,6 +20,9 @@
     - [애니메이션](#애니메이션)
     - [미디어 쿼리](#미디어-쿼리)
     - [Bootstrap](#bootstrap)
+- [03_JS](#03_js)
+    - [JS 기본](#js-기본)
+    - [자료형](#자료형)
 
 <br>
 
@@ -171,3 +174,16 @@
     - [회원가입 폼 페이지2 bs5 추가](./HTML_CSS_JS/01_HTML/20Form_only_html_bs.html)
 
 ---
+
+### 03_JS
+> JavaScript 이론 & 실습
+
+#### JS 기본
+- [JsBasic 이론](./HTML_CSS_JS/03_JS/Theory/01JsBasic.md)
+    - [HTML에 JS 직접 삽입](./HTML_CSS_JS/03_JS/01_Basic/01InlineEvent.html)
+    - [document.write](./HTML_CSS_JS/03_JS/01_Basic/02DocumentWrite.html)
+    - [getElementById, innerHTML](./HTML_CSS_JS/03_JS/01_Basic/03InnerHTML.html)
+
+#### 자료형
+- [Type 이론](./HTML_CSS_JS/03_JS/Theory/02Type.md)
+    - [typeof로 자료형 확인](./HTML_CSS_JS/03_JS/01_Basic/04Type.html)
