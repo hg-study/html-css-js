@@ -4,6 +4,7 @@
 - [transform](#transform)
 - [transform 3D](#transform-3d)
 - [animation](#animation)
+- [슬라이더와 메뉴 만들기](#슬라이더와-메뉴-만들기)
 
 <br>
 
@@ -108,3 +109,46 @@
 - 예제 코드: [여러 요소](../06_Animation/08Animation.html)
 - 예제 코드: [keyframes 퍼센트](../06_Animation/09Animation.html)
 - 예제 코드: [속도 곡선](../06_Animation/10Animation.html)
+
+---
+
+### 슬라이더와 메뉴 만들기
+
+> transition, transform, animation에 앞에서 배운 선택자(`:checked`, `~`)를 조합해 자바스크립트 없이 움직이는 요소를 만든다.
+
+<br>
+
+| **방식** | **구성** |
+| --- | --- |
+| 자동 이동 슬라이더 | 목록 전체를 감싸 `overflow: hidden` 영역 안에서 `@keyframes`로 `left`를 이동하고, `hover` 시 `animation-play-state: paused` |
+| 버튼 슬라이더 | `radio`는 숨기고 `label`을 버튼으로 사용. `:checked~.slider-wrapper`로 선택된 버튼에 따라 `left` 값을 바꾼다 |
+| 햄버거 메뉴 | `checkbox`는 숨기고 `label` 안의 `span` 3개로 선을 그린다. `:checked`일 때 선을 `rotate`, `translate`해 X로 바꾸고 `~`로 메뉴 영역을 표시한다 |
+
+<br>
+
+- 예제 코드: [사이트 메뉴](../06_Animation/04Sitemenu.html)
+- 예제 코드: [자동 슬라이더](../06_Animation/12Slider.html)
+- 예제 코드: [버튼 슬라이더](../06_Animation/13Slider.html)
+- 예제 코드: [슬라이드 3장](../06_Animation/14Slider.html)
+- 예제 코드: [쇼핑몰 메인 연습](../06_Animation/11prtc.html)
+
+<br>
+
+---
+
+<br>
+
+**Animation 요약**
+
+<aside>
+
+> transition: 두 상태 사이를 부드럽게 전환 <br>
+transform: translate, scale, rotate, skew로 모양 변형 (3D는 perspective와 rotateY) <br>
+animation: @keyframes로 단계를 정의하고 animation-* 속성으로 반복 실행
+
+</aside>
+
+<br>
+
+### Link
+[MDN CSS 애니메이션](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_animations)

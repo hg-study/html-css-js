@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider_prtc</title>
+    <!--
+        =======================================
+        쇼핑몰 메인 화면 연습
+        헤더(상단 링크, 로고와 메뉴, 카테고리), 슬라이드 영역, 배너와 상품 영역 레이아웃
+        =======================================
+    -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* header-top : 상단 보조 링크를 오른쪽으로 정렬 */
+        .header-top ul {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            padding: 8px 20px;
+            font-size: .8rem;
+        }
+        /* header-mid : 로고는 왼쪽, 메뉴는 오른쪽 끝에 배치 */
+        .header-mid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .header-mid .logo img {
+            width: 120px;
+            height: 40px;
+            background-color: lightgray;    /* 이미지 경로가 비어 있어 자리만 표시 */
+        }
+        .header-mid .head-mid-menu {
+            display: flex;
+            gap: 20px;
+            font-weight: bold;
+        }
+        /* header-nav : 카테고리 메뉴를 한 줄로 배치 */
+        .header-nav {
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+        }
+        .header-nav ul {
+            display: flex;
+            gap: 25px;
+            padding: 10px 20px;
+            font-size: .9rem;
+        }
+
+        /* slides : 큰 슬라이드 영역. 왼쪽 목록과 오른쪽 버튼을 absolute로 겹쳐 배치 */
+        .slides {
+            position: relative;     /* 자식 absolute의 기준 */
+            max-width: 1280px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        .slides>.slider {
+            width: 100%;
+            height: 100%;
+            background-color: lightgray;
+        }
+        /* btn-prev : 왼쪽에 세로로 놓이는 슬라이드 번호 목록 */
+        .slides>.btn-prev {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 110px;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, .3);
+        }
+        .slides>.btn-prev>.slid-list {
+            flex: 1;                /* 10개 항목이 높이를 균등하게 나눠 가짐 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, .4);
+        }
+        /* btn-next : 오른쪽 가운데의 둥근 버튼 */
+        .slides>.btn-next {
+            position: absolute;
+            right: 15px;
+            top: calc(50% - 20px);  /* 세로 가운데 : 50%에서 버튼 높이의 절반을 뺌 */
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, .5);
+        }
+
+        /* main : 배너와 상품 영역 */
+        main {
+            max-width: 1280px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        main>section {
+            margin-bottom: 20px;
+        }
+        main>.banner {
+            height: 150px;
+            background-color: beige;
+        }
+        main>.item1, main>.item2 {
+            height: 250px;
+            border: 1px solid lightgray;
+        }
+        /* list-slide : 하단 목록 슬라이드 영역 */
+        .list-slide {
+            max-width: 1280px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background-color: whitesmoke;
+        }
+        footer {
+            height: 100px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="layout">
+            </div>
+            <div class="header-top">
+                <ul>
+                    <li><a href="javascript:void(0)">로그인</a></li>
+                    <li><a href="javascript:void(0)">회원가입</a></li>
+                    <li><a href="javascript:void(0)">쿠폰등록</a></li>
+                    <li><a href="javascript:void(0)">스크랩</a></li>
+                    <li><a href="javascript:void(0)">고객센터</a></li>
+                </ul>
+            </div>
+            <div class="header-mid">
+                <div class="logo">
+                    <img src="이미지주소" alt="">
+                </div>
+                <div class="head-mid-menu">
+                    <a href="">건강마켓</a>
+                    <a href="">식단관리</a>
+                </div>
+            </div>
+            <div class="header-nav">
+                <ul>
+                    <li><a href="javascript:void(0)">메뉴</a></li>
+                    <li><a href="javascript:void(0)">카테고리</a></li>
+                    <li><a href="javascript:void(0)">베스트</a></li>
+                    <li><a href="javascript:void(0)">할인</a></li>
+                    <li><a href="javascript:void(0)">기획전</a></li>
+                    <li><a href="javascript:void(0)">이벤트</a></li>
+                    <li><a href="javascript:void(0)">라운지</a></li>
+                    <li><a href="javascript:void(0)">시니어관</a></li>
+                    <li><a href="javascript:void(0)">브랜드직송관</a></li>
+                    <li><a href="javascript:void(0)">무료영양진단</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="slides">
+            <div class="slider"></div>
+            <div class="btn-prev">
+                <div class="slid-list">1<img src="" alt=""></div>
+                <div class="slid-list">2<img src="" alt=""></div>
+                <div class="slid-list">3<img src="" alt=""></div>
+                <div class="slid-list">4<img src="" alt=""></div>
+                <div class="slid-list">5<img src="" alt=""></div>
+                <div class="slid-list">6<img src="" alt=""></div>
+                <div class="slid-list">7<img src="" alt=""></div>
+                <div class="slid-list">8<img src="" alt=""></div>
+                <div class="slid-list">9<img src="" alt=""></div>
+                <div class="slid-list">10<img src="" alt=""></div>
+            </div>
+            <div class="btn-next"></div>
+        </div>
+        <main>
+            <section class="banner"></section>
+            <section class="item1"></section>
+            <section class="item2"></section>
+        </main>
+        <div class="list-slide"></div>
+    </div>
+    <footer></footer>
+</body>
+</html>
