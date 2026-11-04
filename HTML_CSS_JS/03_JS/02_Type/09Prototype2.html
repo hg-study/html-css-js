@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype2</title>
+    <!--
+        =======================================
+        프로토타입 상속
+        Animal, Dog, 포메라니안 생성자 함수로 상속 구현
+        =======================================
+    -->
+</head>
+<body>
+    <script>
+
+        // ----- 상위 프로토타입 함수 ----- 
+        function Animal(name) {
+            console.log('Animal 생성자 호출!');
+            this.name = name;  //속성 추가(name)
+        }
+
+        // toString 함수 재정의(Object's toString을 Animal에서 재정의)
+        Animal.prototype.toString = function(){
+            return `Animal's toString 재정의: ${this.name}`;
+        }
+
+        const tori = new Animal("토리");
+        console.log("Animal's Object: ",tori);
+        console.log(tori.toString());
+
+        console.log("--------------");
+
+        // ----- 하위 프로토타입 함수 ----- 
+        function Dog(name, kind){
+            Animal.call(this,name); // 상위 프로토타입 생성자 호출!
+            console.log("Dog 생성자 호출!");
+            this.kind = kind; // Dog에 속성추가
+        }
+        // 상속코드 (상위 클래스 Animal <- 하위 클래스 Dog)
+        // Object.create(상위.prototype) : 상위 생성자의 prototype을 물려받는 새 prototype 생성
+        Dog.prototype=Object.create(Animal.prototype);
+
+
+        // toString 함수 재정의(Object's toString을 Dog에서 재정의)
+        Dog.prototype.toString = function(){
+            return `Dog's toString 재정의: ${this.name},${this.kind}`;
+        }
+
+        const poppi = new Dog("뽀삐", "말티즈");
+        console.log("Dog's Object: ",poppi)
+        console.log(poppi.toString());
+        
+        console.log("--------------");
+
+        // ----- 하위 프로토타입 함수 ----- 
+        function 포메라니안(name, kind, color) {
+            Dog.call(this, name, kind);
+            console.log("포메라니안 생성자 호출!");
+            this.color = color;
+        }
+
+        // 상속코드
+        포메라니안.prototype=Object.create(Dog.prototype);
+
+        // toString 함수 재정의(Object's toString을 Dog에서 재정의)
+        포메라니안.prototype.toString = function(){
+            return `포메라니안's toString 재정의: ${this.name},${this.kind},${this.color}`;
+        }
+
+        const dog1 = new 포메라니안("콩","포메라니안","검정")
+        console.log(dog1);
+        console.log(dog1.toString());
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
