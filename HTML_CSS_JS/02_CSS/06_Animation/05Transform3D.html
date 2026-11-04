@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform3D</title>
+    <!--
+        =======================================
+        transform 3D
+        perspective로 원근감을 주고 Y축 회전
+        =======================================
+    -->
+</head>
+
+    <style>
+        *{box-sizing: border-box;}
+        body{
+            margin: 0; 
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+
+        .container>.item{
+            width: 100px;
+            height: 100px;
+            background-color: royalblue;
+            transition: 2s;
+        }
+
+        .container:hover>.item{
+            /* perspective(거리) : 원근감을 주는 시야 거리. 작을수록 왜곡이 크다 */
+            /* rotateY(각도) : Y축을 기준으로 회전 */
+            transform: perspective(50px) rotateY(180deg);
+
+        }
+
+    </style>
+
+<body>
+    
+    <div class="container">
+        <div class="item"></div>
+    </div>
+
+
+
+
+</body>
+</html>

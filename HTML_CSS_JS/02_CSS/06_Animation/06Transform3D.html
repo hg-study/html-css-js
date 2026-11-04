@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform3D2</title>
+    <!--
+        =======================================
+        transform 3D 카드 뒤집기
+        앞면과 뒷면이 있는 카드를 hover 시 Y축으로 회전
+        =======================================
+    -->
+
+    <style>
+        *{box-sizing: border-box;}
+
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+        .container{
+            width: 150px;
+            height: 150px;
+            border: 1px solid;
+            position: relative;
+            perspective: 1000px;    /* 자식 요소에 원근감 부여 */
+        }
+        .item{
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform-style: preserve-3d;   /* 자식 요소의 3D 변형을 유지 */
+            transition: 2s;
+        }
+        .item>.front, .item>.back{
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            left: 0;
+            top: 0;  
+            
+            backface-visibility: hidden;    /* 뒤집혀 뒷면이 보일 때 해당 면을 숨김 */
+        }
+        .item>.front{
+            background-color: orange;
+            
+
+        }
+        .item>.back{
+            background-color: royalblue;
+            transform: rotateY(180deg);     /* 뒷면은 미리 180도 돌려 두어 카드가 뒤집히면 정면으로 보이게 함 */
+        }
+
+        .container:hover>.item{
+            transform: rotateY(180deg);
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+    
+    <!-- .container>.item>.front+.back -->
+     
+    <div class="container">
+        <div class="item">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+    </div>
+
+</body>
+</html>

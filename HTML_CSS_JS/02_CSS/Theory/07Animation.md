@@ -2,6 +2,7 @@
 
 - [transition](#transition)
 - [transform](#transform)
+- [transform 3D](#transform-3d)
 
 <br>
 
@@ -48,3 +49,24 @@
 <br>
 
 - 예제 코드: [transform](../06_Animation/03Transform.html)
+
+---
+
+### transform 3D
+
+> 원근감(`perspective`)을 주고 X, Y축을 기준으로 회전해 입체감을 만든다. 카드 뒤집기처럼 앞면과 뒷면이 있는 요소에 쓴다.
+
+<br>
+
+| **속성** | **포함되는 값** | **설명** |
+| --- | --- | --- |
+| `perspective` | `px`<br>작을수록 왜곡이 크다<br>부모에 지정하면 자식 전체에 적용, `transform: perspective(50px)`로 요소 단위 지정 가능 | 원근감을 주는 시야 거리 |
+| `rotateY(각도)` `rotateX(각도)` | `deg`<br>`transform: rotateY(180deg);` | Y축, X축을 기준으로 회전 |
+| `transform-style` | **flat:** 기본값<br>**preserve-3d:** 자식 요소의 3D 변형을 유지<br>`transform-style: preserve-3d;` | 자식의 3D 공간 유지 여부 |
+| `backface-visibility` | **visible:** 기본값<br>**hidden:** 뒤집혀 뒷면이 보일 때 숨김<br>`backface-visibility: hidden;` | 뒷면 표시 여부 |
+| `transform-origin` | `center` `top` `left` `px` `%`<br>`transform-origin: center;` | 변형의 기준점 |
+
+<br>
+
+- 예제 코드: [perspective](../06_Animation/05Transform3D.html)
+- 예제 코드: [카드 뒤집기](../06_Animation/06Transform3D.html)
