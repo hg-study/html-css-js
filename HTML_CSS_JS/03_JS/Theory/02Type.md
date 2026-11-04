@@ -59,3 +59,44 @@ console.log(typeof function(){}) // "function"
 <br>
 
 <span style="color:gray">함수 밖에서 선언하면 모두 전역 스코프가 된다. 스코프와 호이스팅은 Function에서 다룬다.</span>
+
+<br>
+
+---
+
+### 리터럴과 보간법
+
+> 리터럴은 특정 자료형의 값을 코드에 직접 쓴 고정 데이터다. 보간법은 백틱 문자열 안에서 변수나 식을 `${}`로 삽입하는 기능이다.
+
+<br>
+
+| **구분** | **설명** |
+| --- | --- |
+| 리터럴(Literal) | 이름(식별자) 없이 값 자체를 쓴 것. `10`, `"abc"`, `true` |
+| 객체 리터럴 | 중괄호로 속성을 나열해 객체를 만드는 표기법. `{owner: "홍길동"}` |
+| 보간법 | `` `TEST: ${str1} / ${10 + 20}` `` 처럼 변수, 산술식, 비교식, 함수 호출 결과를 문자열에 삽입. 백틱에서만 가능 |
+
+<br>
+
+- 예제 코드: [보간법](../02_Type/01Interpolation.html)
+
+<br>
+
+---
+
+<br>
+
+**Type 요약**
+
+<aside>
+
+> 원시 타입: Number, String, Boolean, null, undefined, Symbol, BigInt / 참조 타입: Object <br>
+null: 의도한 빈 값, undefined: 값이 할당되지 않음 <br>
+const 기본, 값이 바뀌면 let, var는 지양
+
+</aside>
+
+<br>
+
+### Link
+[MDN 자료형](https://developer.mozilla.org/ko/docs/Web/JavaScript/Data_structures)

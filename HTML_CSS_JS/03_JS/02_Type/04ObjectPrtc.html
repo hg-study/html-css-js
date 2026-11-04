@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ObjectPrtc2</title>
+    <!--
+        =======================================
+        객체 연습 : 현실의 사물을 객체로 표현
+        카페, 은행 계좌, 도서관, 주차장을 속성과 기능으로 정의하고 콘솔로 확인
+        =======================================
+    -->
+</head>
+<body>
+    <h1>
+        la
+    </h1>
+    <script>
+        /*
+            ---------------------------------
+            카페를 객체로 표현해보세요.
+            ---------------------------------
+            **조건**
+            - 속성 : 카페이름, 사장이름, 아메리카노재고(50으로 초기화), 라떼재고(30으로 초기화), 매출(0으로 초기화)
+            - 기능
+            - `sellAmericano()` → 아메리카노재고 -1, 매출 +2000, 콘솔에 현재 재고와 매출 출력
+            - `sellLatte()` → 라떼재고 -1, 매출 +3000, 콘솔에 현재 재고와 매출 출력
+            - `restock()` → 아메리카노재고 +50, 라떼재고 +30, 콘솔에 `"재입고 완료"` 출력
+            - `toString()` → 전체 속성 콘솔 출력
+        */
+        // 객체 리터럴 : {속성: 값, 메서드: function(){}} 형태로 객체를 정의. 메서드 안의 this는 해당 객체를 가리킨다
+        const cafe = {
+            // 속성
+            cafeName: "모카하우스",
+            owner: "홍길동",
+            americanoStock: 50,
+            latteStock: 30,
+            sales: 0,
+            // 기능
+            sellAmericano: function () {
+                this.americanoStock -= 1;
+                this.sales += 2000;
+                console.log(`아메리카노 재고: ${this.americanoStock} | 매출: ${this.sales}`);
+            },
+            sellLatte: function () {
+                this.latteStock -= 1;
+                this.sales += 3000;
+                console.log(`라떼 재고: ${this.latteStock} | 매출: ${this.sales}`);
+            },
+            restock: function () {
+                this.americanoStock += 50;
+                this.latteStock += 30;
+                console.log("재입고 완료");
+            },
+            toString: function () {
+                console.log(this.cafeName, this.owner, this.americanoStock, this.latteStock, this.sales);
+            }
+        };
+        // 메서드 호출 : 객체명.메서드명()
+        cafe.sellAmericano();
+        cafe.sellLatte();
+        cafe.restock();
+        cafe.toString();
+        console.log("-------------------------");
+
+        /*
+            ---------------------------------
+            은행 계좌를 객체로 표현해보세요.
+            ---------------------------------
+            **조건**
+            - 속성 : 은행명, 예금주, 잔액(50000으로 초기화), 계좌번호
+            - 기능
+            - `deposit(amount)` → 잔액 +amount, 콘솔에 `"입금완료 | 현재잔액 : (잔액)"` 출력
+            - `withdraw(amount)` → 잔액 -amount, 콘솔에 `"출금완료 | 현재잔액 : (잔액)"` 출력
+            - `toString()` → 은행명, 예금주, 잔액 콘솔 출력
+        */
+        const account = {
+            bankName: "대구은행",
+            owner: "홍길동",
+            balance: 50000,
+            accountNumber: "123-456-7890",
+            // 매개변수(amount) : 메서드를 호출할 때 전달받는 값
+            deposit: function (amount) {
+                this.balance += amount;
+                console.log(`입금완료 | 현재잔액 : ${this.balance}`);
+            },
+            withdraw: function (amount) {
+                this.balance -= amount;
+                console.log(`출금완료 | 현재잔액 : ${this.balance}`);
+            },
+            toString: function () {
+                console.log(this.bankName, this.owner, this.balance);
+            }
+        };
+        account.deposit(10000);
+        account.withdraw(5000);
+        account.toString();
+        console.log("-------------------------");
+
+        /*
+            ---------------------------------
+            도서관을 객체로 표현해보세요.
+            ---------------------------------
+            **조건**
+            - 속성 : 도서관명, 사서이름, 보유도서수(200으로 초기화), 대출중인도서수(0으로 초기화)
+            - 기능
+            - `rent()` → 보유도서수 -1, 대출중인도서수 +1, 콘솔에 현재 현황 출력
+            - `returnBook()` → 보유도서수 +1, 대출중인도서수 -1, 콘솔에 현재 현황 출력
+            - `toString()` → 도서관명, 사서이름, 보유도서수, 대출중인도서수 콘솔 출력
+        */
+        const library = {
+            libraryName: "중앙도서관",
+            librarian: "김사서",
+            bookCount: 200,
+            rentedCount: 0,
+            rent: function () {
+                this.bookCount -= 1;
+                this.rentedCount += 1;
+                console.log(`보유도서: ${this.bookCount} | 대출중: ${this.rentedCount}`);
+            },
+            returnBook: function () {
+                this.bookCount += 1;
+                this.rentedCount -= 1;
+                console.log(`보유도서: ${this.bookCount} | 대출중: ${this.rentedCount}`);
+            },
+            toString: function () {
+                console.log(this.libraryName, this.librarian, this.bookCount, this.rentedCount);
+            }
+        };
+        library.rent();
+        library.rent();
+        library.returnBook();
+        library.toString();
+        console.log("-------------------------");
+
+        /*
+            ---------------------------------
+            주차장을 객체로 표현해보세요.
+            ---------------------------------
+            **조건**
+            - 속성 : 주차장이름, 관리자이름, 전체주차면(50으로 초기화), 현재주차대수(0으로 초기화), 누적수익(0으로 초기화)
+            - 기능
+            - `parkIn()` → 현재주차대수 +1, 누적수익 +1000, 콘솔에 `"입차완료 | 현재주차 : (대수)대"` 출력
+            - `parkOut()` → 현재주차대수 -1, 콘솔에 `"출차완료 | 현재주차 : (대수)대"` 출력
+            - `toString()` → 전체 속성 콘솔 출력
+        */
+        const parking = {
+            parkingName: "역앞주차장",
+            manager: "박관리",
+            totalSpace: 50,
+            carCount: 0,
+            income: 0,
+            parkIn: function () {
+                this.carCount += 1;
+                this.income += 1000;
+                console.log(`입차완료 | 현재주차 : ${this.carCount}대`);
+            },
+            parkOut: function () {
+                this.carCount -= 1;
+                console.log(`출차완료 | 현재주차 : ${this.carCount}대`);
+            },
+            toString: function () {
+                console.log(this.parkingName, this.manager, this.totalSpace, this.carCount, this.income);
+            }
+        };
+        parking.parkIn();
+        parking.parkIn();
+        parking.parkOut();
+        parking.toString();
+    </script>
+</body>
+</html>
