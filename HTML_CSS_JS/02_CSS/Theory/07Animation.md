@@ -1,0 +1,50 @@
+# Animation
+
+- [transition](#transition)
+- [transform](#transform)
+
+<br>
+
+---
+
+### transition
+
+> 속성 값이 바뀔 때 변화를 즉시 보여주지 않고 지정한 시간 동안 부드럽게 전환한다. `:hover` 같은 상태 변화와 함께 쓴다.
+
+<br>
+
+| **속성** | **포함되는 값** | **설명** |
+| --- | --- | --- |
+| `transition` | `시간` (예: `.5s`, `200ms`)<br>`속성 시간 속도 지연` 순으로 함께 지정 가능<br>`transition: .3s;` | 속성 변화에 걸리는 시간 |
+
+<br>
+
+<span style="color:gray">기본 상태에 쓴 시간은 원래대로 돌아올 때, `:hover` 상태에 쓴 시간은 `hover`가 시작될 때 적용된다.</span>
+
+<br>
+
+- 예제 코드: [transition 기본](../06_Animation/01Transition.html)
+- 예제 코드: [transition 활용](../06_Animation/02Transition.html)
+
+---
+
+### transform
+
+> 요소를 이동, 확대, 회전, 기울인다. 요소가 차지하는 공간(문서 흐름)에는 영향을 주지 않고 화면에 그려지는 모양만 바뀐다.
+
+<br>
+
+| **함수** | **포함되는 값** | **설명** |
+| --- | --- | --- |
+| `translate(x, y)` | `px` `%`<br>`translateX()` `translateY()`는 한 방향만 이동<br>`transform: translate(200px, 100px);` | 위치 이동 |
+| `scale(x, y)` | 배율 (1이 원래 크기)<br>`transform: scale(2, 2);` | 크기 조정 |
+| `rotate(각도)` | `deg`<br>`transform: rotate(270deg);` | 회전 |
+| `skew(각도)` | `deg`<br>`transform: skew(30deg);` | 기울이기 |
+
+<br>
+
+<span style="color:gray">여러 변형은 공백으로 나열해 한 번에 적용한다. `transform: translate(850px, 850px) scale(2,2) rotate(270deg);`</span>
+
+<br>
+
+- 예제 코드: [transform](../06_Animation/03Transform.html)

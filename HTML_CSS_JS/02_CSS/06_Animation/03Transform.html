@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <!--
+        =======================================
+        transform 변형
+        위치 이동, 크기, 회전, 기울이기를 hover 시 적용
+        =======================================
+    -->
+
+    <style>
+
+        .parent{
+            width: 1000px;
+            height: 1000px;
+            border: 1px solid;
+        }
+
+        .parent>.son{
+            width: 150px;
+            height: 150px;
+            background-color: orange;
+            transition: .7s;
+        }
+
+        .parent:hover>.son{
+            /* transform : 요소를 변형. 문서 흐름에는 영향을 주지 않는다 */
+            /* translate(x, y) : 위치 이동 */
+            /* transform: translate(200px, 100px);
+            transform: translateX(850px);
+            transform: translateY(850px); */
+            
+            /* scale(x, y) : 크기 조정 */
+            /* transform: scale(2,2); */
+            
+            /* rotate(각도) : 회전 */
+            /* transform: rotate(270deg); */
+
+            /* skew(각도) : 기울이기 */
+            /* transform: skew(30deg); */
+
+            /* 동시 적용 : 공백으로 여러 함수를 나열 */
+            transform: translate(850px, 850px) scale(2,2) rotate(270deg);
+        
+        }
+
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="parent">
+        <div class="son"></div>
+    </div>
+
+
+</body>
+</html>
