@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TablePrtc</title>
+    <!--
+        =======================================
+        표 만들기 연습
+        행과 열 개수를 입력해 표를 만들고 클릭한 셀을 선택 표시
+        =======================================
+    -->
+    <style>
+        td {
+            width: 50px;
+            height: 50px;
+            border: 1px solid gray;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        input {
+            width: 90%;
+            height: 100%;
+            outline: none;
+            border: 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <input id="rownum" placeholder="행의개수입력" style="width:200px;">
+    <input id="colnum" placeholder="열의개수입력" style="width:200px;">
+    <button onclick="makemap()">생성</button>
+    <hr>
+    <table id="tbl">
+        <tbody>
+            
+        </tbody>
+    </table>
+    <script>
+
+        //State 
+        let curRow = 0;
+        let curCol = 0;
+        let selectedNode = null;
+    
+        const selectedStyle = (curRow, curCol) => {
+            // click color 
+            const selectedNode = document.querySelector(`[data-row="${curRow}"][data-col="${curCol}"]`);
+            selectedNode.style.color = "white";
+            selectedNode.style.backgroundColor = "gray";
+        }
+
+        const deSelectedStyle = (node) => {
+            node.style.color="black";
+            node.style.backgroundColor="white";
+        }
+
+        
+        // 행, 열 개수를 입력받아 표를 만드는 함수. 만들 때마다 기존 표를 지우고 새로 만든다
+        const makemap = () => {
+            // input row/col 확인
+            const row = document.querySelector('#rownum').value;    // tr 개수
+            const col = document.querySelector('#colnum').value;    // td 개수
+            const tbodyEl = document.querySelector('#tbl tbody');
+            
+            // 기존 표 삭제
+            while(tbodyEl.firstChild){
+                tbodyEl.removeChild(tbodyEl.firstChild);
+            }
+
+            // 표 생성
+            for(let i=0; i<row; i++){
+                const trEl = document.createElement('tr');
+                for(let j=0; j<col; j++){
+                    const tdEl = document.createElement('td');
+
+                    // 클릭 이벤트 추가
+                    // 셀을 클릭하면 이전에 선택한 셀의 스타일을 되돌리고 클릭한 셀을 선택 스타일로 바꾼다
+                    tdEl.addEventListener('click',(e)=>{
+                        // console.log('clicked...',e);
+                        // dataset : data-* 속성(data-row, data-col)을 객체로 읽는다
+                        const dataSet = tdEl.dataset;
+                        //console.log('dataSet :>> ', dataSet);
+                        const clickedRow = dataSet.row;
+                        const ClickedCol = dataSet.col;
+                        console.log('row',clickedRow,'col',ClickedCol);
+
+                        if (selectedNode==null){        // 초기상태
+                        
+                        }else{
+                            // 기존 선택 노드 스타일 원래대로
+                            deSelectedStyle(selectedNode);
+                        }
+                        
+                        // 클릭 위치(row, col) 스타일 지정
+                        selectedStyle(clickedRow,ClickedCol);
+                        
+                        // 클릭한 위치 노드
+                        selectedNode=tdEl;
+
+                    })
+                    // 번호 추가
+                    tdEl.innerHTML=`[${i},${j}]`;
+                    //
+                    tdEl.setAttribute('data-row',i);
+                    tdEl.setAttribute('data-col',j);
+                    trEl.appendChild(tdEl);
+                }
+                tbodyEl.appendChild(trEl);
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>
