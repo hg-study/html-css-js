@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+    <!--
+        =======================================
+        노드 탐색
+        id, class, 태그, 선택자로 요소를 찾아 스타일 변경
+        =======================================
+    -->
+
+    <style>
+
+
+
+    </style>
+
+</head>
+<body>
+    <ul>
+        <li>LIST_1</li>
+        <li id="li2">LIST_2</li>
+        <li class="item">LIST_3</li>
+        <li>LIST_4</li>
+        <li id="li5">LIST_5</li>
+        <li>LIST_6</li>
+        <li>LIST_7</li>
+        <li class="item">LIST_8</li>
+        <li class="item">LIST_9</li>
+        <li class="item">LIST_10</li>
+    </ul>
+
+    <script>
+
+        // 노드 탐색
+        // id
+        const li2El = document.getElementById('li2')
+        li2El.style.fontSize="2rem"  // font-size가 본 명칭이나 자바는 소문자X fontSize  
+        // setAttribute("속성", 값) : 요소의 속성을 지정. style 속성을 통째로 바꾼다
+        li2El.setAttribute("style","color:red; background-color: black; ")
+
+        // selector
+        const li2El_2 = document.querySelector('#li2');
+        li2El_2.style.width= "200px";
+        li2El_2.style.border= "1px solid";
+        
+        const itemEl = document.querySelector('.item'); // 제일 처음 하나만 검색
+        itemEl.style.color="green";
+        itemEl.style.fontWeight="800";
+
+        const itemsEl = document.querySelectorAll('.item'); // 같은 모든 것 검색
+        console.log('itemsEl :>> ', itemsEl);
+        itemsEl.forEach(item => {
+            item.style.backgroundColor="orange";
+        });
+
+        // tagname
+        let liEls = document.getElementsByTagName('li');
+        // 배열화ㅡ 과정
+        console.log('liEls :>> ', liEls); // 유사 배열. 배열화 작업 필요
+        console.log(Object.entries(liEls)); // 배열화(인덱스도 배열에 들어가 불편)
+        console.log(Array.from(liEls)); // 배열화(목록만 배열에 포함. 추천)
+
+        liEls = Array.from(liEls);
+        liEls.forEach((item) => {
+            item.style.fontSize="2rem";
+        })
+    </script>
+</body>
+</html>

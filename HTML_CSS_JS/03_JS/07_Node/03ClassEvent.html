@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassEvent</title>
+    <!--
+        =======================================
+        class 추가와 제거
+        mouseover, mouseleave 이벤트로 버튼마다 다른 색 class 적용
+        =======================================
+    -->
+        <style>
+        .btn{
+            padding :10px 20px;
+            margin : 5px;
+            border : 1px solid lightgray;
+            border-radius: 5px;
+            transition:.5s;
+            cursor:pointer;
+            min-width:100px;
+            display:inline-block;
+            text-align:center;
+        }
+        .btn--style1{background-color: red;color:white;}
+        .btn--style2{background-color: orange;color:white;}
+        .btn--style3{background-color: yellow;color:white;}
+        .btn--style4{background-color: green;color:white;}
+        .btn--style5{background-color: blue;color:white;}
+        .btn--style6{background-color: navy;color:white;}
+        .btn--style7{background-color: blueviolet;color:white;}
+        .btn--style8{background-color: black;color:white;}
+    </style>
+</head>
+
+<body>
+
+    <div class="btn">1_Button</div>
+    <div class="btn">2_Button</div>
+    <div class="btn">3_Button</div>
+    <div class="btn">4_Button</div>
+    <div class="btn">5_Button</div>
+    <div class="btn">6_Button</div>
+    <div class="btn">7_Button</div>
+    <div class="btn">8_Button</div>
+
+
+    <script>
+
+        const btnEls = document.querySelectorAll('.btn');  // 모든 btn 찾기
+        btnEls.forEach((btnEl,idx) => {  // idx: 인덱스 번호
+            console.log(idx, btnEl);
+            // idx는 0부터 시작하고 class는 btn--style1부터 있으므로 idx + 1로 맞춘다
+            btnEl.addEventListener('mouseover',() => {  // mouseover: 마우스 커서를 요소 위에 올렸을 때 발생하는 이벤트 
+                btnEl.classList.add(`btn--style${idx+1}`);    // 색상 스타일 add
+                
+            })
+            btnEl.addEventListener('mouseleave',() => {     // mouseleave: 마우스 커서가 요소 밖으로 벗어날 때 발생하는 이벤트
+                btnEl.classList.remove(`btn--style${idx+1}`);     // 색상 스타일 remove
+            })
+        })
+        
+
+    </script>
+
+</body>
+
+</html>
