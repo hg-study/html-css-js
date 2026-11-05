@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckEvent</title>
+    <!--
+        =======================================
+        체크 이벤트
+        체크박스의 change 이벤트와 checked 값
+        =======================================
+    -->
+</head>
+<body>
+
+    <div class="chk-block">
+        <input type="checkbox" id="chk">
+        <label for="chk">체크박스</label>
+    </div>
+
+    <script>
+        const chkEl = document.querySelector('#chk');
+        // change : 체크 상태가 바뀔 때 발생. e.target.checked는 체크 여부(true, false)
+        chkEl.addEventListener('change',(e)=>{
+            console.log('e.target.value :>> ', e.target.value);
+            console.log('e.target.checked :>> ', e.target.checked);  // TF
+            if (e.target.checked){
+                document.querySelector('.chk-block label').style.color='blue';
+            }else{
+                document.querySelector('.chk-block label').style.color='black';
+                
+            }
+        })
+
+    </script>
+
+</body>
+</html>
+
