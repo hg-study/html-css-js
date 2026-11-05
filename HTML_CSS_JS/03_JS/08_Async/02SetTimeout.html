@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTimeout</title>
+    <!--
+        =======================================
+        setTimeout
+        지정한 시간 뒤에 한 번 실행하고 clearTimeout으로 취소
+        =======================================
+    -->
+
+    <style></style>
+
+</head>
+<body>
+   
+    <button onclick="start()">예약실행</button>
+    <button onClick="stop()">예약취소</button>
+    <hr>
+    <div class="d1"></div>
+
+    <script>
+
+        let id = null;
+
+        const start = () => {
+            const d1E1 = document.querySelector('.d1');
+            // setTimeout(콜백, 시간) : 지정한 시간(ms) 뒤에 콜백을 한 번 실행하고 id를 반환
+            id = setTimeout(() => {
+                d1E1.innerHTML="SETTIMEOUT RESULT..";
+            }, 3000);
+            console.log('id :>> ', id);
+        }
+        const stop = () => {
+            // clearTimeout(id) : 예약한 setTimeout을 취소
+            clearTimeout(id);
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyncAsync</title>
+    <!--
+        =======================================
+        동기와 비동기 실행 순서
+        메인 스레드 반복문과 setTimeout 비동기 함수의 실행 순서 비교
+        =======================================
+    -->
+</head>
+<body>
+    <script>
+        
+        // 메인스레드에서의 반복문
+        for(let i=0; i<10; i++){
+            console.log('main thread... for i :>> ', i);
+        }
+        console.log("첫번째 for문 종료...");
+        console.log("----------------------------");
+        
+        // 비동기 함수
+        // 스레드 분할 처리- 실제로 js에서는 싱글스레드만 지원/구조적으로 스레드 분할 불가
+        // 즉, 한 번에 하나의 작업만 순차적으로 처리
+        setTimeout(() => {  // Timeout: 특정 시간 실행
+            for(let i=0; i<10; i++){
+                console.log('Async thread... for i :>> ', i);
+            }
+            console.log("두번째 for문 종료...");
+            console.log("----------------------------");
+        }, 1); // 밀리 세컨드(1/1000초) 단위 계산
+        
+        // 메인스레드에서의 반복문
+        for(let i=0; i<10; i++){
+            console.log('main2 thread... for i :>> ', i);
+        }
+        console.log("세번째 for문 종료...");    
+        console.log("----------------------------");
+        
+
+    </script>
+</body>
+</html>
