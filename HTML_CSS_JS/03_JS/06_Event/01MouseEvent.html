@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MouseEvent</title>
+    <!--
+        =======================================
+        마우스 이벤트
+        click, mouseenter, mouseleave, mouseover, dblclick, contextmenu와 파일 드래그 앤 드롭
+        =======================================
+    -->
+</head>
+
+    <style>
+
+        div{
+            width: 300px;
+            height: 200px;
+            border: 1px solid;
+            font-size: 1.5rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div{display:none}
+        div.d3{border: 10px solid gray;}
+        div.d4{
+            border: 5px dashed gray;
+            display: flex; 
+            position: relative;
+            color: gray; 
+            width: 90vw;
+            height: 500px;
+            margin: 0 auto;
+        }
+
+        div.d4::after{
+            content: '+'; 
+            margin: auto;
+            font-size: 3rem;}
+        
+        div.preview{
+            display: block;
+            width: 90vw;
+            height: auto;
+            min-height: 200px;
+            border: 1px solid;
+            margin: 10px auto;
+        }
+        div.preview>img{
+            max-width: 150px;
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            margin: 0 5px;
+        }
+    </style>
+
+<body>
+
+    <div class="d1">
+        <span>[ 0 💌 ]</span>
+        </div>
+    <hr>
+    <div class="d2">click!</div>
+    <hr>
+    <div class="d3"></div>
+    <hr>
+    <div class="d4"></div>
+    <hr>
+    <div class="preview"></div>
+  
+
+    <script>
+        /*  
+            mouseenter  : 마우스 포인터가 특정영역내로 진입시
+            mouseover   : 마우스 포인터가 특정영역내에 머무를시
+            mouseleave  : 마우스 포인터가 특정영역밖으로 나갈때
+            click       : 마우스 1회 클릭
+            dblclick    : 마우스 2회 클릭
+            contextmenu : 마우스 우클릭
+        */
+
+        const d1El = document.querySelector('.d1');
+        var cnt = 0;
+        // addEventListener("이벤트", 콜백) : 요소에 이벤트가 발생했을 때 실행할 함수를 등록
+        d1El.addEventListener('click', (e) => {
+            console.log(e);
+            cnt++;
+            d1El.querySelector('span').innerHTML= `[ ${cnt} 💌 ]` ;
+        });
+
+
+
+        // 클로저 함수
+        function clickHandler() {
+            // 상태 변수
+            let cnt = 0;
+            // Setter
+            function setCnt(n){
+                if(n==null || n == undefined)
+                    cnt++;
+                else cnt = n;
+            }
+            // Getter
+            function getCnt(){
+                return cnt;
+            }
+            //
+            return {"setCnt":setCnt, "getCnt":getCnt};
+        }
+
+        const clickFuncs = clickHandler();
+
+        // d2El
+        const d2El = document.querySelector('.d2');
+        d2El.addEventListener('click',(e)=>{
+            clickFuncs.setCnt()
+            d2El.innerHTML=`<h2>${clickFuncs.getCnt()} ❗</h2>`;
+        })
+        
+        // d3El
+        const d3El = document.querySelector('.d3');
+        d3El.addEventListener('mouseenter',()=>{d3El.innerHTML='<h3>mouseenter</h3>'})
+        d3El.addEventListener('mouseleave',()=>{d3El.innerHTML='<h3>mouseleave</h3>'})
+        d3El.addEventListener('mouseover',()=>{d3El.innerHTML='<h3>mouseover</h3>'})
+        d3El.addEventListener('dblclick',()=>{d3El.innerHTML='<h3>dblclick</h3>'})
+        d3El.addEventListener('contextmenu',(e)=>{d3El.innerHTML='<h3>contextmenu</h3>';e.preventDefault();})
+        
+        
+
+        /*
+            // 요소 자체가 드래그될 때
+            dragstart   :   드래그 시작(마우스를 끌어당길때의 시작점)
+            dragend     :   드래그 종료
+            drag        :   드래그 중
+
+            // 드래그된 요소가 해당 위치에 접근할 때 (파일 드래그해 놓을 때)
+            dragenter   :   드래그가 대상 영역 위로 이동시(요소가 드랍의 대상이 될때)
+            dragover    :   드래그가 대상 영역 위에 있는 동안(요소가 드랍의 대상이 될때)
+            dragleave   :   드래그가 대상 영역에서 벗어날때(요소가 드랍의 대상이 될때)
+            drop        :   드랍(끌어온 마우스의 왼쪽PUSH상태->손을 뗀경우)
+            */
+           
+           // 파일을 드래그해 올리면 미리보기 : preventDefault()로 브라우저 기본 동작(파일 열기)을 막는다
+           const d4El = document.querySelector('.d4');
+           d4El.addEventListener("dragenter",(e)=>{e.preventDefault(); console.log("dragenter")});
+           
+           d4El.addEventListener("dragover",(e)=>{
+                e.preventDefault(); 
+                console.log("dragover");
+                d4El.style.border="5px dashed lightgray";
+                d4El.style.color="lightgray";  
+            });
+
+
+           d4El.addEventListener("dragleave",(e)=>{
+                e.preventDefault(); 
+                console.log("dragleave");
+                d4El.style.border="5px dashed gray";
+                d4El.style.color="gray";
+                
+            });
+
+            // 유효성 검증
+            function isValid(file){
+
+                // file mime-type이 image/* 검증
+                // console.log(file.type);
+                if(!file.type.startsWith('image/')){
+                    alert("이미지 파일만 업로드 가능합니다.");
+                    return false;
+                }
+
+                // file size가 1MB(1024byte*1024byte) 이하 검증
+                // console.log(file.size);
+                if(file.size >= (1024*1024)){
+                    alert("파일 1개 당 허용 사이즈는 1MB 입니다.");
+                    return false;
+                }
+                return true;
+            }
+
+
+           d4El.addEventListener("drop",(e)=>{
+            e.preventDefault(); 
+            console.log("drop");
+            // console.log(e);
+            // console.log(e.dataTransfer);
+            // console.log(e.dataTransfer.files);
+            // dataTransfer.files : 드롭한 파일 목록. URL.createObjectURL(file)은 파일을 화면에 표시할 임시 주소로 변환
+            const files = e.dataTransfer.files;
+
+            // preview
+            const previewEl = document.querySelector('.preview');
+
+
+            for (let i=0 ; i<files.length ; i++){
+                if(!isValid(files[i])){
+                    return;
+                }
+
+                const newImgEl = document.createElement('img');
+                newImgEl.src= URL.createObjectURL(files[i]);
+                previewEl.appendChild(newImgEl);
+            }
+
+        });
+           
+           
+           </script> 
+
+</body>
+</html>
