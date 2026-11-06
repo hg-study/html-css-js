@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RestaurantChart</title>
+    <!--
+        =======================================
+        음식 종류별 맛집 차트
+        공공데이터(중구 맛집)를 reduce로 음식 종류별로 집계해 막대 차트로 표시
+        =======================================
+    -->
+    <script src="./js/JungguRestaurant.js"></script>
+</head>
+
+<body style="display:flex;justify-content: center;align-items: center;height:100vh;">
+    <div style="width:800px;height:500px;">
+        <canvas id="myChart"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // console.log("중구맛집",중구맛집);
+        // 중구맛집.js에서 불러온 변수 중구맛집의 data 배열(음식점 목록)
+        const 중구맛집_data = 중구맛집.data;
+        // console.log("dataArray",dataArray);
+
+        // reduce로 음식 종류(FD_CS)별 개수를 집계 -> {종류: 개수}
+        const catList =
+            중구맛집_data.reduce((catList, item) => {
+                // console.log('reduce',item.FD_CS);
+                catList[item.FD_CS] = (catList[item.FD_CS] == undefined) ? 1 : catList[item.FD_CS] + 1
+                // console.log('reduce',catList);
+                return catList;
+            }, {})
+        
+        console.log( Object.keys(catList));
+
+
+        //차트 구현
+        const ctx = document.getElementById('myChart');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(catList),
+                datasets: [{
+                    label: '음식점 수',
+                    data: Object.values(catList),
+                    borderWidth: 1,
+                    backgroundColor : ['red','orange']
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

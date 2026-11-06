@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrimeSum</title>
+    <!--
+        =======================================
+        범죄 대분류별 합계
+        지역별 범죄 건수 데이터를 reduce로 범죄 대분류별 합계로 집계
+        =======================================
+    -->
+
+    <script src="./js/PoliceCrimeByRegion.js"> </script>
+</head>
+<body>
+    
+
+    <script>
+        // console.log(지역별범죄건수);
+
+        // 지역별범죄건수.js의 변수. 모든 지역의 건수를 범죄 대분류별로 합산
+        const result = 
+        지역별범죄건수.reduce((resultObject,item)=>{
+            // 구조 분해 : 대분류와 중분류를 꺼내고 나머지(지역별 건수)는 rest 객체로 받는다
+            const {범죄대분류,범죄중분류, ...rest} = item;
+            const values = Object.values(rest);
+            const item_sum = values.reduce((sum,count)=>{return sum+count;},0);
+
+            // console.log(범죄대분류,item_sum);
+            // return {범죄대분류,item_sum}
+            if(resultObject[범죄대분류]!==undefined){
+                resultObject[범죄대분류] += item_sum;
+            }else{
+                //처음 누적
+                resultObject[범죄대분류] = item_sum;
+            }
+            return resultObject;
+        },{})
+        
+        console.log(result);
+    </script>
+</body>
+</html>
