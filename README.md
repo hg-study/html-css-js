@@ -31,6 +31,11 @@
     - [이벤트](#이벤트)
     - [노드 CRUD](#노드-crud)
     - [동기와 비동기](#동기와-비동기)
+- [04_JSLIB](#04_jslib)
+    - [Swiper](#swiper)
+    - [Lodash](#lodash)
+    - [ScrollMagic](#scrollmagic)
+    - [GSAP](#gsap)
 
 <br>
 
@@ -267,3 +272,25 @@
     - [Promise와 async/await](./HTML_CSS_JS/03_JS/08_Async/04PromiseAsync.html)
 
 ---
+
+### 04_JSLIB
+> JavaScript 라이브러리 이론 & 실습
+
+#### Swiper
+- [Swiper 이론](./HTML_CSS_JS/04_JSLIB/Theory/01Swiper.md)
+    - [배너 슬라이더](./HTML_CSS_JS/04_JSLIB/01_Swiper/01BasicSwiper.html)
+    - [세로 슬라이더](./HTML_CSS_JS/04_JSLIB/01_Swiper/02VerticalSwiper.html)
+    - [멀티 슬라이더](./HTML_CSS_JS/04_JSLIB/01_Swiper/03MultiSlider.html)
+
+#### Lodash
+- [Lodash 이론](./HTML_CSS_JS/04_JSLIB/Theory/02Lodash.md)
+    - [throttle](./HTML_CSS_JS/04_JSLIB/02_Lodash/01Throttle.html)
+
+#### ScrollMagic
+- [ScrollMagic 이론](./HTML_CSS_JS/04_JSLIB/Theory/03ScrollMagic.md)
+    - [클래스 토글](./HTML_CSS_JS/04_JSLIB/03_ScrollMagic/01ClassToggle.html)
+    - [여러 요소 감시](./HTML_CSS_JS/04_JSLIB/03_ScrollMagic/02MultiScene.html)
+
+#### GSAP
+- [GSAP 이론](./HTML_CSS_JS/04_JSLIB/Theory/04Gsap.md)
+    - [gsap.to](./HTML_CSS_JS/04_JSLIB/04_Gsap/01GsapTo.html)
