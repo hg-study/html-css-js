@@ -36,6 +36,9 @@
     - [Lodash](#lodash)
     - [ScrollMagic](#scrollmagic)
     - [GSAP](#gsap)
+    - [Chart.js](#chartjs)
+    - [QR 코드](#qr-코드)
+    - [Canvas](#canvas)
 
 <br>
 
@@ -294,3 +297,19 @@
 #### GSAP
 - [GSAP 이론](./HTML_CSS_JS/04_JSLIB/Theory/04Gsap.md)
     - [gsap.to](./HTML_CSS_JS/04_JSLIB/04_Gsap/01GsapTo.html)
+
+#### Chart.js
+- [Chart.js 이론](./HTML_CSS_JS/04_JSLIB/Theory/05Chart.md)
+    - [막대 차트](./HTML_CSS_JS/04_JSLIB/05_Chart/01BarChart.html)
+    - [차트 종류](./HTML_CSS_JS/04_JSLIB/05_Chart/02ChartTypes.html)
+    - [음식 종류별 맛집 차트](./HTML_CSS_JS/04_JSLIB/05_Chart/03RestaurantChart.html)
+    - [범죄 대분류별 합계](./HTML_CSS_JS/04_JSLIB/05_Chart/04CrimeSum.html)
+
+#### QR 코드
+- [QR 코드 이론](./HTML_CSS_JS/04_JSLIB/Theory/06Qrcode.md)
+    - [QR 코드 생성](./HTML_CSS_JS/04_JSLIB/06_Qrcode/01Qrcode.html)
+
+#### Canvas
+- [Canvas 이론](./HTML_CSS_JS/04_JSLIB/Theory/07Canvas.md)
+    - [Canvas 그림판](./HTML_CSS_JS/04_JSLIB/07_Canvas/01Canvas.html)
+    - [Canvas 그림판 JS](./HTML_CSS_JS/04_JSLIB/07_Canvas/01Canvas.js)
