@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeafletBasic</title>
+    <!--
+        =======================================
+        Leaflet 기본 지도
+        OpenStreetMap 타일로 대구를 중심으로 한 지도 표시
+        =======================================
+    -->
+    <!-- LEAFLET CSS CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <!-- LEAFLET JS CDN -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <style>
+        #map {
+            height: 100vh;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="map"></div>
+
+    <script>
+        // L.map('요소 id').setView([위도, 경도], 줌 레벨) : 지도를 만들고 중심 좌표와 확대 수준 지정 (대구광역시청)
+        var map = L.map('map').setView([35.8714, 128.6014], 13);
+
+        // L.tileLayer(타일 주소, 옵션) : 배경지도 타일 지정. {z}/{x}/{y}는 줌, 가로, 세로 번호
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+    </script>
+</body>
+
+</html>
