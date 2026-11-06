@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarChart</title>
+    <!--
+        =======================================
+        Chart.js 막대 차트
+        dataset을 색마다 나눠 막대를 쌓고 애니메이션 시차와 클릭 이벤트 적용
+        =======================================
+    -->
+</head>
+
+<body style="display:flex;justify-content: center;align-items: center;height:100vh;">
+
+
+    <div style="width:800px;height:500px;">
+        <canvas id="myChart"></canvas>  <!-- 차트 그릴 캔버스 -->
+    </div>
+
+
+    <!-- Chart.js: 그래프 라이브러리. 외부 라이브러리를 가져온다. -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+
+        const dataSet = [
+            // 단일 dataset 예시 : backgroundColor를 배열로 지정하면 막대마다 색이 달라진다
+            // {
+            //     label: '# of Votes',
+            //     data: [12, 19, 3, 5, 2, 3],
+            //     borderWidth: 1,
+            //     backgroundColor: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            // }
+
+
+            // 여러 dataset : 색마다 dataset을 따로 만들고 x축을 stacked로 지정해 한 줄에 표시
+            {
+                label: 'red',
+                data: [12, 0, 0, 0, 0, 0],
+                borderWidth: 1,
+                backgroundColor: 'red',
+                borderColor: '',
+            },
+            {
+                label: 'orange',
+                data: [0, 22, 0, 0, 0, 0],
+                borderWidth: 1,
+                backgroundColor: 'orange',
+                borderColor: '',
+            },
+            {
+                label: 'yellow',
+                data: [0, 0, 30, 0, 0, 0],
+                borderWidth: 1,
+                backgroundColor: 'yellow',
+                borderColor: '',
+            },
+            {
+                label: 'green',
+                data: [0, 0, 0, 5, 0, 0],
+                borderWidth: 1,
+                backgroundColor: 'green',
+                borderColor: '',
+            },
+            {
+                label: 'blue',
+                data: [0, 0, 0, 0, 19, 0],
+                borderWidth: 1,
+                backgroundColor: 'blue',
+                borderColor: '',
+            },
+            {
+                label: 'navy',
+                data: [0, 0, 0, 0, 0, 32],
+                borderWidth: 1,
+                backgroundColor: 'navy',
+                borderColor: '',
+
+                // barPercentage: 11,        // 개별 막대에 대한 너비 비율(%) 
+                // categoryPercentage: 1,   // 전체 너비 중 해당 막대 그룹이 차지하는 비율(%)
+            },
+
+
+        ]
+        // options : 애니메이션, 축, 클릭 이벤트 설정. animation.delay로 막대가 순서대로 나타나게 한다
+        const options = {
+            animation: {
+                delay: (el) => { return el.dataIndex * 100; }
+            },
+            scales: {
+                x: {
+                    stacked: true,
+
+                },
+                y: {
+                    beginAtZero: true
+                    // min : 0,
+                    // max : 100,
+                    // ticks : {
+                    //     stepSize : 10,
+                    // }
+                },
+            },
+            onClick: (e,chartEl) => {
+                // console.log(e);
+                console.log(chartEl);
+            }
+        }
+
+        // new Chart(캔버스, {type, data, options}) : 차트 생성. type은 bar, line, pie, doughnut 등
+        new Chart(ctx, {
+            type: 'bar',    //bar, line , pie , doughnut // , bubble , scatter , heatmap...
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: dataSet,
+            },
+            options: options,
+        });
+    </script>
+
+</body>
+
+</html>
