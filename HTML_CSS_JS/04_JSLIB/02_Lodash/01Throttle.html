@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throttle</title>
+    <!--
+        =======================================
+        Lodash throttle
+        scroll 이벤트가 연속으로 발생해도 일정 시간에 한 번만 실행하도록 제한
+        =======================================
+    -->
+
+    <!-- LODASH CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.23/lodash.min.js"></script>
+
+    <style>
+        body{height: 8000px; margin: 0;}
+    </style>
+
+</head>
+<body>
+    
+
+
+    <script>
+        // _ : Lodash가 제공하는 전역 객체. CDN을 불러오면 사용 가능
+        console.log("_",_)
+
+        // throttle 없이 등록하면 스크롤하는 동안 이벤트가 발생할 때마다 매번 실행된다
+        // window.addEventListener('scroll', () => { console.log(window.scrollY); })
+
+        // _.throttle(함수, 시간) : 지정한 시간(ms) 동안 한 번만 함수를 실행. 스크롤처럼 자주 발생하는 이벤트의 실행 횟수를 줄인다
+        window.addEventListener('scroll',_.throttle(() => {console.log(window.scrollY)},100))
+    </script>
+</body>
+</html>
