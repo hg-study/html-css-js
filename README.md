@@ -44,6 +44,8 @@
     - [SCSS 기본, 중첩, 변수, 연산](#scss-기본-중첩-변수-연산)
     - [Mixin, Function](#mixin-function)
     - [반복문, 내장 함수](#반복문-내장-함수)
+- [06_NODE](#06_node)
+    - [npm, lodash, Parcel](#npm-lodash-parcel)
 
 <br>
 
@@ -357,3 +359,13 @@
     - [내장 함수](./HTML_CSS_JS/05_SCSS/07_BuiltIn/BuiltIn.scss)
 
 ---
+
+### 06_NODE
+> Node.js 이론 & 실습
+
+#### npm, lodash, Parcel
+- [Node 이론](./HTML_CSS_JS/06_NODE/Theory/01Node.md)
+    - [npm 실습](./HTML_CSS_JS/06_NODE/01_Npm/package.json)
+    - [lodash로 배열 섞기](./HTML_CSS_JS/06_NODE/01_Npm/index.js)
+    - [Parcel과 lodash](./HTML_CSS_JS/06_NODE/02_ParcelBundler/index.js)
+    - [Parcel 실행 페이지](./HTML_CSS_JS/06_NODE/02_ParcelBundler/index.html)
