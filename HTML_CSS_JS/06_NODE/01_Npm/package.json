@@ -1,0 +1,30 @@
+{
+  "name": "fullstack_node_js",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node index.js",
+    "start2": "parcel index.html",  
+    "build": "parcel build index.html",  
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hg-study/html-css-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/hg-study/html-css-js/issues"
+  },
+  "homepage": "https://github.com/hg-study/html-css-js#readme",
+  "dependencies": {
+    "lodash": "^4.18.1",
+    "nodemon": "^3.1.14"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  }
+}
