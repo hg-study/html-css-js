@@ -1,0 +1,26 @@
+{
+  "name": "fullstack_scss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx parcel 07_BuiltIn/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hg-study/html-css-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/hg-study/html-css-js/issues"
+  },
+  "homepage": "https://github.com/hg-study/html-css-js#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.101.0"
+  }
+}

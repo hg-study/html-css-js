@@ -1,0 +1,25 @@
+/* 기본 .box 스타일 */
+.box {
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: royalblue;
+  
+  /* 우측 이미지에 있던 정렬 스타일 추가 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* &:hover 변환 */
+.box:hover {
+  /* darken(royalblue, 10%) 결과물 예시 */
+  background-color: #2b5bc7; 
+}
+
+/* &.built-in 변환 */
+.box.built-in {
+  /* mix(royalblue, red) 결과물 예시 */
+  background-color: #7137b0; 
+}

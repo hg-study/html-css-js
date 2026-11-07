@@ -1,0 +1,32 @@
+/*
+    =======================================
+    SCSS 내장 함수
+    mix, lighten, darken, saturate, invert, rgba로 색을 조작
+    =======================================
+*/
+
+.box {
+  $color : royalblue;
+  width : 200px;
+  height : 100px;
+  margin : 20px;
+  border-radius : 10px;
+  background-color: $color;
+
+  &:hover {
+    // darken($색, %) : 색을 어둡게
+    background-color: darken($color, 10%); 
+  }
+  &.built-in {
+    // mix($색1, $색2) : 두 색을 섞는다
+    background-color: mix($color, red);
+    // lighten($색, %) : 색을 밝게
+    //background-color: lighten($color, 10%);
+    // saturate($색, %) : 채도를 높인다
+    //background-color: saturate($color, 10%);
+    // invert($색) : 색을 반전
+    //background-color: invert($color);
+    // rgba($색, 투명도) : 투명도를 지정
+    //background-color: rgba($color, .5);
+  }
+}
