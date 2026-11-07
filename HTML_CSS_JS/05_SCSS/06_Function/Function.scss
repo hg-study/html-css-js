@@ -1,0 +1,36 @@
+/*
+    =======================================
+    SCSS @function
+    @function으로 계산 함수를 정의하고 mixin과 함께 사용
+    =======================================
+*/
+
+// 정중앙 정렬 mixin : flex로 가로, 세로 가운데 정렬
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+}
+
+// @function 이름($매개변수) { @return 값; } : 값을 계산해 돌려주는 함수 정의. mixin은 스타일을, function은 값을 반환한다
+@function ratio($size, $ratio) {  // @function으로 ratio() 함수 정의
+  @return $size * $ratio;         // 매개변수 $size와 $ratio를 곱해 반환
+}
+
+// ratio 함수 없이 크기를 직접 지정
+.box1 {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  @include center;
+}
+
+// function과 mixin을 함께 적용
+.box {
+  $width: 100px;  // 지역 변수
+
+  width: $width;
+  height: ratio($width, .5); // 함수 호출 : 100px * 0.5 = 50px
+  @include center;            // @include : 정의한 mixin을 적용
+}
