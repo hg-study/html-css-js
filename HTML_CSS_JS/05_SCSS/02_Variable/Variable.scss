@@ -1,0 +1,36 @@
+/*
+    =======================================
+    SCSS 변수
+    $변수로 값을 저장해 재사용하고 전역, 지역 변수 범위 구분
+    =======================================
+*/
+// $변수명: 값; : 변수 선언. 블록 밖에서 선언하면 파일 전체에서 쓰는 전역 변수
+$size: 200px;
+
+.container{
+    margin: 50px;
+    // 블록 안에서 선언한 지역 변수 : 그 블록 안에서만 사용 가능
+    $localsize: 100px;
+
+    li{
+        border: 1px solid;
+    }
+    .item{
+        width: $size;
+        height: $localsize;
+        transform: translateX($size);
+        background-color: royalblue;
+    }
+}
+ 
+.container2{
+    margin : 50px;
+    
+    $localsize : 50px; 
+    .item{
+        width : $size;
+        height : $localsize;
+        transform : translateX($size);
+        background-color: orange;
+    }
+}

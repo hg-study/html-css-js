@@ -1,0 +1,19 @@
+.container {
+  margin: 50px;
+}
+.container .item {
+  width: 200px;
+  height: 100px;
+  transform: translateX(200px);
+  background-color: royalblue;
+}
+
+.container2 {
+  margin: 50px;
+}
+.container2 .item {
+  width: 200px;
+  height: 50px;
+  transform: translateX(200px);
+  background-color: orange;
+}

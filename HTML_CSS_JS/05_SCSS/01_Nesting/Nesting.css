@@ -1,0 +1,53 @@
+.container {
+    border: 1px solid;
+    width: 500px;
+    padding: 5px;
+}
+.container ul {
+    border: 1px solid;
+    width: 300px;
+    padding: 5px;
+}
+.container ul li{
+    border: 1px solid red;
+    width: 200px;
+}
+.container ul li.name{
+    color: green;
+}
+.container ul li.age{
+    background: orange;
+}
+
+.container2 .btn {
+  border: 1px solid;
+  width: 100px;
+  margin: 5px;
+  text-align: center;
+}
+.container2 .btn.active {
+  color: red;
+}
+
+.fs-small {
+  font-size: 0.7rem;
+}
+.fs-medium {
+  font-size: 0.9rem;
+}
+.fs-large {
+  font-size: 1.2rem;
+}
+
+.container3 .box {
+  width: 200px;
+  font-weight: bold;
+  font-size: 10px;
+  font-family: "sans-serif";
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+}

@@ -1,0 +1,82 @@
+/*
+    =======================================
+    SCSS 중첩
+    선택자 안에 자식 선택자를 작성하고 &로 부모를 참조, 속성도 중첩
+    =======================================
+*/
+// 중첩 : 부모 선택자 안에 자식 선택자를 작성해 .container ul li처럼 반복되는 선택자를 줄인다
+.container{
+    border: 1px solid;
+    width: 500px;
+    padding: 5px;
+
+    ul{
+        border: 1px solid;
+        width: 300px;
+        padding: 5px;
+
+        li{
+            border: 1px solid red;
+            width: 200px;
+
+            &.name{  // & : 부모 선택자(li). li.name
+                color: goldenrod;
+            }
+            &.age{
+                background-color: royalblue;
+            }
+        }
+    }
+}
+
+.container2{
+    .btn{
+        border: 1px solid;
+        width: 100px;
+        margin: 5px;
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        padding: 5px;
+
+        &.active{
+            color: red;
+        }
+    }
+    // &-접미사 : 부모 선택자 뒤에 이어 붙여 .fs-small, .fs-medium, .fs-large 생성
+    .fs{
+        &-small{
+            font-size: .5rem;
+        }
+        &-medium{
+            font-size: 1.2rem;
+        }
+        &-large{
+            font-size: 2rem;
+        }
+    }
+}
+
+.container3{
+    .box{
+        width: 200px;
+        border: 1px solid;
+
+        // 속성 중첩 : font-weight, font-size처럼 앞부분이 같은 속성을 font: { weight, size }로 묶는다
+        font: {
+            weight: bold;
+            size: 100px;
+            family: "sans-serif";
+        };
+        margin: {
+            top: 10px;
+            bottom: 20px;
+        };
+        padding: {
+            top: 10px;
+            right: 20px;
+            bottom: 30px;
+            left: 40px;
+        };
+    }
+}
