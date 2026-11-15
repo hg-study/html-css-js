@@ -67,23 +67,23 @@
     - [리스트: ul, ol, li, 중첩](./HTML_CSS_JS/01_HTML/03List.html)
     - [리스트 prtc](./HTML_CSS_JS/01_HTML/04Listprtc.html)
 
-#### Entity & Emmet
+#### Entity와 Emmet 단축키
 - [Entity&Emmet 이론](./HTML_CSS_JS/01_HTML/Theory/03Entity&Emmet.md)
     - [엔티티 Entity](./HTML_CSS_JS/01_HTML/05Entity.html)
     - [단축 문법 Emmet](./HTML_CSS_JS/01_HTML/06Emmet.html)
 
-#### Table
+#### 표 만들기와 셀 병합
 - [Table 이론](./HTML_CSS_JS/01_HTML/Theory/04Table.md)
     - [Table 기본&rowspan 병합](./HTML_CSS_JS/01_HTML/07Table.html)
     - [Table prtc](./HTML_CSS_JS/01_HTML/08Tableprtc.html)
     - [시맨틱 Table](./HTML_CSS_JS/01_HTML/09Table.html)
 
-#### A Tag
+#### a 태그로 링크 만들기
 - [ATag 이론](./HTML_CSS_JS/01_HTML/Theory/05ATag.md)
     - [ATag 스타일 버튼, iframe 연동](./HTML_CSS_JS/01_HTML/10ATag.html)
     - [ATag 페이지 앵커 링크 & 고정 nev](./HTML_CSS_JS/01_HTML/11ATag.html)
 
-#### Img & Video
+#### 이미지와 영상 삽입
 - [Img&Video 이론](./HTML_CSS_JS/01_HTML/Theory/06Img&Video.md)
     - [Img 삽입](./HTML_CSS_JS/01_HTML/12Img.html)
     - [Video 자동재생, 그라데이션 오버레이](./HTML_CSS_JS/01_HTML/13Video.html)
@@ -143,7 +143,7 @@
     - [가상 요소](./HTML_CSS_JS/02_CSS/03_Selector/08PseudoElement.html)
     - [구조 가상 클래스](./HTML_CSS_JS/02_CSS/03_Selector/09NthChild.html)
 
-#### Position
+#### 요소 위치 지정과 GNB 메뉴
 - [Position 이론](./HTML_CSS_JS/02_CSS/Theory/05Position.md)
     - [relative, absolute 비교](./HTML_CSS_JS/02_CSS/04_Position/01Relative.html)
     - [absolute 기준 요소](./HTML_CSS_JS/02_CSS/04_Position/02Absolute.html)
@@ -192,7 +192,7 @@
     - [미디어 쿼리 기본](./HTML_CSS_JS/02_CSS/07_MQ/01MediaQuery.html)
     - [link media 속성](./HTML_CSS_JS/02_CSS/07_MQ/02LinkMedia.html)
 
-#### Bootstrap
+#### Bootstrap 그리드와 폼
 - [Bootstrap 이론](./HTML_CSS_JS/02_CSS/Theory/09Bootstrap.md)
     - [회원가입 폼 페이지2 bs5 추가](./HTML_CSS_JS/01_HTML/20Form_only_html_bs.html)
 
@@ -286,26 +286,26 @@
 ### 04_JSLIB
 > JavaScript 라이브러리 이론 & 실습
 
-#### Swiper
+#### Swiper로 슬라이드 만들기
 - [Swiper 이론](./HTML_CSS_JS/04_JSLIB/Theory/01Swiper.md)
     - [배너 슬라이더](./HTML_CSS_JS/04_JSLIB/01_Swiper/01BasicSwiper.html)
     - [세로 슬라이더](./HTML_CSS_JS/04_JSLIB/01_Swiper/02VerticalSwiper.html)
     - [멀티 슬라이더](./HTML_CSS_JS/04_JSLIB/01_Swiper/03MultiSlider.html)
 
-#### Lodash
+#### Lodash로 데이터 다루기
 - [Lodash 이론](./HTML_CSS_JS/04_JSLIB/Theory/02Lodash.md)
     - [throttle](./HTML_CSS_JS/04_JSLIB/02_Lodash/01Throttle.html)
 
-#### ScrollMagic
+#### ScrollMagic으로 스크롤 연출
 - [ScrollMagic 이론](./HTML_CSS_JS/04_JSLIB/Theory/03ScrollMagic.md)
     - [클래스 토글](./HTML_CSS_JS/04_JSLIB/03_ScrollMagic/01ClassToggle.html)
     - [여러 요소 감시](./HTML_CSS_JS/04_JSLIB/03_ScrollMagic/02MultiScene.html)
 
-#### GSAP
+#### GSAP으로 애니메이션 만들기
 - [GSAP 이론](./HTML_CSS_JS/04_JSLIB/Theory/04Gsap.md)
     - [gsap.to](./HTML_CSS_JS/04_JSLIB/04_Gsap/01GsapTo.html)
 
-#### Chart.js
+#### Chart.js로 차트 만들기
 - [Chart.js 이론](./HTML_CSS_JS/04_JSLIB/Theory/05Chart.md)
     - [막대 차트](./HTML_CSS_JS/04_JSLIB/05_Chart/01BarChart.html)
     - [차트 종류](./HTML_CSS_JS/04_JSLIB/05_Chart/02ChartTypes.html)
@@ -316,12 +316,12 @@
 - [QR 코드 이론](./HTML_CSS_JS/04_JSLIB/Theory/06Qrcode.md)
     - [QR 코드 생성](./HTML_CSS_JS/04_JSLIB/06_Qrcode/01Qrcode.html)
 
-#### Canvas
+#### Canvas로 그림 그리기
 - [Canvas 이론](./HTML_CSS_JS/04_JSLIB/Theory/07Canvas.md)
     - [Canvas 그림판](./HTML_CSS_JS/04_JSLIB/07_Canvas/01Canvas.html)
     - [Canvas 그림판 JS](./HTML_CSS_JS/04_JSLIB/07_Canvas/01Canvas.js)
 
-#### Leaflet
+#### Leaflet으로 지도 만들기
 - [Leaflet 이론](./HTML_CSS_JS/04_JSLIB/Theory/08Leaflet.md)
     - [Leaflet 기본 지도](./HTML_CSS_JS/04_JSLIB/08_Leaflet/01_Basic/01Basic.html)
     - [OSM 지도](./HTML_CSS_JS/04_JSLIB/08_Leaflet/02_Tile/01OsmMap.html)
@@ -348,7 +348,7 @@
     - [변수](./HTML_CSS_JS/05_SCSS/02_Variable/Variable.scss)
     - [연산](./HTML_CSS_JS/05_SCSS/03_Operation/Operation.scss)
 
-#### Mixin, Function
+#### SCSS Mixin과 Function
 - [Scss Reuse 이론](./HTML_CSS_JS/05_SCSS/Theory/02ScssReuse.md)
     - [Mixins](./HTML_CSS_JS/05_SCSS/04_Mixins/Mixins.scss)
     - [Function](./HTML_CSS_JS/05_SCSS/06_Function/Function.scss)
@@ -363,7 +363,7 @@
 ### 06_NODE
 > Node.js 이론 & 실습
 
-#### npm, lodash, Parcel
+#### npm과 Parcel로 패키지 관리
 - [Node 이론](./HTML_CSS_JS/06_NODE/Theory/01Node.md)
     - [npm 실습](./HTML_CSS_JS/06_NODE/01_Npm/package.json)
     - [lodash로 배열 섞기](./HTML_CSS_JS/06_NODE/01_Npm/index.js)
